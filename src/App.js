@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import '../../admin-panel-makeup/blocks/rcheckbox-radio.css';
 
 function App() {
   return (
