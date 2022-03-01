@@ -12,6 +12,10 @@
   --button-shadow-light: #bad8f5;
   --button-shadow-dark: rgba(0, 0, 0, 0.2);
 }
+.wrapper{
+  display: flex;
+  flex-direction: column;
+}
 .body {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;

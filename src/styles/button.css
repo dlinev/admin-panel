@@ -1,6 +1,6 @@
 .frame__button {
   width: 600px;
-  flex-direction: inherit;
+  flex-direction: initial;
   padding: 48px;
 }
 .button {
