@@ -11,6 +11,25 @@
   --button-font-color-black: #000;
   --button-shadow-light: #bad8f5;
   --button-shadow-dark: rgba(0, 0, 0, 0.2);
+
+  --wrapper-color-border: #8055FF;
+  --input-background-color: #fff;
+  --input-color-border: #BAD8F5;
+  --input-background-color-checked: #459DF5;
+  --input-color-border-checked: #459DF5;
+  --radio-background-color: #fff;
+  --radio-color-border: #BAD8F5;
+  --radio-color-text: #459DF5;
+  --input-color-placeholder: #BAD8F5;
+  --input-color-text: #000;
+  --input-order-color-border: #459DF5;
+
+  --button-font-color-normal: #FFF;
+  --button-font-color-dark: #000;
+  --button-shadow-normal: #BAD8F5;
+  --button-shadow-dark: rgba(0, 0, 0, 0.2);
+  --button-background-color: #459DF5;
+  --button-empty-color: #459DF5;
 }
 .wrapper{
   display: flex;
