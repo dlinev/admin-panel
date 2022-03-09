@@ -1,0 +1,83 @@
+.frame__button {
+  width: 600px;
+  flex-direction: initial;
+  padding: 48px;
+}
+.button {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+}
+.button-block {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-bottom: 40px;
+}
+.button__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.button__img {
+  width: 16px;
+  height: 16px;
+}
+.button__text {
+  font-size: 13px;
+  display: block;
+  white-space: nowrap;
+}
+/* модификаторы*/
+.button_theme_default {
+  background-color: var(--background-color-default);
+  color: var(--button-font-color-white);
+}
+.button_theme_flat {
+  color: var(--background-color-default);
+}
+.button_theme_disabled {
+  color: var(--button-font-color-black);
+}
+
+.button_theme_default .button__img {
+  fill: var(--button-font-color-white);
+}
+.button_theme_flat .button__img {
+  fill: var(--background-color-default);
+}
+
+.button_size_big {
+  padding: 8px 16px;
+}
+.button_size_big .button__img + .button__text {
+  margin-left: 8px;
+}
+.button_size_big + .button_size_icon_only {
+  padding: 8px;
+}
+.button_size_small {
+  padding: 4px 8px;
+}
+.button_size_small .button__img + .button__text {
+  margin-left: 6px;
+}
+.button_size_small + .button_size_icon_only {
+  padding: 4px;
+}
+
+/* прощай красота
+.button__item:hover {
+  box-shadow: 0px 2px 5px 2px var(--button-shadow-light);
+}
+.button_black:hover {
+  box-shadow: 0px 2px 5px 2px var(--button-shadow-dark);
+}
+*/
