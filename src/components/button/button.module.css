@@ -1,21 +1,8 @@
-.frame__button {
-  width: 600px;
-  flex-direction: initial;
-  padding: 48px;
-}
 .button {
   font-family: Ubuntu;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
-}
-.button-block {
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-bottom: 40px;
 }
 .button__item {
   display: flex;
@@ -72,12 +59,3 @@
 .button_size_small + .button_size_icon_only {
   padding: 4px;
 }
-
-/* прощай красота
-.button__item:hover {
-  box-shadow: 0px 2px 5px 2px var(--button-shadow-light);
-}
-.button_black:hover {
-  box-shadow: 0px 2px 5px 2px var(--button-shadow-dark);
-}
-*/

@@ -4,9 +4,9 @@ import './styles/index.css';
 import { Component } from 'react';
 import Input from './components/input/input';
 import SearchBar from './components/search-bar/search-bar';
+import CheckboxRadio from './components/checkbox-radio/checkbox-radio';
+import Button from './components/button/button';
 
-// import './styles/checkbox-radio.css';
-// import './styles/button.css';
 // import './styles/dropdown.css';
 
 function App() {
@@ -19,263 +19,52 @@ function App() {
       <Input inputValue='06.12.2021' inputLock='true'  showIcon='true'/>
     </div>
 
-    <div className="frame frame_search-bar">
+    <div className="frame frame_searchBar">
       <SearchBar />
       <SearchBar showButton='true' inputValue='50744'/>
     </div>
 
+      <div className="frame frame_checkboxRadio">
+        <CheckboxRadio type='checkbox'/>
+      </div>
+      <div className="frame frame_checkboxRadio">
+        <CheckboxRadio type='radio'/>
+      </div>
 
+      <div className="frame frame_button">
+        <div className="buttonColumn">
+          <div className="buttonBlock">
+              <Button theme='default' size='big' showIcon='true'  showText='true' />
+              <Button theme='default' size='big' showIcon='false' showText='true' />
+              <Button theme='default' size='big' showIcon='true'  showText='false' />
+          </div>
+          <div className="buttonBlock">
+              <Button theme='default' size='small' showIcon='true'  showText='true' />
+              <Button theme='default' size='small' showIcon='false' showText='true' />
+              <Button theme='default' size='small' showIcon='true'  showText='false' />
+          </div>
+        </div>
+        <div className="buttonColumn">
+          <div className="buttonBlock">
+              <Button theme='flat' size='big' showIcon='true'  showText='true' />
+              <Button theme='flat' size='big' showIcon='false' showText='true' />
+              <Button theme='flat' size='big' showIcon='true'  showText='false'/>
+          </div>
+          <div className="buttonBlock">
+              <Button theme='flat' size='small' showIcon='true'  showText='true' />
+              <Button theme='flat' size='small' showIcon='false' showText='true' />
+              <Button theme='flat' size='small' showIcon='true'  showText='false' />
+          </div>
+        </div>
+        <div className="buttonColumn">
+          <div className="buttonBlock">
+              <Button theme='disabled' size='big' showIcon='true' showText='true'/>
+              <Button theme='disabled' size='big' showText='true' />
+              <Button theme='disabled' size='big' showIcon='true' />
+          </div>
+        </div>
+      </div>
 {/* 
-
-      <div className="frame frame_checkbox-radio">
-        <div className="checkbox-block">
-          <div className="checkbox">
-            <input className="custom-checkbox" type="checkbox" id="checkbox-1" />
-            <label for="checkbox-1"></label>
-          </div>
-          <div className="checkbox">
-            <input
-              className="custom-checkbox"
-              type="checkbox"
-              id="checkbox-2"
-            />
-            <label for="checkbox-2"></label>
-          </div>
-        </div>
-      </div>
-
-      <div className="frame frame_checkbox-radio">
-        <div className="radio-block">
-          <div className="radio">
-            <input
-              className="custom-radio"
-              id="radio-1"
-              type="radio"
-              name="radio-group"
-              value="radio1"
-            />
-            <label for="radio-1"></label>
-          </div>
-          <div className="radio">
-            <input
-              className="custom-radio"
-              id="radio-2"
-              type="radio"
-              name="radio-group"
-              checked
-              value="radio2"
-            />
-            <label for="radio-2"></label>
-          </div>
-        </div>
-      </div>
-
-      <div className="frame frame__button">
-      <div className="button-column">
-        <div className="button-block">
-          <button
-            className="button button__item button_theme_default button_size_big"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-            <div className="button__text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_default button_size_big"
-          >
-            <div className="button__text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_default button_size_big button_size_icon_only"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div className="button-block">
-          <button
-            className="button button__item button_theme_default button_size_small"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-            <div className="button__text button_small_text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_default button_size_small"
-          >
-            <div className="button__text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_default button_size_small button_size_icon_only"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div className="button-column">
-        <div className="button-block">
-          <button className="button button__item button_theme_flat button_size_big">
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-            <div className="button__text button_big_text">Text here</div>
-          </button>
-
-          <button className="button button__item button_theme_flat button_size_big">
-            <div className="button__text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_flat button_size_icon_only"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div className="button-block">
-          <button
-            className="button button__item button_theme_flat button_size_small"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-            <div className="button__text button_small_text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_flat button_size_small"
-          >
-            <div className="button__text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_flat button_size_icon_only"
-          >
-            <svg className="button__img" viewBox="0 0 16 16" stroke="none">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div className="button-column">
-        <div className="button-block">
-          <button
-            className="button button__item button_theme_disabled button_size_big"
-          >
-            <svg
-              className="button__img"
-              viewBox="0 0 16 16"
-              fill="#000"
-              stroke="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-            <div className="button__text button_big_text">Text here</div>
-          </button>
-
-          <button
-            className="button button__item button_theme_disabled button_size_big"
-          >
-            <div className="button__text">Text here</div>
-          </button>
-        </div>
-      </div>
-    </div>
 
     <div className="frame dropdown-frame">
     
