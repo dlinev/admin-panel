@@ -1,3 +1,11 @@
+.buttonBlock {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-bottom: 40px;
+}
 .button {
   font-family: Ubuntu;
   font-style: normal;

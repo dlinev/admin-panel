@@ -67,11 +67,14 @@
   flex-direction: initial;
   padding: 48px;
 }
-.buttonBlock {
-  width: 150px;
+.frame_dropdown {
+  width: 672px;
+  height: 512px;
+  margin: 0 auto;
+  border: 1px dashed var(--wrapper-color-border);
+  padding: 1rem;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
-  padding-bottom: 40px;
+  flex-direction: column;
 }
+

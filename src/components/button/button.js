@@ -3,6 +3,10 @@ import styles from './button.module.css';
 
 
 class Button extends Component {
+  constructor(props){
+    super(props);
+    this.text = (typeof(props.text)==='undefined' ? 'Text here' : props.text);
+  }
     showIcon(){
       return <svg className={styles.button__img} 
                   viewBox="0 0 16 16" 
@@ -21,7 +25,7 @@ class Button extends Component {
     }
 
     showText(){
-      return <div className={styles.button__text}>Text here</div>
+      return <div className={styles.button__text}>{this.text}</div>
     }
     getClassName(props){
       let className = `${styles.button} ${styles.button__item} `;

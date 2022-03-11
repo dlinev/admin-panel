@@ -1,27 +1,29 @@
 import './styles/reset.css';
 import './styles/index.css';
+import stylesDropdown from './components/dropdown/dropdown.module.css'; 
+import stylesButton   from './components/button/button.module.css'; 
 
-import { Component } from 'react';
-import Input from './components/input/input';
-import SearchBar from './components/search-bar/search-bar';
-import CheckboxRadio from './components/checkbox-radio/checkbox-radio';
-import Button from './components/button/button';
+import { Component }  from 'react';
+import Input          from './components/input/input';
+import SearchBar      from './components/search-bar/search-bar';
+import CheckboxRadio  from './components/checkbox-radio/checkbox-radio';
+import Button         from './components/button/button';
+import Dropdown       from './components/dropdown/dropdown';
 
-// import './styles/dropdown.css';
 
 function App() {
   return (
     <div className="wrapper">
 
     <div className="frame">
-      <Input />
-      <Input inputValue='06.12.2021' inputError='true' showButton='true'/>
-      <Input inputValue='06.12.2021' inputLock='true'  showIcon='true'/>
+      <Input placeholder='Введите' labelText='Дата и время заказа'/>
+      <Input placeholder='Введите' labelText='Дата и время заказа' inputValue='06.12.2021' inputError='true' showButton='true'/>
+      <Input placeholder='Введите' labelText='Дата и время заказа' inputValue='06.12.2021' inputLock='true'  showIcon='true'/>
     </div>
 
     <div className="frame frame_searchBar">
-      <SearchBar />
-      <SearchBar showButton='true' inputValue='50744'/>
+      <SearchBar placeholder='Номер заказа или ФИО' showIcon='true'/>
+      <SearchBar placeholder='Номер заказа или ФИО' showButton='true' showIcon='true' inputValue='50744'/>
     </div>
 
       <div className="frame frame_checkboxRadio">
@@ -33,37 +35,72 @@ function App() {
 
       <div className="frame frame_button">
         <div className="buttonColumn">
-          <div className="buttonBlock">
+          <div className={stylesButton.buttonBlock}>
               <Button theme='default' size='big' showIcon='true'  showText='true' />
               <Button theme='default' size='big' showIcon='false' showText='true' />
               <Button theme='default' size='big' showIcon='true'  showText='false' />
           </div>
-          <div className="buttonBlock">
+          <div className={stylesButton.buttonBlock}>
               <Button theme='default' size='small' showIcon='true'  showText='true' />
               <Button theme='default' size='small' showIcon='false' showText='true' />
               <Button theme='default' size='small' showIcon='true'  showText='false' />
           </div>
         </div>
         <div className="buttonColumn">
-          <div className="buttonBlock">
+          <div className={stylesButton.buttonBlock}>
               <Button theme='flat' size='big' showIcon='true'  showText='true' />
               <Button theme='flat' size='big' showIcon='false' showText='true' />
               <Button theme='flat' size='big' showIcon='true'  showText='false'/>
           </div>
-          <div className="buttonBlock">
+          <div className={stylesButton.buttonBlock}>
               <Button theme='flat' size='small' showIcon='true'  showText='true' />
               <Button theme='flat' size='small' showIcon='false' showText='true' />
               <Button theme='flat' size='small' showIcon='true'  showText='false' />
           </div>
         </div>
         <div className="buttonColumn">
-          <div className="buttonBlock">
+          <div className={stylesButton.buttonBlock}>
               <Button theme='disabled' size='big' showIcon='true' showText='true'/>
               <Button theme='disabled' size='big' showText='true' />
               <Button theme='disabled' size='big' showIcon='true' />
           </div>
         </div>
       </div>
+
+    <div className="frame frame_dropdown">
+      <div className={stylesDropdown.dropdownCheck}>
+        <div className={stylesDropdown.dropdownBlock}>
+          <Dropdown type='checkbox' itemText='Новый'/>
+          <Dropdown type='checkbox' itemText='Рассчет'/>
+        </div>
+        <div className={stylesDropdown.dropdownBlock}>
+          <div className={stylesDropdown.dropdownRadio}>
+            <Dropdown type='radio' itemText='Radio' />
+          </div>
+        </div>
+      </div>
+      <div className={stylesDropdown.dropdownSingle}>
+        <div className={`${stylesDropdown.dropdownBlock} ${stylesDropdown.dropdownShort}`}>
+          <div className={stylesDropdown.dropdownInput}>
+            <Input placeholder='Введите номер' labelText='Номер страницы'/>
+          </div>
+        </div>
+        <div className={stylesDropdown.dropdownBlock}>
+          <div className={stylesDropdown.dropdownInput}>
+            <div className={stylesDropdown.dropdownInput__text}>Удалить n-записей?</div>
+              <Button theme='flat'    size='small' showIcon='false' showText='true' text='Удалить'/>
+              <Button theme='default' size='small' showIcon='false' showText='true' text='Отменить'/>
+            </div>
+          </div>
+        <div className={stylesDropdown.dropdownBlock}>
+          <div className={stylesDropdown.dropdownInput}>
+            <div className={stylesDropdown.dropdownInput__text}>Выберите тему</div>
+              <Button theme='flat'    size='small' showIcon='true' showText='true' text='Светлая'/>  
+              <Button theme='default' size='small' showIcon='true' showText='true' text='Темная'/>
+          </div>
+        </div>
+      </div>
+    </div>
 {/* 
 
     <div className="frame dropdown-frame">

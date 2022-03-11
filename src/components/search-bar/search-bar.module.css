@@ -36,3 +36,6 @@
 .searchBar__input::placeholder {
   color: var(--input-color-placeholder);
 }
+.searchbarLabel__text {
+  margin-bottom: 0.5rem;
+}

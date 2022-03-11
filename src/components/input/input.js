@@ -38,14 +38,14 @@ class Input extends Component {
     
     render() {
         return <div className="input">
-                <label className={styles.input__label}>Дата и время заказа
+                <label className={styles.input__label}>{this.props.labelText}
                     <div className={styles.inputBlock}>
                         <input  className={`${styles.inputBlock__item}
                                             ${this.props.inputError==='true' ? styles.inputBlock__item_error : ''}
                                             ${this.props.inputLock==='true' ? styles.inputBlock__item_lock : ''}
                                 `}
                                 type="datetime"
-                                placeholder='Введите'
+                                placeholder={this.props.placeholder}
                                 value={this.props.inputValue}
                                 disabled={this.props.inputLock}/>
                         {this.props.showIcon==='true' ? this.showIcon() : ''}
