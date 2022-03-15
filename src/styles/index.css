@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(../fonts/Ubuntu-Regular.ttf); 
+}
 :root {
   --frame-color-border-default: #8055ff;
   --background-color-default: #459df5;
