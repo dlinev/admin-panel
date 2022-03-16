@@ -1,7 +1,4 @@
-.frame_search-bar {
-  height: 200px;
-}
-.search-bar {
+.searchBar {
   width: 100%;
   height: 2rem;
   border: 1px solid var(--input-color-border-default);
@@ -12,13 +9,13 @@
   position: relative;
   align-items: center;
 }
-.search-bar__img {
+.searchBar__img {
   width: 1rem;
   height: 1rem;
   position: absolute;
   left: 0.5rem;
 }
-.search-bar__input {
+.searchBar__input {
   width: 100%;
   height: 100%;
   border: none;
@@ -33,9 +30,12 @@
     outline: thin;
     outline-offset: 0;
 }*/
-.search-bar__input_cancel {
+.searchBar__input_cancel {
   padding-right: 2rem;
 }
-.search-bar__input::placeholder {
+.searchBar__input::placeholder {
   color: var(--input-color-placeholder);
+}
+.searchbarLabel__text {
+  margin-bottom: 0.5rem;
 }

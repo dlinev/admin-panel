@@ -1,20 +1,9 @@
-.dropdown-frame {
-  width: 672px;
-  height: 512px;
-  margin: 0 auto;
-  border: 1px dashed var(--wrapper-color-border);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-.dropdown-check,
-.dropdown-single {
+.dropdownCheck,
+.dropdownSingle {
   display: flex;
   margin-bottom: 3rem;
 }
-
-.dropdown-block {
+.dropdownBlock {
   width: 160px;
   background-color: #fff;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
@@ -23,9 +12,10 @@
   border-radius: 8px;
   margin: 24px;
 }
-.dropdown-short {
+.dropdownShort {
   height: 6rem;
 }
+
 .dropdown {
   margin-bottom: 1rem;
 }
@@ -39,7 +29,7 @@
   display: flex;
   margin-right: 0.75rem;
 }
-.dropdown__item-hidden {
+.dropdown__itemHidden {
   display: none;
 }
 .dropdown__input {
@@ -71,34 +61,34 @@
   font-size: 13px;
   line-height: 16px;
 }
-.dropdown-radio {
+.dropdownRadio {
   display: flex;
   flex-direction: column;
 }
-.dropdown-radio__items {
+.dropdownRadio__items {
   margin-bottom: 1rem;
   font-size: 13px;
   line-height: 16px;
 }
-.dropdown-radio__item {
+.dropdownRadio__item {
   display: none;
 }
-.dropdown-radio__text {
+.dropdownRadio__text {
   display: inline-block;
   cursor: pointer;
 }
-.dropdown-radio__item:checked + .dropdown-radio__text {
+.dropdownRadio__item:checked + .dropdownRadio__text {
   color: var(--radio-color-text);
 }
 
-.dropdown-input {
+.dropdownInput {
   font-size: 13px;
   line-height: 16px;
 }
-.dropdown-input__text {
+.dropdownInput__text {
   margin-bottom: 0.5rem;
 }
-.dropdown-input__item {
+.dropdownInput__item {
   width: 128px;
   height: 2rem;
   border: 1px solid var(--input-order-color-border);
@@ -108,11 +98,11 @@
   outline-width: 0;
 }
 
-.dropdown-input__item::placeholder {
+.dropdownInput__item::placeholder {
   color: var(--input-color-placeholder);
 }
 
-.dropdown-button__item {
+.dropdownButton__item {
   display: flex;
 
   flex-direction: row;
@@ -129,30 +119,30 @@
   font-size: 13px;
 }
 
-.dropdown-button__item:hover {
+.dropdownButton__item:hover {
   box-shadow: 0px 2px 5px 2px var(--button-shadow-normal);
 }
-.dropdown-button_empty-small {
+.dropdownButton_emptySmall {
   padding: 0.25rem 0.8rem 0.25rem 0.5rem;
   color: var(--button-empty-color);
 }
-.dropdown-button_empty-small:hover {
+.dropdownButton_emptySmall:hover {
   background-color: var(--button-background-color);
   color: #fff;
 }
-.dropdown-button_empty-small:hover > .dropdown-button__img {
+.dropdownButton_emptySmall:hover > .dropdownButton__img {
   fill: #fff;
 }
-.dropdown-button_full-small {
+.dropdownButton_fullSmall {
   background-color: var(--button-background-color);
   padding: 0.25rem 0.8rem 0.25rem 0.5rem;
   color: var(--button-font-color-normal);
 }
-.dropdown-button__img {
+.dropdownButton__img {
   width: 16px;
   height: 16px;
 }
-.dropdown-button__text {
+.dropdownButton__text {
   font-size: 13px;
   display: block;
   padding-left: 0.25rem;
