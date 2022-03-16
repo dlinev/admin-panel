@@ -4,7 +4,7 @@ import styles from './input.module.css';
 
 class InputBlock extends Component {
     render() {
-        return <div className={styles.frame}>
+        return <div className="frame">
           <div className={styles.input}>
             <label className={styles.input__label}
               >Дата и время заказа

@@ -5,7 +5,7 @@ import styles from './checkbox-radio.module.css';
 class CheckboxRadioBlock extends Component {    
     render() {
         return  <div>
-        <div className={`${styles.frame} ${styles.frame_checkboxRadio}`}>
+        <div className="frame frame_checkboxRadio">
 
           <div className={styles.checkboxBlock}>
             <div className={styles.checkbox}>
@@ -23,7 +23,7 @@ class CheckboxRadioBlock extends Component {
           </div>
       </div>
   
-      <div className={`${styles.frame} ${styles.frame_checkboxRadio}`}>
+      <div className="frame frame_checkboxRadio">
         <div className={styles.radioBlock}>
           <div className={styles.radio}>
             <input

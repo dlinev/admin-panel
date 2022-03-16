@@ -4,7 +4,7 @@ import styles from './search-bar.module.css';
 
 class SearchBarBlock extends Component {
     render() {
-        return <div className={`${styles.frame} ${styles.frame_searchBar}`}>
+        return <div className="frame frame_searchBar">
           
         <div className={styles.searchBar}>
           <input

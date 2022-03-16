@@ -4,7 +4,7 @@ import styles from './button.module.css';
 
 class ButtonBlock extends Component {
     render() {
-        return  <div className={`${styles.frame} ${styles.frame__button}`}>
+        return  <div className="frame frame_button">
         <div className={styles.buttonColumn}>
           <div className={styles.buttonBlock}>
             <button
