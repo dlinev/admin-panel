@@ -6,16 +6,17 @@ import Button from '../button/button';
 
 export const Input = ( {    placeholder='Введите', 
                             label='Дата и время заказа', 
-                            value,
+                            value='',
                             isError=false,
-                            isLock=false,
+                            disabled=false,
                             srcImage='',
                             srcButtonImage=''
                         } ) => {
 
     const itemClassNames = cx({
+        [styles.item]: true,
         [styles.error]: isError,
-        [styles.block]: isLock
+        [styles.block]: disabled
     });
 
     // showButton(){
@@ -55,15 +56,12 @@ export const Input = ( {    placeholder='Введите',
             <div className="input">
                 <label className={styles.label}>{label}
                     <div className={styles._}>
-                        <input  className={`${styles.item}
-                                            ${isError==='true' ? styles.item_error : ''}
-                                            ${isLock==='true' ? styles.item_lock : ''}
-                                `}
+                        <input  className={itemClassNames}
                                 type="datetime"
                                 placeholder={placeholder}
                                 value={value}
-                                disabled={isLock}/>
-                        {srcImage==='' ? '' : <Image srcImage = {srcImage} />}
+                                disabled={disabled}/>
+                        {srcImage==='' ? '' : <Image srcImage = {srcImage} /> }
                         {srcButtonImage==='' ? '' : <Button />}
                     </div>
                 </label>
