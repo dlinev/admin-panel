@@ -1,8 +1,7 @@
 import cx from 'classnames';
 import styles from './button.module.css'; 
 
-import Image from '../image/image';
-import Text from  '../text/text';
+import { Image, Text } from '../components'
 
 export const Button = ( { theme, size, text, iconName} ) => {
 

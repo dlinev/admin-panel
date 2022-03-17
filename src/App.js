@@ -3,8 +3,8 @@ import './styles/index.css';
 
 import InputForm      from './components/InputForm/InputForm';
 import ButtonForm     from './components/ButtonForm/ButtonForm';
+import SearchBarForm  from './components/SearchBarForm/SearchBarForm';
 
-import SearchBar      from './components/search-bar/search-bar';
 import CheckboxRadio  from './components/checkbox-radio/checkbox-radio';
 import Dropdown       from './components/dropdown/dropdown';
 
@@ -13,12 +13,10 @@ function App() {
   return (
     <div className="wrapper">
       <InputForm />
+      <SearchBarForm />
       <ButtonForm />
 
-    {/* <div className="frame frame_searchBar">
-      <SearchBar placeholder='Номер заказа или ФИО' showIcon='true'/>
-      <SearchBar placeholder='Номер заказа или ФИО' showButton='true' showIcon='true' inputValue='50744'/>
-    </div>
+    {/* 
 
       <div className="frame frame_checkboxRadio">
         <CheckboxRadio type='checkbox'/>

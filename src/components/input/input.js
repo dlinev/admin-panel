@@ -1,8 +1,7 @@
 import styles from './input.module.css'; 
 import cx from 'classnames';
 
-import Image  from '../image/image';
-import Button from '../button/button';
+import { Image, Button } from '../components';
 
 export const Input = ( {    type = "datetime",
                             placeholder = 'Введите', 

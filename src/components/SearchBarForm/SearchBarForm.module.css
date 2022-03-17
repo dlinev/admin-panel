@@ -1,0 +1,16 @@
+.frame{
+    width: 352px;
+    height: 400px;
+    margin: 0 auto;
+    border: 1px dashed var(--frame-color-border-default);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.frame {
+    height: 200px;
+  }
+  
