@@ -6,25 +6,27 @@ import { Image, Button } from '../components';
 export const Input = ( {    type = "datetime",
                             placeholder = 'Введите', 
                             label = 'Дата и время заказа', 
-                            value = '',
+                            value,
                             isError=false,
                             disabled=false,
-                            iconName='',
-                            buttonIconName='',
+                            iconName,
+                            buttonIconName,
+                            className,
                             onChange=()=>{}
                         } ) => {
 
-    const inputClassNames = cx({
+    const classNames = cx({
         [styles.item]: true,
         [styles.item_error]: isError,
-        [styles.item_lock]: disabled
+        [styles.item_lock]: disabled,
+        [className]: !!className,
     });
 
     return (
         <div className="input">
             <label className={styles.label}>{label}
                 <div className={styles._}>
-                    <input  className={inputClassNames}
+                    <input  className={classNames}
                             type={type}
                             placeholder={placeholder}
                             value={value}
