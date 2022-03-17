@@ -2,9 +2,10 @@ import './styles/reset.css';
 import './styles/index.css';
 
 import InputForm      from './components/InputForm/InputForm';
+import ButtonForm     from './components/ButtonForm/ButtonForm';
+
 import SearchBar      from './components/search-bar/search-bar';
 import CheckboxRadio  from './components/checkbox-radio/checkbox-radio';
-import Button         from './components/button/button';
 import Dropdown       from './components/dropdown/dropdown';
 
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="wrapper">
       <InputForm />
+      <ButtonForm />
 
     {/* <div className="frame frame_searchBar">
       <SearchBar placeholder='Номер заказа или ФИО' showIcon='true'/>
@@ -25,39 +27,6 @@ function App() {
         <CheckboxRadio type='radio'/>
       </div>
 
-      <div className="frame frame_button">
-        <div className="buttonColumn">
-          <div className={stylesButton.buttonBlock}>
-              <Button theme='default' size='big' showIcon='true'  showText='true' />
-              <Button theme='default' size='big' showIcon='false' showText='true' />
-              <Button theme='default' size='big' showIcon='true'  showText='false' />
-          </div>
-          <div className={stylesButton.buttonBlock}>
-              <Button theme='default' size='small' showIcon='true'  showText='true' />
-              <Button theme='default' size='small' showIcon='false' showText='true' />
-              <Button theme='default' size='small' showIcon='true'  showText='false' />
-          </div>
-        </div>
-        <div className="buttonColumn">
-          <div className={stylesButton.buttonBlock}>
-              <Button theme='flat' size='big' showIcon='true'  showText='true' />
-              <Button theme='flat' size='big' showIcon='false' showText='true' />
-              <Button theme='flat' size='big' showIcon='true'  showText='false'/>
-          </div>
-          <div className={stylesButton.buttonBlock}>
-              <Button theme='flat' size='small' showIcon='true'  showText='true' />
-              <Button theme='flat' size='small' showIcon='false' showText='true' />
-              <Button theme='flat' size='small' showIcon='true'  showText='false' />
-          </div>
-        </div>
-        <div className="buttonColumn">
-          <div className={stylesButton.buttonBlock}>
-              <Button theme='disabled' size='big' showIcon='true' showText='true'/>
-              <Button theme='disabled' size='big' showText='true' />
-              <Button theme='disabled' size='big' showIcon='true' />
-          </div>
-        </div>
-      </div>
 
     <div className="frame frame_dropdown">
       <div className={stylesDropdown.dropdownCheck}>

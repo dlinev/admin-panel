@@ -43,18 +43,6 @@
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
 }
-.frame {
-  width: 352px;
-  height: 400px;
-  margin: 0 auto;
-  border: 1px dashed var(--frame-color-border-default);
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 .frame_searchBar {
   height: 200px;
 }
@@ -65,11 +53,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.frame_button {
-  width: 600px;
-  flex-direction: initial;
-  padding: 48px;
 }
 .frame_dropdown {
   width: 672px;

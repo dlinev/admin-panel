@@ -16,8 +16,8 @@ export const Input = ( {    type = "datetime",
 
     const inputClassNames = cx({
         [styles.item]: true,
-        [styles.error]: isError,
-        [styles.block]: disabled
+        [styles.item_error]: isError,
+        [styles.item_lock]: disabled
     });
 
     return (
@@ -29,8 +29,8 @@ export const Input = ( {    type = "datetime",
                             placeholder={placeholder}
                             value={value}
                             disabled={disabled}/>
-                    {srcImage==='' ? '' : <Image srcImage = {srcImage} /> }
-                    {srcButtonImage==='' ? '' : <Button />}
+                    {srcImage==='' ? '' : <Image srcImage={srcImage} /> }
+                    {srcButtonImage==='' ? '' : <Button srcButtonImage={srcButtonImage}/>}
                 </div>
             </label>
         </div>
