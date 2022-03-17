@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 export const Image = ( { srcImage=''} ) => {
         return (
-            <img class='_' src={srcImage}/>
+            <img className={styles._} src={srcImage}/>
         )
     }
 export default Image;

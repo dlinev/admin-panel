@@ -4,28 +4,22 @@ import cx from 'classnames';
 import Input from '../input/input'
 
 import { ReactComponent as abortIcon } from '../../icons/abort.svg';
+import { ReactComponent as searchIcon } from '../../icons/search.svg';
 
 class InputForm extends Component {
 
     render() {
         return  <div className="frame">
+                    <Input />
                     <Input 
-                        placeholder='Введите' 
-                        label='Дата и время заказа'
-                    />
-                    <Input 
-                        placeholder='Введите' 
-                        label='Дата и время заказа' 
                         value='06.12.2021' 
                         isError={true}
-                        srcButtonImage=''
+                        srcButtonImage={abortIcon}
                     />
                     <Input 
-                        placeholder='Введите' 
-                        label='Дата и время заказа' 
                         value='06.12.2021' 
                         disabled={true}
-                        srcImage={abortIcon}
+                        srcImage={searchIcon}
                     />
                 </div>
   
