@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="wrapper">
       <InputForm />
-      <ButtonForm />
+      {/* <ButtonForm /> */}
 
     {/* <div className="frame frame_searchBar">
       <SearchBar placeholder='Номер заказа или ФИО' showIcon='true'/>

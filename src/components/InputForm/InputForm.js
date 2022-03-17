@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import styles from './InputForm.module.css'; 
 import Input from '../input/input'
 
-import { ReactComponent as abortIcon } from '../../icons/abort.svg';
-import { ReactComponent as searchIcon } from '../../icons/search.svg';
-
 class InputForm extends Component {
 
     render() {
@@ -13,12 +10,12 @@ class InputForm extends Component {
                     <Input 
                         value='06.12.2021' 
                         isError={true}
-                        srcButtonImage={abortIcon}
+                        srcButtonImage='AbortIcon'
                     />
                     <Input 
                         value='06.12.2021' 
                         disabled={true}
-                        srcImage={searchIcon}
+                        srcImage='SearchIcon'
                     />
                 </div>
   

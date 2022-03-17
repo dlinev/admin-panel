@@ -11,7 +11,7 @@ class ButtonForm extends Component {
             <div className={styles.frame}>
                 <div className={styles.column}>
                     <div className={styles.block}>
-                        <Button theme='default' size='big' srcImage={searchIcon}  text='Text here' />
+                        <Button theme='default' size='big' srcImage='SearchIcon'  text='Text here' />
                         <Button theme='default' size='big' text='Text here' />
                         <Button theme='default' size='big' srcImage={searchIcon} />
                     </div>

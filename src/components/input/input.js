@@ -11,7 +11,8 @@ export const Input = ( {    type = "datetime",
                             isError=false,
                             disabled=false,
                             srcImage='',
-                            srcButtonImage=''
+                            srcButtonImage='',
+                            onChange=()=>{}
                         } ) => {
 
     const inputClassNames = cx({
@@ -28,9 +29,10 @@ export const Input = ( {    type = "datetime",
                             type={type}
                             placeholder={placeholder}
                             value={value}
-                            disabled={disabled}/>
+                            disabled={disabled}
+                            onChange={onChange}/>
                     {srcImage==='' ? '' : <Image srcImage={srcImage} /> }
-                    {srcButtonImage==='' ? '' : <Button srcButtonImage={srcButtonImage}/>}
+                    {srcButtonImage==='' ? '' : <Button srcImage={srcButtonImage}/>}
                 </div>
             </label>
         </div>
