@@ -1,10 +1,7 @@
 import './styles/reset.css';
 import './styles/index.css';
-import stylesDropdown from './components/dropdown/dropdown.module.css'; 
-import stylesButton   from './components/button/button.module.css'; 
 
-import { Component }  from 'react';
-import Input          from './components/input/input';
+import InputForm      from './components/InputForm/InputForm';
 import SearchBar      from './components/search-bar/search-bar';
 import CheckboxRadio  from './components/checkbox-radio/checkbox-radio';
 import Button         from './components/button/button';
@@ -14,14 +11,9 @@ import Dropdown       from './components/dropdown/dropdown';
 function App() {
   return (
     <div className="wrapper">
+      <InputForm />
 
-    <div className="frame">
-      <Input placeholder='Введите' labelText='Дата и время заказа'/>
-      <Input placeholder='Введите' labelText='Дата и время заказа' inputValue='06.12.2021' inputError='true' showButton='true'/>
-      <Input placeholder='Введите' labelText='Дата и время заказа' inputValue='06.12.2021' inputLock='true'  showIcon='true'/>
-    </div>
-
-    <div className="frame frame_searchBar">
+    {/* <div className="frame frame_searchBar">
       <SearchBar placeholder='Номер заказа или ФИО' showIcon='true'/>
       <SearchBar placeholder='Номер заказа или ФИО' showButton='true' showIcon='true' inputValue='50744'/>
     </div>
@@ -100,7 +92,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
 {/* 
 
     <div className="frame dropdown-frame">
