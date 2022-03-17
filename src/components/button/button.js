@@ -4,7 +4,7 @@ import styles from './button.module.css';
 import Image from '../image/image';
 import Text from  '../text/text';
 
-export const Button = ( { theme, size, srcImage, text} ) => {
+export const Button = ( { theme, size, text, iconName} ) => {
 
     const classNames = cx({
       [styles._]: true,
@@ -14,11 +14,11 @@ export const Button = ( { theme, size, srcImage, text} ) => {
       [styles.theme_disabled]: (theme==='disabled'),
       [styles.size_big]: (size==='big'),
       [styles.size_small]: (size==='small'),
-      [styles.size_icon_only]:(srcImage!=='' || text==='')
+      [styles.size_icon_only]:(iconName!=='' || text==='')
     });    
     return (
       <button className={classNames}>
-        {srcImage==='' ? '' : <Image srcImage={srcImage} />}
+        {iconName==='' ? '' : <Image iconName={iconName} />}
         {text==='' ? '' : <Text text={text} />}
       </button>
 

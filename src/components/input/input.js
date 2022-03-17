@@ -10,8 +10,8 @@ export const Input = ( {    type = "datetime",
                             value = '',
                             isError=false,
                             disabled=false,
-                            srcImage='',
-                            srcButtonImage='',
+                            iconName='',
+                            buttonIconName='',
                             onChange=()=>{}
                         } ) => {
 
@@ -31,8 +31,8 @@ export const Input = ( {    type = "datetime",
                             value={value}
                             disabled={disabled}
                             onChange={onChange}/>
-                    {srcImage==='' ? '' : <Image srcImage={srcImage} /> }
-                    {srcButtonImage==='' ? '' : <Button srcImage={srcButtonImage}/>}
+                    {iconName==='' ? '' : <Image iconName={iconName} /> }
+                    {buttonIconName==='' ? '' : <Button iconName={buttonIconName}/>}
                 </div>
             </label>
         </div>

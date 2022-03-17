@@ -10,12 +10,12 @@ class InputForm extends Component {
                     <Input 
                         value='06.12.2021' 
                         isError={true}
-                        srcButtonImage='AbortIcon'
+                        buttonIconName='XMediumIcon'
                     />
                     <Input 
                         value='06.12.2021' 
                         disabled={true}
-                        srcImage='SearchIcon'
+                        iconName='SearchIcon'
                     />
                 </div>
   

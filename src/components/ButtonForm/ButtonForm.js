@@ -11,33 +11,33 @@ class ButtonForm extends Component {
             <div className={styles.frame}>
                 <div className={styles.column}>
                     <div className={styles.block}>
-                        <Button theme='default' size='big' srcImage='SearchIcon'  text='Text here' />
+                        <Button theme='default' size='big' iconName='SearchIcon'  text='Text here' />
                         <Button theme='default' size='big' text='Text here' />
-                        <Button theme='default' size='big' srcImage={searchIcon} />
+                        <Button theme='default' size='big' iconName='searchIcon' />
                     </div>
                     <div className={styles.buttonBlock}>
-                        <Button theme='default' size='small' srcImage={searchIcon} text='Text here'/>
+                        <Button theme='default' size='small' iconName='searchIcon' text='Text here'/>
                         <Button theme='default' size='small' text='Text here' />
-                        <Button theme='default' size='small' srcImage={searchIcon} />
+                        <Button theme='default' size='small' iconName='searchIcon' />
                     </div>
                 </div>
                 <div className={styles.column}>
                     <div className={styles.block}>
-                        <Button theme='flat' size='big' srcImage={searchIcon} text='Text here' />
+                        <Button theme='flat' size='big' iconName='searchIcon' text='Text here' />
                         <Button theme='flat' size='big' text='Text here'/>
-                        <Button theme='flat' size='big' srcImage={searchIcon}/>
+                        <Button theme='flat' size='big' iconName='searchIcon'/>
                     </div>
                     <div className={styles.block}>
-                        <Button theme='flat' size='small' ssrcImage={searchIcon} text='Text here' />
+                        <Button theme='flat' size='small' siconName='searchIcon' text='Text here' />
                         <Button theme='flat' size='small' text='Text here' />
-                        <Button theme='flat' size='small' srcImage={searchIcon} />
+                        <Button theme='flat' size='small' iconName='searchIcon' />
                     </div>
                 </div>
                 <div className={styles.column}>
                     <div className={styles.block}>
-                        <Button theme='disabled' size='big' srcImage={searchIcon} text='Text here' />
+                        <Button theme='disabled' size='big' iconName='searchIcon' text='Text here' />
                         <Button theme='disabled' size='big' text='Text here' />
-                        <Button theme='disabled' size='big' srcImage={searchIcon} />
+                        <Button theme='disabled' size='big' iconName='searchIcon' />
                     </div>
                 </div>
             </div>
