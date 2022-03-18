@@ -25,13 +25,3 @@
   position: static;
   padding: 0 0.5rem 0 2rem;
 }
-
-.input_cancel {
-  padding-right: 2rem;
-}
-.input::placeholder {
-  color: var(--input-color-placeholder);
-}
-.label__text {
-  margin-bottom: 0.5rem;
-}

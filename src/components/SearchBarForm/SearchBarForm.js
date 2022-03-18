@@ -7,8 +7,8 @@ class SearchBarForm extends Component {
 
     render() {
         return  <div className={styles.frame}>
-                    <SearchBar iconName='SearchIcon'/>
-                    <SearchBar iconButtonName='XMediumIcon' iconName='SearchIcon' value='50744'/>
+                    <SearchBar icon='SearchIcon'/>
+                    <SearchBar iconButton='XMediumIcon' icon='SearchIcon' value='50744'/>
                 </div>
   }
 }

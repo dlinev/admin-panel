@@ -14,3 +14,10 @@
     height: 200px;
   }
   
+  .input_cancel {
+    padding-right: 2rem;
+  }
+  .input::placeholder {
+    color: var(--input-color-placeholder);
+  }
+  

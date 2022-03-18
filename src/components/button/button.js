@@ -3,21 +3,15 @@ import styles from './button.module.css';
 
 import { Image, Text } from '../components'
 
-export const Button = ( { theme, size, text, iconName} ) => {
+export const Button = ( { text, icon, className} ) => {
 
-    const classNames = cx({
-      [styles._]: true,
-      [styles.item]: true,
-      [styles.theme_default]: (theme==='default'),
-      [styles.theme_flat]: (theme==='flat'),
-      [styles.theme_disabled]: (theme==='disabled'),
-      [styles.size_big]: (size==='big'),
-      [styles.size_small]: (size==='small'),
-      [styles.size_icon_only]:(iconName!=='' || text==='')
-    });    
+    const classNames = cx(styles._,{
+      [className]: !!className
+    });   
+
     return (
       <button className={classNames}>
-        {iconName==='' ? '' : <Image iconName={iconName} />}
+        {icon==='' ? '' : <Image icon={icon} />}
         {text==='' ? '' : <Text text={text} />}
       </button>
 

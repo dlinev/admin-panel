@@ -7,8 +7,8 @@ import { ReactComponent as XLargeIcon }  from '../../icons/x-large.svg';
 import { ReactComponent as XMediumIcon } from '../../icons/x-medium.svg';
 import { ReactComponent as LockedIcon }  from '../../icons/locked.svg';
 
-export const Image = ( { iconName, className} ) => {
-    let icon = '';
+export const Image = ( { icon, className} ) => {
+    let iconObj = '';
 
     const classNames = cx(styles._, {
         [className]: !!className,
@@ -22,9 +22,9 @@ export const Image = ( { iconName, className} ) => {
         {iconName: 'LockedIcon',    iconClass: <LockedIcon  className={classNames} />},
     ];
     try {
-        icon = arrIcons.find(item => item.iconName === (iconName)).iconClass;
+        iconObj = arrIcons.find(item => item.iconName === (icon)).iconClass;
     } catch(error) { /* do nofing */};
 
-    return (icon)
+    return (iconObj)
 }
 export default Image;

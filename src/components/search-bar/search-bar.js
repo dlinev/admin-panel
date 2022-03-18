@@ -5,8 +5,8 @@ import { Input, Button, Image, Text } from '../components.js';
 export const SearchBar = ({  
     placeholder='Номер заказа или ФИО', 
     value, 
-    iconName, 
-    iconButtonName, 
+    icon, 
+    iconButton, 
     text='', 
     className,
     ...props
@@ -19,13 +19,14 @@ export const SearchBar = ({
   return ( 
     <div className={classNames}>
       {text==='' ? '' : <Text text={text} />}
-      <Input className={styles.input}
+      {icon==='' ? '' : <Image className={styles.image} icon={icon}/>}
+      {iconButton==='' ? '' : <Button icon={iconButton} />}
+      <Input 
           type='text' 
           placeholder={placeholder}
           value={value}
+          label=''
       />
-      {iconName==='' ? '' : <Image className={styles.image} iconName={iconName}/>}
-      {iconButtonName==='' ? '' : <Button iconName={iconButtonName} />}
     </div>
   )
 }

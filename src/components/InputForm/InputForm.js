@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import styles from './InputForm.module.css'; 
-import { Input } from '../components'
+import { InputBlock } from '../components';
 
 class InputForm extends Component {
 
     render() {
         return  <div className={styles.frame}>
-                    <Input />
-                    <Input 
+                    <InputBlock />
+                    <InputBlock 
                         value='06.12.2021' 
                         isError={true}
-                        buttonIconName='XMediumIcon'
+                        iconButton='XMediumIcon'
                     />
-                    <Input 
+                    <InputBlock 
                         value='06.12.2021' 
                         disabled={true}
-                        iconName='SearchIcon'
+                        icon='LockedIcon'
                     />
                 </div>
   

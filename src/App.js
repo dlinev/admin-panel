@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="wrapper">
       <InputForm />
+      <ButtonForm />
       <SearchBarForm />
       <CheckboxRadioForm />
-      <ButtonForm />
       <DropdownForm />
     </div>
   );
