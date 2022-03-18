@@ -3,16 +3,30 @@ import styles from './button.module.css';
 
 import { Image, Text } from '../components'
 
-export const Button = ( { text, icon, className} ) => {
+export const Button = ( { 
+  text, 
+  icon, 
+  className,
+  classNameImage,
+  classNameText,
+} ) => {
 
     const classNames = cx(styles._,{
       [className]: !!className
     });   
 
+    const classNamesImage = cx({
+      [classNameImage]: !!classNameImage
+    });   
+
+    const classNamesText = cx({
+      [classNameText]: !!classNameText
+    });   
+
     return (
       <button className={classNames}>
-        {icon==='' ? '' : <Image icon={icon} />}
-        {text==='' ? '' : <Text text={text} />}
+        {icon==='' ? '' : <Image className={classNamesImage} icon={icon} />}
+        {text==='' ? '' : <Text  className={classNamesText} text={text} />}
       </button>
 
     )

@@ -36,7 +36,7 @@ export const InputBlock = ( {
                             disabled={disabled}
                             onChange={onChange}/>
                     {icon==='' ? '' : <Image className={styles.image} icon={icon} /> }
-                    {iconButton==='' ? '' : <Button className={styles.button} icon={iconButton}/>}
+                    {iconButton==='' ? '' : <Button className={styles.button} icon={iconButton} classNameImage={styles.image_error}/>}
                 </div>
             </label>
         </div>

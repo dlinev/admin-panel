@@ -1,0 +1,40 @@
+._ {
+  width: 1rem;
+  height: 1rem;
+}
+/* для элемента label, связанного с .custom-checkbox */
+.custom {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+/* для элемента label, связанного с .custom-checkbox */
+.custom + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom + label::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #bad8f5;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px 16px;
+}
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom:checked + label::before {
+  border-color: #459df5;
+  background-color: #459df5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23FFF' stroke='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z' stroke='none'/%3E%3C/svg%3E");
+}
+/* стили при наведении курсора на checkbox */
+.custom:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #459df5;
+}

@@ -1,8 +1,6 @@
 ._ {
   width: 1rem;
   height: 1rem;
-  /* position: absolute;
-  top: 0.5rem;
-  right: 0.5rem; */
   fill: #000;
+  stroke: rgb(69, 157, 245);
 }

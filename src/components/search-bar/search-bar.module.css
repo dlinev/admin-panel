@@ -10,10 +10,18 @@
   align-items: center;
 }
 .image {
+  position: absolute;
+  left: 0.5rem;
+}
+.button{
   width: 1rem;
   height: 1rem;
   position: absolute;
-  left: 0.5rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;  
 }
 .input {
   width: 100%;
@@ -24,4 +32,10 @@
   line-height: 1rem;
   position: static;
   padding: 0 0.5rem 0 2rem;
+}
+.input_cancel{
+  padding-right: 2rem;
+}
+.image_cancel{
+  stroke: rgb(186, 216, 245);
 }
