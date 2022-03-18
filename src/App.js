@@ -12,10 +12,10 @@ function App() {
   return (
     <div className="wrapper">
       <InputForm />
-      <ButtonForm />
+      {/* <ButtonForm />
       <SearchBarForm />
       <CheckboxRadioForm />
-      <DropdownForm />
+      <DropdownForm /> */}
     </div>
   );
 }
