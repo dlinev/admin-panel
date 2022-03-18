@@ -10,29 +10,34 @@ export const InputBlock = ( {
     value,
     isError=false,
     disabled=false,
-    icon,
-    iconButton,
+    icon='',
+    iconButton='',
     className,
     onChange=()=>{}
 } ) => {
 
-    const classNames = cx(styles._, styles.item, {
+    const classNames = cx(styles._, {
+        [className]: !!className,
+    });
+
+    const classNamesInput = cx(styles.item, {
         [styles.item_error]: isError,
         [styles.item_lock]: disabled,
-        [className]: !!className,
     });
 
     return (
         <div className={classNames}>
             <label className={styles.label}>{label}
-                <Input  className={styles.input}
-                        type={type}
-                        placeholder={placeholder}
-                        value={value}
-                        disabled={disabled}
-                        onChange={onChange}/>
-                {icon==='' ? '' : <Image icon={icon} /> }
-                {iconButton==='' ? '' : <Button icon={iconButton}/>}
+                <div className={styles.inputBlock}>
+                    <Input  className={classNamesInput}
+                            type={type}
+                            placeholder={placeholder}
+                            value={value}
+                            disabled={disabled}
+                            onChange={onChange}/>
+                    {icon==='' ? '' : <Image className={styles.image} icon={icon} /> }
+                    {iconButton==='' ? '' : <Button className={styles.button} icon={iconButton}/>}
+                </div>
             </label>
         </div>
     )
