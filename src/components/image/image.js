@@ -7,15 +7,6 @@ import { ReactComponent as XLargeIcon }  from '../../icons/x-large.svg';
 import { ReactComponent as XMediumIcon } from '../../icons/x-medium.svg';
 import { ReactComponent as LockedIcon }  from '../../icons/locked.svg';
 
-
-const arrIcons = [
-    {iconName: 'AbortIcon', iconClass: <AbortIcon className={classNames} />},
-    {iconName: 'SearchIcon', iconClass: <SearchIcon className={classNames} />},
-    {iconName: 'XLargeIcon', iconClass: <XLargeIcon className={classNames} />},
-    {iconName: 'XMediumIcon', iconClass: <XMediumIcon Icon className={classNames} />},
-    {iconName: 'LockedIcon', iconClass: <LockedIcon Icon className={classNames} />},
-];
-
 export const Image = ( { iconName, className} ) => {
     let icon = '';
 
@@ -23,6 +14,13 @@ export const Image = ( { iconName, className} ) => {
         [className]: !!className,
       });
 
+    const arrIcons = [
+        {iconName: 'AbortIcon',     iconClass: <AbortIcon   className={classNames} />},
+        {iconName: 'SearchIcon',    iconClass: <SearchIcon  className={classNames} />},
+        {iconName: 'XLargeIcon',    iconClass: <XLargeIcon  className={classNames} />},
+        {iconName: 'XMediumIcon',   iconClass: <XMediumIcon className={classNames} />},
+        {iconName: 'LockedIcon',    iconClass: <LockedIcon  className={classNames} />},
+    ];
     try {
         icon = arrIcons.find(item => item.iconName === (iconName)).iconClass;
     } catch(error) { /* do nofing */};

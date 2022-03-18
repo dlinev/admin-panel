@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './InputForm.module.css'; 
-import Input from '../input/input'
+import { Input } from '../components'
 
 class InputForm extends Component {
 
