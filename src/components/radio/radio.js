@@ -1,9 +1,13 @@
 import styles from './radio.module.css'; 
+import { Text } from '../components';
+import cx from 'classnames';
 
-
-export const Radio = ({ id, value, checked, text }) => {    
-  return (
-    <div className={styles._}>
+export const Radio = ({ id, value, checked, text='', className }) => {    
+  const classNames = cx(styles._, {
+    [className]: !!className
+  });
+return (
+    <div className={classNames}>
         <input  className={styles.custom} 
                 type="radio"
                 name="radio-group"

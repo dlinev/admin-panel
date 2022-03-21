@@ -1,12 +1,17 @@
 import styles from './checkbox.module.css'; 
+import { Text  } from '../components';
+import cx from 'classnames';
 
-export const Checkbox = ({ id, text }) => {    
-
+export const Checkbox = ({ id, checked, text='', className }) => {    
+  const classNames = cx(styles._, {
+                          [className]: !!className
+                        });
   return ( 
-    <div className={styles._}>
+    <div className={classNames}>
         <input  className={styles.custom} 
                 type='checkbox'
-                id={id} />
+                id={id} 
+                checked={checked} />
         <label for={id}></label>
         {text==='' ? '' : <Text text={text}/>}
     </div>
