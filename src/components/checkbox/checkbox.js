@@ -2,7 +2,13 @@ import styles from './checkbox.module.css';
 import { Text  } from '../components';
 import cx from 'classnames';
 
-export const Checkbox = ({ id, checked, text='', className }) => {    
+export const Checkbox = ({ 
+  id, 
+  checked, 
+  text='', 
+  className,
+  onChange=()=>{} 
+}) => {    
   const classNames = cx(styles._, {
                           [className]: !!className
                         });
@@ -11,7 +17,8 @@ export const Checkbox = ({ id, checked, text='', className }) => {
         <input  className={styles.custom} 
                 type='checkbox'
                 id={id} 
-                checked={checked} />
+                checked={checked}
+                onChange={onChange} />
         <label for={id}></label>
         {text==='' ? '' : <Text text={text}/>}
     </div>

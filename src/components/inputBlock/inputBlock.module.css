@@ -4,6 +4,8 @@
 .label {
   display: block; 
   margin-bottom: 0.5rem;
+  font-size: 13px;
+  font-family: Ubuntu;
 }
 
 .inputBlock{

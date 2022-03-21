@@ -17,3 +17,15 @@
 }
 .column{
 }
+.block {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 40px;
+}
+.button_auto_size{
+    width: auto;
+    height: auto;
+}

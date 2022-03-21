@@ -2,7 +2,14 @@ import styles from './radio.module.css';
 import { Text } from '../components';
 import cx from 'classnames';
 
-export const Radio = ({ id, value, checked, text='', className }) => {    
+export const Radio = ({ 
+    id, 
+    value, 
+    checked, 
+    text='', 
+    className,
+    onChange=()=>{} 
+}) => {    
   const classNames = cx(styles._, {
     [className]: !!className
   });
@@ -13,7 +20,8 @@ return (
                 name="radio-group"
                 id={id}
                 value={value}
-                checked={checked} />
+                checked={checked} 
+                onChange={onChange}/>
         <label for={id}></label>
         {text==='' ? '' : <Text text={text}/>}
     </div>

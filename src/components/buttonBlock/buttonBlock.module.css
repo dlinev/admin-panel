@@ -1,12 +1,4 @@
 ._ {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding-bottom: 40px;
-}
-.item {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -14,8 +6,6 @@
   background-color: transparent;
   border-radius: 4px;
   margin-bottom: 16px;
-  width: auto;
-  height: auto;
 }
 /* модификаторы*/
 .theme_default {

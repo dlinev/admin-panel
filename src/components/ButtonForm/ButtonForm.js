@@ -8,15 +8,70 @@ class ButtonForm extends Component {
         return  (
             <div className={styles.frame}>
                 <div className={styles.column}>
-                    <ButtonBlock theme='default' size='big' /> 
-                    <ButtonBlock theme='default' size='small' /> 
+                    <div className={styles.block}>
+                        <ButtonBlock 
+                            className={styles.button_auto_size}
+                            theme='default' 
+                            size='big' 
+                            arrItems={[
+                                        {icon:'SearchIcon', text: 'Text here'},
+                                        {text:'Text here'},
+                                        {icon:'SearchIcon'}
+                            ]}
+                        />
+                    </div>
+                    <div className={styles.block}>
+                        <ButtonBlock 
+                            className={styles.button_auto_size}
+                            theme='default' 
+                            size='small' 
+                            arrItems={[
+                                {icon:'SearchIcon', text: 'Text here'},
+                                {text:'Text here'},
+                                {icon:'SearchIcon'}
+                            ]}
+                        /> 
+                    </div>
                 </div>
                 <div className={styles.column}>
-                    <ButtonBlock theme='flat' size='big' /> 
-                    <ButtonBlock theme='flat' size='small' /> 
+                    <div className={styles.block}>
+                        <ButtonBlock 
+                            className={styles.button_auto_size}
+                            theme='flat' 
+                            size='big' 
+                            arrItems={[
+                                {icon:'SearchIcon', text: 'Text here'},
+                                {text:'Text here'},
+                                {icon:'SearchIcon'}
+                            ]}
+                        /> 
+                    </div>
+                    <div className={styles.block}>
+                        <ButtonBlock 
+                            className={styles.button_auto_size}
+                            theme='flat' 
+                            size='small' 
+                            arrItems={[
+                                {icon:'SearchIcon', text: 'Text here'},
+                                {text:'Text here'},
+                                {icon:'SearchIcon'}
+                            ]}
+                        /> 
+                    </div>
                 </div>
                 <div className={styles.column}>
-                    <ButtonBlock theme='disabled' size='big' /> 
+                    <div className={styles.block}>
+                        <ButtonBlock 
+                            className={styles.button_auto_size}
+                            theme='disabled' 
+                            size='big' 
+                            arrItems={[
+                                {icon:'SearchIcon', text: 'Text here'},
+                                {text:'Text here'},
+                                {icon:'SearchIcon'}
+                            ]}
+                        /> 
+                    </div>
                 </div>
             </div>
 

@@ -6,6 +6,8 @@ import { ReactComponent as SearchIcon }  from '../../icons/search.svg';
 import { ReactComponent as XLargeIcon }  from '../../icons/x-large.svg';
 import { ReactComponent as XMediumIcon } from '../../icons/x-medium.svg';
 import { ReactComponent as LockedIcon }  from '../../icons/locked.svg';
+import { ReactComponent as MoonIcon }    from '../../icons/moon.svg';
+import { ReactComponent as SunIcon }     from '../../icons/sun.svg';
 
 export const Image = ( { icon, className} ) => {
     let iconObj = '';
@@ -20,6 +22,8 @@ export const Image = ( { icon, className} ) => {
         {iconName: 'XLargeIcon',    iconClass: <XLargeIcon  className={classNames} />},
         {iconName: 'XMediumIcon',   iconClass: <XMediumIcon className={classNames} />},
         {iconName: 'LockedIcon',    iconClass: <LockedIcon  className={classNames} />},
+        {iconName: 'MoonIcon',      iconClass: <MoonIcon    className={classNames} />},
+        {iconName: 'SunIcon',       iconClass: <SunIcon     className={classNames} />},
     ];
     try {
         iconObj = arrIcons.find(item => item.iconName === (icon)).iconClass;
