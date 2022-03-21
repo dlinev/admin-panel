@@ -8,25 +8,15 @@ class ButtonForm extends Component {
         return  (
             <div className={styles.frame}>
                 <div className={styles.column}>
-                    <div className={styles.block}>
-                        <ButtonBlock theme='default' size='big' /> 
-                    </div>
-                    <div className={styles.buttonBlock}>
-                        <ButtonBlock theme='default' size='small' /> 
-                    </div>
+                    <ButtonBlock theme='default' size='big' /> 
+                    <ButtonBlock theme='default' size='small' /> 
                 </div>
                 <div className={styles.column}>
-                    <div className={styles.block}>
-                        <ButtonBlock theme='flat' size='big' /> 
-                    </div>
-                    <div className={styles.block}>
-                        <ButtonBlock theme='flat' size='small' /> 
-                    </div>
+                    <ButtonBlock theme='flat' size='big' /> 
+                    <ButtonBlock theme='flat' size='small' /> 
                 </div>
                 <div className={styles.column}>
-                    <div className={styles.block}>
-                        <ButtonBlock theme='disabled' size='big' /> 
-                    </div>
+                    <ButtonBlock theme='disabled' size='big' /> 
                 </div>
             </div>
 
