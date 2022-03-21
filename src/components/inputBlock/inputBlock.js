@@ -25,6 +25,10 @@ export const InputBlock = ( {
         [styles.item_lock]: disabled,
     });
 
+    const classNamesImage = cx(styles.image, {
+        [styles.image_lock]: disabled,
+    });
+
     return (
         <div className={classNames}>
             <label className={styles.label}>{label}
@@ -35,7 +39,7 @@ export const InputBlock = ( {
                             value={value}
                             disabled={disabled}
                             onChange={onChange}/>
-                    {icon==='' ? '' : <Image className={styles.image} icon={icon} /> }
+                    {icon==='' ? '' : <Image className={classNamesImage} icon={icon} /> }
                     {iconButton==='' ? '' : <Button className={styles.button} icon={iconButton} classNameImage={styles.image_error}/>}
                 </div>
             </label>

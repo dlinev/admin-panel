@@ -10,7 +10,7 @@ class CheckboxRadioForm extends Component {
                 <div className={styles.frame}>
                     <CheckboxBlock arrItems={[
                         { id:'checkbox_1' },
-                        { id:'checkbox_2', checked:false},
+                        { id:'checkbox_2', checked:true},
                     ]} />
                 </div>
                 <div className={styles.frame}>

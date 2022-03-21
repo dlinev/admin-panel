@@ -36,7 +36,8 @@
     margin: 24px;
   }
 
-  .checkbox__item {
+  .checkbox__item,
+  .radio__item {
     padding: 8px 0 8px 0;
   }
   .item {
@@ -44,7 +45,7 @@
     display: flex;
     margin-right: 0.75rem;
   }
-  .item-hidden {
+  .itemHidden {
     display: none;
   }
 
@@ -53,4 +54,11 @@
   }
   .checkbox__item:last-child{
     padding: 8px 0 0 0;
+  }
+  .button{
+    display: flex;
+    justify-content: center;
+  }
+  .text{
+    margin-bottom: 8px;
   }

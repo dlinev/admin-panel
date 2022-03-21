@@ -51,3 +51,7 @@
 .image_error{
   stroke: rgb(186, 216, 245);
 }
+.image_lock{
+  fill: rgb(0, 0, 0);
+  stroke: rgb(0, 0, 0);
+}
