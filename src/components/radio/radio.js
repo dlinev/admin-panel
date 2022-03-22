@@ -4,27 +4,36 @@ import cx from 'classnames';
 
 export const Radio = ({ 
     id, 
+    name,
     value, 
-    checked, 
+    checked=false, 
     text='', 
     className,
+    classNameInput,
     onChange=()=>{} 
 }) => {    
   const classNames = cx(styles._, {
     [className]: !!className
   });
+  const classNamesInput = cx(styles.item, {
+    [classNameInput]: !!classNameInput
+  });
 return (
     <div className={classNames}>
-        <input  className={styles.custom} 
-                type="radio"
-                name="radio-group"
-                id={id}
-                value={value}
-                checked={checked} 
-                onChange={onChange}/>
-        <label for={id}></label>
-        {text==='' ? '' : <Text text={text}/>}
+      <label className={styles.label}>
+        <input
+          className={classNamesInput}
+          type='radio'
+          id={id}
+          name={name}
+          value={value}
+          defaultChecked={checked}
+          onChange={onChange}
+        />
+        {text==='' ? '' : <Text className={styles.text} text={text}/>}
+      </label>
     </div>
+
   )
 }
 export default Radio;

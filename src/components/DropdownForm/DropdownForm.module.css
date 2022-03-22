@@ -23,7 +23,7 @@
   }
   .blocks {
     display: flex;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     align-items: flex-start;
   }
   
@@ -45,7 +45,14 @@
     display: flex;
     margin-right: 0.75rem;
   }
-  .itemHidden {
+  .item:first-child{
+    padding: 0 0 8px 0;
+  }
+  .item:last-child {
+    padding: 8px 0 0 0;
+  }
+  
+  .hidden {
     display: none;
   }
 

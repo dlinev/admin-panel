@@ -8,15 +8,21 @@ class CheckboxRadioForm extends Component {
         return (
             <div className={styles.wrapper}>
                 <div className={styles.frame}>
-                    <CheckboxBlock arrItems={[
-                        { id:'checkbox_1' },
-                        { id:'checkbox_2', checked:true},
-                    ]} />
+                    <CheckboxBlock 
+                        className={styles.block}
+                        arrItems={[
+                            { id:'checkbox_1' },
+                            { id:'checkbox_2', checked: true},
+                        ]} 
+                    />
                 </div>
                 <div className={styles.frame}>
-                    <RadioBlock arrItems={[
-                        { id:'radio_1', value:'radio_group' },
-                        { id:'radio_2', value:'radio_group', checked:true},
+                    <RadioBlock 
+                        className={styles.block}
+x                        name='radioGroup1'
+                        arrItems={[
+                            { id:'radio_1', value:'radio1', checked: true },
+                            { id:'radio_2', value:'radio2'},
                     ]} />
                 </div>
             </div>

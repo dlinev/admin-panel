@@ -1,7 +1,7 @@
 .frame {
     width: 352px;
     height: 400px;
-    margin: 0 auto;
+    margin: 20px;
     border: 1px dashed var(--frame-color-border-default);
     box-sizing: border-box;
     border-radius: 5px;
@@ -18,11 +18,12 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding: 8px;
   }
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-  
+.block{
+    justify-content: space-around;
+}  

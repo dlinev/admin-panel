@@ -1,5 +1,5 @@
 import styles from './DropdownForm.module.css'; 
-import { CheckboxBlock, RadioBlock, InputBlock, ButtonBlock, Text } from '../components'
+import { CheckboxBlock, RadioBlock, InputBlock, ButtonBlock, Text, Dropdown } from '../components'
 import cx from 'classnames';
 
 export const DropdownForm = () => {
@@ -25,7 +25,9 @@ export const DropdownForm = () => {
           </div>
           <div className={styles.block}>
             <RadioBlock 
+              name='radioGroup2'
               className={classNamesRadio}
+              classNameInput={styles.hidden}
               arrItems={[
                 {id: 'dp_rad_item_1', value:'dp_radio_group', text:'Новый'},
                 {id: 'dp_rad_item_2', value:'dp_radio_group', text:'Рассчет'},
