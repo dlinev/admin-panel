@@ -19,7 +19,7 @@ class CheckboxRadioForm extends Component {
                 <div className={styles.frame}>
                     <RadioBlock 
                         className={styles.block}
-x                        name='radioGroup1'
+x                       name='radioGroup1'
                         arrItems={[
                             { id:'radio_1', value:'radio1', checked: true },
                             { id:'radio_2', value:'radio2'},

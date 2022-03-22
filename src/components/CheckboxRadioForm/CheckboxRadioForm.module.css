@@ -18,6 +18,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    padding: 24px;
   }
 .wrapper {
     display: flex;
@@ -25,5 +26,6 @@
     align-items: center;
 }
 .block{
+    width: 100%;
     justify-content: space-around;
 }  
