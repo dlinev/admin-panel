@@ -1,15 +1,17 @@
 /* simple element */
-import Input          from './input/input';
+import { default as Input } from './generic/input/input';
+import { default as Image } from './generic/image/image';
+import { default as Text  } from './generic/text/text';
+import { default as Label } from './generic/label/label';
+
 import Button         from './button/button';
-import Image          from './image/image';
-import Text           from './text/text';
 import Checkbox       from './checkbox/checkbox';
 import Radio          from './radio/radio';
 
 /* complex element */
-import SearchBar      from './search-bar/search-bar';
+import SearchBar      from './searchbar/searchbar';
 import Dropdown       from './dropdown/dropdown';
-import CheckboxRadio  from './checkbox-radio/checkbox-radio';
+import CheckboxRadio  from './checkboxRadio/checkboxRadio';
 
 /* block element */
 import InputBlock     from './inputBlock/inputBlock';
@@ -19,9 +21,11 @@ import ButtonBlock    from './buttonBlock/buttonBlock';
 
 export { 
     Input, 
-    Button, 
     Image, 
     Text, 
+    Label, 
+
+    Button, 
     Checkbox,
     Radio,
     

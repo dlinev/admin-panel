@@ -1,4 +1,4 @@
-import styles from './search-bar.module.css'; 
+import styles from './searchbar.module.css'; 
 import cx from 'classnames';
 import { Input, Button, Image, Text } from '../components.js';
 

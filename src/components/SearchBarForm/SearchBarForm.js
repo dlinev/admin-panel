@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './SearchBarForm.module.css'; 
+import styles from './searchbarForm.module.css'; 
 
 import { SearchBar } from '../components';
 

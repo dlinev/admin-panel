@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './CheckboxRadioForm.module.css'; 
+import styles from './checkboxRadioForm.module.css'; 
 import { RadioBlock, CheckboxBlock } from '../components'
 
 class CheckboxRadioForm extends Component {

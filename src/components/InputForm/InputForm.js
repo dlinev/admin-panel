@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './InputForm.module.css'; 
+import styles from './inputForm.module.css'; 
 import { InputBlock } from '../components';
 
 class InputForm extends Component {

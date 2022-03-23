@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './ButtonForm.module.css'; 
+import styles from './buttonForm.module.css'; 
 import { ButtonBlock } from '../buttonBlock/buttonBlock'
 
 class ButtonForm extends Component {
