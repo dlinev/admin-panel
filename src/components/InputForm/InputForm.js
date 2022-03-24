@@ -1,24 +1,28 @@
-import React, { Component } from 'react';
+import InputWithLabel from '../inputWithLabel/inputWithLabel';
 import styles from './inputForm.module.css'; 
-import { InputBlock } from '../components';
 
-class InputForm extends Component {
-
-    render() {
-        return  <div className={styles.frame}>
-                    <InputBlock />
-                    <InputBlock 
-                        value='06.12.2021' 
-                        isError={true}
-                        iconButton='XMediumIcon'
-                    />
-                    <InputBlock 
-                        value='06.12.2021' 
-                        disabled={true}
-                        icon='LockedIcon'
-                    />
-                </div>
-  
-  }
+export const InputForm = () => {
+    return ( 
+        <div className={styles.frame}>
+            <InputWithLabel 
+                label='Дата и время заказа'
+                placeholder='Введите'
+                theme='default'
+            />
+            <InputWithLabel 
+                value='06.12.2021' 
+                label='Дата и время заказа'
+                placeholder='Введите'
+                theme='error'
+            />
+            <InputWithLabel  
+                value='06.12.2021' 
+                label='Дата и время заказа'
+                placeholder='Введите'
+                theme='disabled'
+            />
+        </div>
+    )
 }
+
 export default InputForm;

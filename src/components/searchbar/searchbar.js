@@ -2,7 +2,7 @@ import styles from './searchbar.module.css';
 import cx from 'classnames';
 import { Input, Button, Image, Text } from '../components.js';
 
-export const SearchBar = ({  
+export default ({  
     placeholder='Номер заказа или ФИО', 
     value, 
     icon='', 
@@ -38,4 +38,3 @@ export const SearchBar = ({
     </div>
   )
 }
-export default SearchBar;    
