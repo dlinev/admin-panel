@@ -1,4 +1,4 @@
-import InputWithLabel from '../inputWithLabel/inputWithLabel';
+import { InputWithLabel } from '../components';
 import styles from './inputForm.module.css'; 
 
 export const InputForm = () => {

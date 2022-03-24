@@ -1,18 +1,4 @@
 ._ {
-  /**/
-}
-.label {
-  display: block; 
-  margin-bottom: 0.5rem;
-  font-size: 13px;
-  font-family: Ubuntu;
-}
-
-.inputBlock{
-  position: relative;
-}
-
-.item {
   width: 100%;
   height: 2rem;
   border: 1px solid var(--input-color-border-default);
@@ -21,11 +7,15 @@
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   font-size: 13px;
 }
-.item::placeholder {
+._::placeholder {
   color: var(--input-color-placeholder);
 }
 
-.button {
+.label {
+  display: block; 
+  margin-bottom: 0.5rem;
+}
+.Button {
   width: 1rem;
   height: 1rem;
   position: absolute;
@@ -35,11 +25,6 @@
   border: none;
   background: none;
 }
-.image{
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem; 
-}
 
 /**************/
 .item_error {
@@ -47,11 +32,4 @@
 }
 .item_lock {
   background-color: var(--input-background-color-lock);
-}
-.image_error{
-  stroke: rgb(186, 216, 245);
-}
-.image_lock{
-  fill: rgb(0, 0, 0);
-  stroke: rgb(0, 0, 0);
 }

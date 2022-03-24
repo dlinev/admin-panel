@@ -1,5 +1,6 @@
-import styles from './input.module.css'; 
 import cx from 'classnames';
+
+import styles from './input.module.css'; 
 
 export default ({  
     type = 'text',
