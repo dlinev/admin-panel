@@ -1,6 +1,6 @@
 import cx from 'classnames';
 
-import { Label, Button, Input } from '../components';
+import { Label, Button, Input, Row } from '../components';
 
 import styles from './inputWithLabel.module.css'; 
 
@@ -17,24 +17,27 @@ export default ( {
 } ) => {
 
 
-    const inputClass = cx(styles._, className, {
+    const classNames = cx(styles._, className, {
         [styles.theme_error]:    (theme==='error'),
         [styles.theme_disabled]: (theme==='disabled'),
     });
 
     return (
         <Label className={styles.label}>{label}
-            <Input  className={inputClass}
-                    type={type}
-                    placeholder={placeholder}
-                    onChange={onChange}
-                    {...props}
-            />
-            <Button className={styles.Button} 
-                    theme={theme}
-                    size={size}
-                    onClick={onClick}
-            />
+            <Row className={classNames}>
+                <Input  className={styles.input}
+                        type={type}
+                        placeholder={placeholder}
+                        onChange={onChange}
+                        disabled={(theme==='disabled')}
+                        {...props}
+                />
+                <Button className={styles.button} 
+                        theme={theme}
+                        size={size}
+                        onClick={onClick}
+                />
+            </Row>
         </Label>
     )
 }

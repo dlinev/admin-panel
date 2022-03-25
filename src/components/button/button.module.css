@@ -45,7 +45,11 @@
   fill: #fff;
 }
 .image_disabled{
-  stroke: rgb(0, 0, 0);
+  stroke: black;
+  fill: black;
+}
+.image_error{
+  stroke: rgb(186, 216, 245); 
 }
 .text_big{
   margin-left: 8px;
