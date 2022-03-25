@@ -22,6 +22,7 @@ class ButtonForm extends Component {
                             theme='default' 
                             size='big' 
                             text='Text here'
+                            icon='none'
                         />
                         <Button 
                             className={styles.button_auto_size} 
@@ -44,6 +45,7 @@ class ButtonForm extends Component {
                             theme='default' 
                             size='small' 
                             text='Text here'
+                            icon='none'
                         />
                         <Button 
                             className={styles.button_auto_size} 
@@ -68,6 +70,7 @@ class ButtonForm extends Component {
                             theme='flat' 
                             size='big' 
                             text='Text here'
+                            icon='none'
                         />
                         <Button 
                             className={styles.button_auto_size} 
@@ -89,6 +92,7 @@ class ButtonForm extends Component {
                             theme='flat' 
                             size='small' 
                             text='Text here'
+                            icon='none'
                         />
                         <Button 
                             className={styles.button_auto_size} 
@@ -113,12 +117,7 @@ class ButtonForm extends Component {
                             theme='disabled' 
                             size='big' 
                             text='Text here'
-                        />
-                        <Button 
-                            className={styles.button_auto_size} 
-                            theme='disabled' 
-                            size='big' 
-                            icon='SearchIcon'
+                            icon='none'
                         />
                     </Column>
                 </Column>

@@ -5,8 +5,7 @@ import InputForm          from './components/inputForm/inputForm';
 import SearchBarForm      from './components/searchbarForm/searchbarForm';
 import CheckboxRadioForm  from './components/checkboxRadioForm/checkboxRadioForm';
 import ButtonForm         from './components/buttonForm/buttonForm';
-
-// import DropdownForm       from './components/dropdownForm/dropdownForm';
+import DropdownForm       from './components/dropdownForm/dropdownForm';
 
 
 
@@ -17,7 +16,7 @@ function App() {
       <SearchBarForm />
       <CheckboxRadioForm />
       <ButtonForm />
-      {/* <DropdownForm /> */}
+      <DropdownForm />
     </div>
   );
 }

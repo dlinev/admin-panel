@@ -5,7 +5,7 @@ import styles from './button.module.css';
 
 export default  ( { 
   text, 
-  icon='none',
+  icon,
   theme,
   size,
   className,
