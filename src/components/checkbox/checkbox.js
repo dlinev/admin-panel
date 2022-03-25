@@ -1,18 +1,23 @@
-import styles from './checkbox.module.css'; 
 import cx from 'classnames';
+import { Label, Input, Text, Column } from '../components'
 
-export const Checkbox = ({ id, checked, text, className }) => {
-  const classNames = cx(styles._, {
-    [className]: !!className
-  });
+import styles from './checkbox.module.css'; 
+
+export default ({ 
+    className, 
+    ...props 
+}) => {
+
+  const {text, checked} = {...props};
+
   return ( 
-    <div className={classNames}>
-      <label className={styles.label}>
-        <div className={styles.item}>
-          <input className={styles.input} 
+    <div className={cx(styles._, className)}>
+      <Label className={styles.label}>
+        <Column className={styles.item}>
+          <Input className={styles.input} 
                  type='checkbox'
-                 id={id}
                  defaultChecked={checked}
+                 {...props}
           />
           <svg  className={styles.image} 
                 viewBox="0 0 16 16" 
@@ -20,10 +25,9 @@ export const Checkbox = ({ id, checked, text, className }) => {
                 stroke="none">
             <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
           </svg>
-        </div>
-        <div className={styles.text}>{text}</div>
-      </label>
+        </Column>
+        <Text className={styles.text} text={text}/>
+      </Label>
     </div>
   )
 }
-export default Checkbox;

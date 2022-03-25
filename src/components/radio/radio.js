@@ -1,16 +1,14 @@
-import styles from './radio.module.css'; 
-import { Text } from '../components';
+import { Text, Label, Input } from '../components';
 import cx from 'classnames';
 
-export const Radio = ({ 
-    id, 
-    name,
-    value, 
-    checked=false, 
-    text='', 
+import styles from './radio.module.css'; 
+
+export default ({ 
+    text, 
     className,
     classNameInput,
-    onChange=()=>{} 
+    onChange=()=>{},
+    ...props
 }) => {    
   const classNames = cx(styles._, {
     [className]: !!className
@@ -18,22 +16,22 @@ export const Radio = ({
   const classNamesInput = cx(styles.item, {
     [classNameInput]: !!classNameInput
   });
+
+  const { checked } = {...props};
+
 return (
     <div className={classNames}>
-      <label className={styles.label}>
-        <input
+      <Label className={styles.label}>
+        <Input
           className={classNamesInput}
           type='radio'
-          id={id}
-          name={name}
-          value={value}
           defaultChecked={checked}
           onChange={onChange}
+          {...props}
         />
-        {text==='' ? '' : <Text className={styles.text} text={text}/>}
-      </label>
+        {text && <Text className={styles.text} text={text}/>}
+      </Label>
     </div>
 
   )
 }
-export default Radio;

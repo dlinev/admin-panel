@@ -1,31 +1,40 @@
-import React, { Component } from 'react';
+import { Radio, Checkbox, Row } from '../components'
+
 import styles from './checkboxRadioForm.module.css'; 
-import { RadioBlock, CheckboxBlock } from '../components'
 
-class CheckboxRadioForm extends Component {
+export const CheckboxRadioForm = () => {
 
-    render() {
-        return (
-            <div className={styles.wrapper}>
-                <div className={styles.frame}>
-                    <CheckboxBlock 
-                        className={styles.block}
-                        arrItems={[
-                            { id:'checkbox_1' },
-                            { id:'checkbox_2', checked: true},
-                        ]} 
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.frame}>
+                <Row className={styles.block}>
+                    <Checkbox 
+                        id='checkbox_1'
+                        checked={false}
                     />
-                </div>
-                <div className={styles.frame}>
-                    <RadioBlock 
-                        className={styles.block}
-x                       name='radioGroup1'
-                        arrItems={[
-                            { id:'radio_1', value:'radio1', checked: true },
-                            { id:'radio_2', value:'radio2'},
-                    ]} />
-                </div>
+                    <Checkbox 
+                        id='checkbox_2'
+                        checked={true}
+                    />
+
+                </Row>
             </div>
-    )}
+            <div className={styles.frame}>
+                <Row className={styles.block}>
+                    <Radio 
+                        name='radioGroup1'
+                        id='radio_1'
+                        value='radio1' 
+                        checked= {true}
+                    />
+                    <Radio 
+                        name='radioGroup1'
+                        id='radio_2'
+                        value='radio2' 
+                    />
+                </Row>
+            </div>
+        </div>
+    )
 }
 export default CheckboxRadioForm;
