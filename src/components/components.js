@@ -13,9 +13,6 @@ import { default as InputWithLabel } from './inputWithLabel/inputWithLabel';
 import { default as Checkbox }       from './checkbox/checkbox';
 import { default as Radio }          from './radio/radio';
 
-/* complex element */
-import Dropdown  from './dropdown/dropdown';
-
 
 export { 
 
@@ -31,6 +28,4 @@ export {
     Button, 
     Checkbox,
     Radio,
-    
-    Dropdown, 
 }
