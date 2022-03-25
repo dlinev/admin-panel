@@ -1,5 +1,10 @@
 ._ {
   width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
 }
 
 /* модификаторы*/
@@ -9,9 +14,11 @@
 }
 .theme_flat {
   color: var(--background-color-default);
+  background: none;
 }
 .theme_disabled {
   color: var(--button-font-color-black);
+  background: none;
 }
 
 .theme_default .image {

@@ -5,6 +5,7 @@ import styles from './button.module.css';
 
 export default  ( { 
   text, 
+  icon='none',
   theme,
   size,
   className,
@@ -12,17 +13,19 @@ export default  ( {
   ...props
 } ) => {
 
-  let icon='';
-  switch (theme){
-    case 'disabled': {
-        icon = 'LockedIcon';
-        break;
-    }
-    default: {
-        icon = 'XMediumIcon';
-        break;
+  if(!icon) {
+    switch (theme){
+      case 'disabled': {
+          icon = 'LockedIcon';
+          break;
+      }
+      default: {
+          icon = 'XMediumIcon';
+          break;
+      }
     }
   }
+  
 
     const classNames = cx(styles._, className, {
       [styles.theme_default]:  (theme==='default'),
@@ -30,7 +33,7 @@ export default  ( {
       [styles.theme_disabled]: (theme==='disabled'),
       [styles.size_big]:       (size==='big'),
       [styles.size_small]:     (size==='small'),
-      [styles.size_icon_only]: (icon && text),
+      [styles.size_icon_only]: (!text),
     });
 
     const imageClass = cx({
@@ -40,8 +43,8 @@ export default  ( {
     });   
 
     const textClass = cx({
-      [styles.text_big]:   (size==='big'),
-      [styles.text_small]: (size==='small'),
+      [styles.text_big]:   (size==='big' && icon!=='none'),
+      [styles.text_small]: (size==='small' && icon!=='none'),
     });   
 
     return (

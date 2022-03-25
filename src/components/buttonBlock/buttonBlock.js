@@ -9,13 +9,12 @@ export const ButtonBlock = ({
     className 
 }) => {
     
-    const classNames = cx(styles._, {
+    const classNames = cx(styles._, className, {
         [styles.theme_default]:  (theme==='default'),
         [styles.theme_flat]:     (theme==='flat'),
         [styles.theme_disabled]: (theme==='disabled'),
         [styles.size_big]:       (size==='big'),
         [styles.size_small]:     (size==='small'),
-        [className]: !!className
     });
 
     const classNamesImage = cx({

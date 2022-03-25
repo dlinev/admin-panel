@@ -16,6 +16,13 @@
     padding: 48px;
 }
 .column{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-radius: 4px;
+    margin-bottom: 16px;    
 }
 .block {
     width: 150px;
@@ -28,4 +35,5 @@
 .button_auto_size{
     width: auto;
     height: auto;
+    margin-bottom: 8px;
 }

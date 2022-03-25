@@ -14,11 +14,7 @@ import { default as Checkbox }       from './checkbox/checkbox';
 import { default as Radio }          from './radio/radio';
 
 /* complex element */
-import Dropdown       from './dropdown/dropdown';
-import CheckboxRadio  from './checkboxRadio/checkboxRadio';
-
-/* block element */
-import ButtonBlock    from './buttonBlock/buttonBlock';
+import Dropdown  from './dropdown/dropdown';
 
 
 export { 
@@ -37,8 +33,4 @@ export {
     Radio,
     
     Dropdown, 
-    CheckboxRadio,
-
-    ButtonBlock,
-
 }
