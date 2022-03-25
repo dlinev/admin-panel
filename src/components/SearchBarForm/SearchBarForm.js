@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import styles from './searchbarForm.module.css'; 
 
 import { SearchBar } from '../components';
+
+import styles from './searchbarForm.module.css'; 
 
 class SearchBarForm extends Component {
 
     render() {
         return  <div className={styles.frame}>
-                    <SearchBar icon='SearchIcon'/>
-                    <SearchBar iconButton='XMediumIcon' icon='SearchIcon' />
+                    <SearchBar placeholder='Номер заказа или ФИО'/>
+                    <SearchBar placeholder='Номер заказа или ФИО' value='что-то ищем тут'/>
                 </div>
   }
 }

@@ -14,12 +14,14 @@ export default  ( {
 
   let icon='';
   switch (theme){
-    case 'disabled':
-      icon = 'LockedIcon';
-      break;
-    default:
-      icon = 'XMediumIcon';
-      break;
+    case 'disabled': {
+        icon = 'LockedIcon';
+        break;
+    }
+    default: {
+        icon = 'XMediumIcon';
+        break;
+    }
   }
 
     const classNames = cx(styles._, className, {
