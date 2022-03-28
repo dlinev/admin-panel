@@ -61,6 +61,6 @@
   "devDependencies": {
     "hasky": "^3.0.2",
     "lint-staged": "^12.3.7",
-    "prettier": "2.6.1",
+    "prettier": "2.6.1"
   }
 }
