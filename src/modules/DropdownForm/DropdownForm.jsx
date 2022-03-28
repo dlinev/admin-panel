@@ -5,7 +5,8 @@ import {
   Button,
   Text,
   Column,
-} from "../components";
+} from "../../components/components";
+
 import cx from "classnames";
 
 import styles from "./DropdownForm.module.css";
@@ -20,32 +21,38 @@ export const DropdownForm = () => {
         <Column className={styles.block}>
           <Checkbox
             className={classNamesCheckbox}
+            key="dp_chk_item_1"
             id="dp_chk_item_1"
             text="Новый"
           />
           <Checkbox
             className={classNamesCheckbox}
+            key="dp_chk_item_2"
             id="dp_chk_item_2"
             text="Рассчет"
           />
           <Checkbox
             className={classNamesCheckbox}
+            key="dp_chk_item_3"
             id="dp_chk_item_3"
             text="Подтвержден"
             checked={true}
           />
           <Checkbox
             className={classNamesCheckbox}
+            key="dp_chk_item_4"
             id="dp_chk_item_4"
             text="Отложен"
           />
           <Checkbox
             className={classNamesCheckbox}
+            key="dp_chk_item_5"
             id="dp_chk_item_5"
             text="Выполнен"
           />
           <Checkbox
             className={classNamesCheckbox}
+            key="dp_chk_item_6"
             id="dp_chk_item_6"
             text="Отменен"
           />
@@ -56,6 +63,7 @@ export const DropdownForm = () => {
             name="radioGroup2"
             className={classNamesRadio}
             classNameInput={styles.hidden}
+            key="dp_rad_item_1"
             id="dp_rad_item_1"
             value="dp_radio_group"
             text="Новый"
@@ -64,6 +72,7 @@ export const DropdownForm = () => {
             name="radioGroup2"
             className={classNamesRadio}
             classNameInput={styles.hidden}
+            key="dp_rad_item_2"
             id="dp_rad_item_2"
             value="dp_radio_group"
             text="Рассчет"
@@ -72,6 +81,7 @@ export const DropdownForm = () => {
             name="radioGroup2"
             className={classNamesRadio}
             classNameInput={styles.hidden}
+            key="dp_rad_item_3"
             id="dp_rad_item_3"
             value="dp_radio_group"
             text="Подтвержден"
@@ -81,6 +91,7 @@ export const DropdownForm = () => {
             name="radioGroup2"
             className={classNamesRadio}
             classNameInput={styles.hidden}
+            key="dp_rad_item_4"
             id="dp_rad_item_4"
             value="dp_radio_group"
             text="Отложен"
@@ -89,6 +100,7 @@ export const DropdownForm = () => {
             name="radioGroup2"
             className={classNamesRadio}
             classNameInput={styles.hidden}
+            key="dp_rad_item_5"
             id="dp_rad_item_5"
             value="dp_radio_group"
             text="Выполнен"
@@ -97,6 +109,7 @@ export const DropdownForm = () => {
             name="radioGroup2"
             className={classNamesRadio}
             classNameInput={styles.hidden}
+            key="dp_rad_item_6"
             id="dp_rad_item_6"
             value="dp_radio_group"
             text="Отменен"

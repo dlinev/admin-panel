@@ -1,0 +1,31 @@
+.frame {
+  width: 352px;
+  height: 400px;
+  margin: 20px;
+  border: 1px dashed var(--frame-color-border-default);
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.frame {
+  height: 64px;
+  width: 104px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 24px;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block {
+  width: 100%;
+  justify-content: space-between;
+}
