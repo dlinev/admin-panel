@@ -1,37 +1,36 @@
-import { Text, Label, Input } from '../components';
-import cx from 'classnames';
+import { Text, Label, Input } from "../components";
+import cx from "classnames";
 
-import styles from './Radio.module.css'; 
+import styles from "./Radio.module.css";
 
-export const Radio = ({ 
-    text, 
-    className,
-    classNameInput,
-    onChange=()=>{},
-    ...props
-}) => {    
+export const Radio = ({
+  text,
+  className,
+  classNameInput,
+  onChange = () => {},
+  ...props
+}) => {
   const classNames = cx(styles._, {
-    [className]: !!className
+    [className]: !!className,
   });
   const classNamesInput = cx(styles.item, {
-    [classNameInput]: !!classNameInput
+    [classNameInput]: !!classNameInput,
   });
 
-  const { checked } = {...props};
+  const { checked } = { ...props };
 
-return (
+  return (
     <div className={classNames}>
       <Label className={styles.label}>
         <Input
           className={classNamesInput}
-          type='radio'
+          type="radio"
           defaultChecked={checked}
           onChange={onChange}
           {...props}
         />
-        {text && <Text className={styles.text} text={text}/>}
+        {text && <Text className={styles.text} text={text} />}
       </Label>
     </div>
-
-  )
-}
+  );
+};
