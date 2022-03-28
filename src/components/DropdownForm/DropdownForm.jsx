@@ -1,7 +1,7 @@
 import { Checkbox, Radio, InputWithLabel, Button, Text, Column } from '../components'
 import cx from 'classnames';
 
-import styles from './dropdownForm.module.css'; 
+import styles from './DropdownForm.module.css'; 
 
 export const DropdownForm = () => {
   
@@ -129,4 +129,3 @@ export const DropdownForm = () => {
       </div>
     )
 }
-export default DropdownForm;

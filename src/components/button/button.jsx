@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import { Image, Text } from '../components'
 
-import styles from './button.module.css'; 
+import styles from './Button.module.css'; 
 
-export default  ( { 
+export const Button = ( { 
   text, 
   icon,
   theme,

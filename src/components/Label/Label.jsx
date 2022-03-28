@@ -1,8 +1,8 @@
 import cx from 'classnames';
 
-import styles from './label.module.css'; 
+import styles from './Label.module.css'; 
 
-export default ({   
+export const Label = ({   
     children,
     text, 
     className,

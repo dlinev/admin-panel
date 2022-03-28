@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import { Label, Input, Text, Column } from '../components'
 
-import styles from './checkbox.module.css'; 
+import styles from './Checkbox.module.css'; 
 
-export default ({ 
+export const Checkbox = ({ 
     className, 
     ...props 
 }) => {

@@ -1,8 +1,8 @@
 import cx from 'classnames';
 
-import styles from './text.module.css'; 
+import styles from './Text.module.css'; 
 
-export default ( { text, className, ...props} ) => {
+export const Text =( { text, className, ...props} ) => {
     return (
         <div className={cx(styles._, className)} {...props}>{text}</div>
     )

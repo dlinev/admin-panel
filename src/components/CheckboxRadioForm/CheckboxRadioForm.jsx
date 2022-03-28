@@ -1,6 +1,6 @@
 import { Radio, Checkbox, Row } from '../components'
 
-import styles from './checkboxRadioForm.module.css'; 
+import styles from './CheckboxRadioForm.module.css'; 
 
 export const CheckboxRadioForm = () => {
 
@@ -37,4 +37,3 @@ export const CheckboxRadioForm = () => {
         </div>
     )
 }
-export default CheckboxRadioForm;

@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
 import { Column, Button } from '../components'
 
-import styles from './buttonForm.module.css'; 
+import styles from './ButtonForm.module.css'; 
 
-class ButtonForm extends Component {
-
-    render() {
+export const ButtonForm = () => {
         return  (
             <div className={styles.frame}>
                 <Column className={styles.column}>
@@ -124,6 +121,5 @@ class ButtonForm extends Component {
 
             </div>
 
-    )}
+    )
 }
-export default ButtonForm;

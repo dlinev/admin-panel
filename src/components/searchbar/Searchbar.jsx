@@ -1,9 +1,9 @@
 import cx from 'classnames';
-import { Input, Button, Image, Text } from '../components.js';
+import { Input, Button, Image } from '../components.js';
 
-import styles from './searchbar.module.css'; 
+import styles from './Searchbar.module.css'; 
 
-export default ({  
+export const Searchbar = ({  
     placeholder='Введите значение', 
     className,
     ...props

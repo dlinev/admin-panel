@@ -1,6 +1,6 @@
 import { InputWithLabel } from '../components';
 
-import styles from './inputForm.module.css'; 
+import styles from './InputForm.module.css'; 
 
 export const InputForm = () => {
     return ( 
@@ -25,5 +25,3 @@ export const InputForm = () => {
         </div>
     )
 }
-
-export default InputForm;

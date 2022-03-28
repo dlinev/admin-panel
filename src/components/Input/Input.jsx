@@ -1,8 +1,8 @@
 import cx from 'classnames';
 
-import styles from './input.module.css'; 
+import styles from './Input.module.css'; 
 
-export default ({  
+export const Input = ({  
     type = 'text',
     placeholder = 'Введите значениие', 
     className,

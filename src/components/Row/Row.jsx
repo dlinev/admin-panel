@@ -1,8 +1,8 @@
 import cx from 'classnames';
 
-import styles from './row.module.css'; 
+import styles from './Row.module.css'; 
 
-export default ({   
+export const Row = ({   
     children,
     className,
     ...props

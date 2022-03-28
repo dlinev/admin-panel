@@ -1,8 +1,8 @@
 import cx from 'classnames';
 
-import styles from './column.module.css'; 
+import styles from './Column.module.css'; 
 
-export default ({   
+export const Column = ({   
     children,
     className,
     ...props

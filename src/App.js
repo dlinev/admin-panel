@@ -1,11 +1,11 @@
 import './styles/reset.css';
 import './styles/index.css';
 
-import InputForm          from './components/inputForm/inputForm';
-import SearchBarForm      from './components/searchbarForm/searchbarForm';
-import CheckboxRadioForm  from './components/checkboxRadioForm/checkboxRadioForm';
-import ButtonForm         from './components/buttonForm/buttonForm';
-import DropdownForm       from './components/dropdownForm/dropdownForm';
+import { InputForm }          from './components/InputForm/InputForm';
+import { SearchbarForm }      from './components/SearchbarForm/SearchbarForm';
+import { CheckboxRadioForm }  from './components/CheckboxRadioForm/CheckboxRadioForm';
+import { ButtonForm }         from './components/ButtonForm/ButtonForm';
+import { DropdownForm }       from './components/DropdownForm/DropdownForm';
 
 
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="wrapper">
       <InputForm />
-      <SearchBarForm />
+      <SearchbarForm />
       <CheckboxRadioForm />
       <ButtonForm />
       <DropdownForm />

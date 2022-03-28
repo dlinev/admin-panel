@@ -1,9 +1,9 @@
 import { Text, Label, Input } from '../components';
 import cx from 'classnames';
 
-import styles from './radio.module.css'; 
+import styles from './Radio.module.css'; 
 
-export default ({ 
+export const Radio = ({ 
     text, 
     className,
     classNameInput,

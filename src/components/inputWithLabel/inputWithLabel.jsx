@@ -2,9 +2,9 @@ import cx from 'classnames';
 
 import { Label, Button, Input, Row } from '../components';
 
-import styles from './inputWithLabel.module.css'; 
+import styles from './InputWithLabel.module.css'; 
 
-export default ( {   
+export const InputWithLabel = ( {   
     type = 'text',
     placeholder = 'Введите значениеи', 
     label,
