@@ -3,13 +3,13 @@ import { Label, Input, Text, Column } from "../components";
 
 import styles from "./Checkbox.module.css";
 
-export const Checkbox = ({ className, ...props }) => {
-  const { text, checked } = { ...props };
+export const Checkbox = ({ children, className, ...props }) => {
+  const { checked } = { ...props };
 
   return (
     <div className={cx(styles._, className)}>
       <Label className={styles.label}>
-        <Column className={styles.item}>
+        <Column className={cx(styles.item, { [styles.itemSpace]: children })}>
           <Input
             className={styles.input}
             type="checkbox"
@@ -29,7 +29,7 @@ export const Checkbox = ({ className, ...props }) => {
             />
           </svg>
         </Column>
-        <Text className={styles.text} text={text} />
+        <Text className={styles.text}>{children}</Text>
       </Label>
     </div>
   );

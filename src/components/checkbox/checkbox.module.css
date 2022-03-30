@@ -9,6 +9,8 @@
 .item {
   position: relative;
   display: flex;
+}
+.itemSpace {
   margin-right: 0.75rem;
 }
 .input {

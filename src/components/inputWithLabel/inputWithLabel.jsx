@@ -1,13 +1,15 @@
 import cx from "classnames";
 
 import { Label, Button, Input, Row } from "../components";
+import { ReactComponent as XMediumIcon } from "../../icons/x-medium.svg";
+import { ReactComponent as LockedIcon } from "../../icons/locked.svg";
 
 import styles from "./InputWithLabel.module.css";
 
 export const InputWithLabel = ({
   type = "text",
   placeholder = "Введите значениеи",
-  label,
+  children,
   theme,
   size,
   className,
@@ -20,10 +22,22 @@ export const InputWithLabel = ({
     [styles.theme_error]: theme === "error",
     [styles.theme_disabled]: theme === "disabled",
   });
-
+  let Icon;
+  switch (theme) {
+    case "error": {
+      Icon = XMediumIcon;
+      break;
+    }
+    case "disabled": {
+      Icon = LockedIcon;
+      break;
+    }
+    default:
+      Icon = null;
+  }
   return (
     <Label className={styles.label}>
-      {label}
+      {children}
       <Row className={classNames}>
         <Input
           className={styles.input}
@@ -35,6 +49,7 @@ export const InputWithLabel = ({
         />
         <Button
           className={styles.button}
+          icon={Icon}
           theme={theme}
           size={size}
           onClick={onClick}

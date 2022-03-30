@@ -22,7 +22,7 @@ export const ButtonForm = () => {
             theme="default"
             size="big"
           >
-            Text here{" "}
+            Text here
           </Button>
           <Button
             className={styles.button_auto_size}
@@ -104,15 +104,22 @@ export const ButtonForm = () => {
             className={styles.button_auto_size}
             theme="disabled"
             size="big"
-            icon="SearchIcon"
-            text="Text here"
-          />
+            icon={SearchIcon}
+          >
+            Text here
+          </Button>
           <Button
             className={styles.button_auto_size}
             theme="disabled"
             size="big"
-            text="Text here"
-            icon="none"
+          >
+            Text here
+          </Button>
+          <Button
+            className={styles.button_auto_size}
+            theme="disabled"
+            size="big"
+            icon={SearchIcon}
           />
         </Column>
       </Column>

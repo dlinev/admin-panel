@@ -19,19 +19,20 @@
 .theme_disabled {
   color: var(--button-font-color-black);
   background: none;
+  cursor: default;
 }
 
-.theme_default .image {
+.theme_default .icon {
   fill: var(--button-font-color-white);
 }
-.theme_flat .image {
+.theme_flat .icon {
   fill: var(--background-color-default);
 }
 
 .size_big {
   padding: 8px 16px;
 }
-.size_big .image + .text {
+.size_big .icon + .text {
   margin-left: 8px;
 }
 .size_big + .size_icon_only {
@@ -40,7 +41,7 @@
 .size_small {
   padding: 4px 8px;
 }
-.size_small .image + .text {
+.size_small .icon + .text {
   margin-left: 6px;
 }
 .size_small + .size_icon_only {

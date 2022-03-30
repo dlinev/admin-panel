@@ -7,7 +7,7 @@ export const CheckboxRadioForm = () => {
     <div className={styles.wrapper}>
       <div className={styles.frame}>
         <Row className={styles.block}>
-          <Checkbox key="checkbox_1" id="checkbox_1" checked={false} />
+          <Checkbox key="checkbox_1" id="checkbox_1" />
           <Checkbox key="checkbox_2" id="checkbox_2" checked={true} />
         </Row>
       </div>

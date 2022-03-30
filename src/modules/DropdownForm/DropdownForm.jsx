@@ -25,111 +25,121 @@ export const DropdownForm = () => {
             className={classNamesCheckbox}
             key="dp_chk_item_1"
             id="dp_chk_item_1"
-            text="Новый"
-          />
+          >
+            Новый
+          </Checkbox>
           <Checkbox
             className={classNamesCheckbox}
             key="dp_chk_item_2"
             id="dp_chk_item_2"
-            text="Рассчет"
-          />
+          >
+            Рассчет
+          </Checkbox>
           <Checkbox
             className={classNamesCheckbox}
             key="dp_chk_item_3"
             id="dp_chk_item_3"
-            text="Подтвержден"
             checked={true}
-          />
+          >
+            Подтвержден
+          </Checkbox>
           <Checkbox
             className={classNamesCheckbox}
             key="dp_chk_item_4"
             id="dp_chk_item_4"
-            text="Отложен"
-          />
+          >
+            Отложен
+          </Checkbox>
           <Checkbox
             className={classNamesCheckbox}
             key="dp_chk_item_5"
             id="dp_chk_item_5"
-            text="Выполнен"
-          />
+          >
+            Выполнен
+          </Checkbox>
           <Checkbox
             className={classNamesCheckbox}
             key="dp_chk_item_6"
             id="dp_chk_item_6"
-            text="Отменен"
-          />
+          >
+            Отменен
+          </Checkbox>
         </Column>
 
         <Column className={styles.block}>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
-            classNameInput={styles.hidden}
+            hiddenSelector={true}
             key="dp_rad_item_1"
             id="dp_rad_item_1"
             value="dp_radio_group"
-            text="Новый"
-          />
+          >
+            Новый
+          </Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
-            classNameInput={styles.hidden}
+            hiddenSelector={true}
             key="dp_rad_item_2"
             id="dp_rad_item_2"
             value="dp_radio_group"
-            text="Рассчет"
-          />
+          >
+            Рассчет
+          </Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
-            classNameInput={styles.hidden}
+            hiddenSelector={true}
             key="dp_rad_item_3"
             id="dp_rad_item_3"
             value="dp_radio_group"
-            text="Подтвержден"
             checked={true}
-          />
+          >
+            Подтвержден
+          </Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
-            classNameInput={styles.hidden}
+            hiddenSelector={true}
             key="dp_rad_item_4"
             id="dp_rad_item_4"
             value="dp_radio_group"
-            text="Отложен"
-          />
+          >
+            Отложен
+          </Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
-            classNameInput={styles.hidden}
+            hiddenSelector={true}
             key="dp_rad_item_5"
             id="dp_rad_item_5"
             value="dp_radio_group"
-            text="Выполнен"
-          />
+          >
+            Выполнен
+          </Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
-            classNameInput={styles.hidden}
+            hiddenSelector={true}
             key="dp_rad_item_6"
             id="dp_rad_item_6"
             value="dp_radio_group"
-            text="Отменен"
-          />
+          >
+            Отменен
+          </Radio>
         </Column>
       </div>
 
       <div className={styles.blocks}>
         <Column className={styles.block}>
-          <InputWithLabel
-            label="Номер страницы"
-            placeholder="Введите номер"
-            theme="default"
-          />
+          <InputWithLabel placeholder="Введите номер" theme="default">
+            Номер страницы
+          </InputWithLabel>
         </Column>
 
         <Column className={styles.block}>
-          <Text className={styles.text} text="Удалить n-записей" />
+          <Text className={styles.text}>Удалить n-записей</Text>
           <Button className={styles.button} theme="flat" size="small">
             Удалить
           </Button>
@@ -139,7 +149,7 @@ export const DropdownForm = () => {
         </Column>
 
         <Column className={styles.block}>
-          <Text className={styles.text} text="Выберете тему" />
+          <Text className={styles.text}>Выберете тему</Text>
           <Button
             className={styles.button}
             theme="flat"

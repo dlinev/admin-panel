@@ -9,7 +9,7 @@
   cursor: pointer;
   width: 1rem;
 }
-.item {
+.input {
   position: relative;
   display: flex;
   width: 100%;
@@ -22,7 +22,9 @@
   line-height: 16px;
   cursor: pointer;
 }
-.item:checked + .text {
+.input:checked + .text {
   color: var(--radio-color-text);
 }
-
+.input_hidden {
+  display: none;
+}
