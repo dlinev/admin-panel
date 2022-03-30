@@ -46,22 +46,26 @@
 .size_small + .size_icon_only {
   padding: 4px;
 }
-
-.image_default{
+.icon {
+  width: 1rem;
+  height: 1rem;
+  fill: rgb(69, 157, 245);
+  stroke: rgb(69, 157, 245);
+}
+.icon_default {
   stroke: #fff;
   fill: #fff;
 }
-.image_disabled{
+.icon_disabled {
   stroke: black;
   fill: black;
 }
-.image_error{
-  stroke: rgb(186, 216, 245); 
+.icon_error {
+  stroke: rgb(186, 216, 245);
 }
-.text_big{
+.icon_text_big {
   margin-left: 8px;
 }
-.text_small{
+.icon_text_small {
   margin-left: 6px;
 }
-

@@ -8,6 +8,8 @@ import {
 } from "../../components/components";
 
 import cx from "classnames";
+import { ReactComponent as MoonIcon } from "../../icons/moon.svg";
+import { ReactComponent as SunIcon } from "../../icons/sun.svg";
 
 import styles from "./DropdownForm.module.css";
 
@@ -128,20 +130,12 @@ export const DropdownForm = () => {
 
         <Column className={styles.block}>
           <Text className={styles.text} text="Удалить n-записей" />
-          <Button
-            className={styles.button}
-            theme="flat"
-            size="small"
-            icon="none"
-            text="Удалить"
-          />
-          <Button
-            className={styles.button}
-            theme="default"
-            size="small"
-            icon="none"
-            text="Отменить"
-          />
+          <Button className={styles.button} theme="flat" size="small">
+            Удалить
+          </Button>
+          <Button className={styles.button} theme="default" size="small">
+            Отменить
+          </Button>
         </Column>
 
         <Column className={styles.block}>
@@ -150,16 +144,18 @@ export const DropdownForm = () => {
             className={styles.button}
             theme="flat"
             size="small"
-            icon="SunIcon"
-            text="Светлая"
-          />
+            icon={SunIcon}
+          >
+            Светлая
+          </Button>
           <Button
             className={styles.button}
             theme="default"
             size="small"
-            icon="MoonIcon"
-            text="Темная"
-          />
+            icon={MoonIcon}
+          >
+            Темная
+          </Button>
         </Column>
       </div>
     </div>
