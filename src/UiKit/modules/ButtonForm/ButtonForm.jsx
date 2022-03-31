@@ -1,5 +1,5 @@
-import { Column, Button } from "../../components";
-import { ReactComponent as SearchIcon } from "../../icons/search.svg";
+import { Column, Button } from "../../../components";
+import { ReactComponent as SearchIcon } from "../../../icons/search.svg";
 
 import styles from "./ButtonForm.module.css";
 

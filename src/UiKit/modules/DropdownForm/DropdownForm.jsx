@@ -5,11 +5,11 @@ import {
   Button,
   Text,
   Column,
-} from "../../components";
+} from "../../../components";
 
 import cx from "classnames";
-import { ReactComponent as MoonIcon } from "../../icons/moon.svg";
-import { ReactComponent as SunIcon } from "../../icons/sun.svg";
+import { ReactComponent as MoonIcon } from "../../../icons/moon.svg";
+import { ReactComponent as SunIcon } from "../../../icons/sun.svg";
 
 import styles from "./DropdownForm.module.css";
 

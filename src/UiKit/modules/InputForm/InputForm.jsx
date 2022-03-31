@@ -1,4 +1,4 @@
-import { InputWithLabel } from "../../components";
+import { InputWithLabel } from "../../../components";
 
 import styles from "./InputForm.module.css";
 

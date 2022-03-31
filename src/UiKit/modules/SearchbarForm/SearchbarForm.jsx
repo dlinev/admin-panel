@@ -1,4 +1,4 @@
-import { Searchbar } from "../../components";
+import { Searchbar } from "../../../components";
 
 import styles from "./SearchbarForm.module.css";
 

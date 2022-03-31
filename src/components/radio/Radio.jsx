@@ -21,7 +21,7 @@ export const Radio = ({
         <input
           className={inputClass}
           type="radio"
-          defaultChecked={checked}
+          checked={checked}
           onChange={onChange}
           {...props}
         />

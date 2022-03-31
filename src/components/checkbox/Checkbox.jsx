@@ -10,7 +10,7 @@ export const Checkbox = ({ children, className, checked, ...props }) => {
         <input
           className={cx(styles.input, { [styles.input_space]: children })}
           type="checkbox"
-          defaultChecked={checked}
+          checked={checked}
           {...props}
         />
 

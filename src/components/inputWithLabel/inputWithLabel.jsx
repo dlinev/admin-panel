@@ -15,6 +15,7 @@ export const InputWithLabel = ({
   return (
     <Label className={styles.label}>
       {children}
+      <div className={styles.space} />
       <Input
         className={styles.input}
         type={type}
