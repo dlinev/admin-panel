@@ -53,20 +53,24 @@
   fill: rgb(69, 157, 245);
   stroke: rgb(69, 157, 245);
 }
-.icon_default {
+.theme_default .icon {
   stroke: #fff;
   fill: #fff;
 }
-.icon_disabled {
+.theme_disabled .icon {
   stroke: black;
   fill: black;
 }
-.icon_error {
+.theme_error .icon {
   stroke: rgb(186, 216, 245);
 }
-.icon_text_big {
+
+.text {
+  margin: 0;
+}
+.size_big .text .icon {
   margin-left: 8px;
 }
-.icon_text_small {
+.size_small .text .icon {
   margin-left: 6px;
 }

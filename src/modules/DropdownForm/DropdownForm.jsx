@@ -5,7 +5,7 @@ import {
   Button,
   Text,
   Column,
-} from "../../components/components";
+} from "../../components";
 
 import cx from "classnames";
 import { ReactComponent as MoonIcon } from "../../icons/moon.svg";

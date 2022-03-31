@@ -2,10 +2,10 @@ import cx from "classnames";
 
 import styles from "./Text.module.css";
 
-export const Text = ({ children, className, ...props }) => {
+export const Text = ({ children, component = "span", className, ...props }) => {
   return (
-    <div className={cx(styles._, className)} {...props}>
+    <span className={cx(styles._, className)} {...props}>
       {children}
-    </div>
+    </span>
   );
 };

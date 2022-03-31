@@ -1,27 +1,24 @@
-import { Text, Label, Input } from "../components";
+import { Text, Label, Input } from "../";
 import cx from "classnames";
 
 import styles from "./Radio.module.css";
 
 export const Radio = ({
   children,
+  checked,
+  hiddenSelector,
   className,
   onChange = () => {},
   ...props
 }) => {
-  const { checked, hiddenSelector } = { ...props };
-
-  const classNames = cx(styles._, {
-    [className]: !!className,
-  });
   const inputClass = cx(styles.input, {
     [styles.input_hidden]: !!hiddenSelector,
   });
 
   return (
-    <div className={classNames}>
+    <div className={cx(styles._, className)}>
       <Label className={styles.label}>
-        <Input
+        <input
           className={inputClass}
           type="radio"
           defaultChecked={checked}
