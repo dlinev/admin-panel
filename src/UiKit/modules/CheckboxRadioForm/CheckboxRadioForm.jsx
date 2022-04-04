@@ -1,4 +1,4 @@
-import { Radio, Checkbox, Row } from "../../../components";
+import { Radio, Checkbox, Row, Label } from "../../../components";
 
 import styles from "./CheckboxRadioForm.module.css";
 

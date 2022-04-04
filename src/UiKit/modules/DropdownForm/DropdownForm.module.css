@@ -37,32 +37,27 @@
   margin: 24px;
 }
 
-.checkbox__item,
-.radio__item {
+.label,
+.radio {
   padding: 8px 0 8px 0;
 }
-.item {
-  position: relative;
-  display: flex;
+.checkbox {
   margin-right: 0.75rem;
 }
-.item:first-child {
+.label {
+  position: relative;
+  display: flex;
+}
+.label:first-child {
   padding: 0 0 8px 0;
 }
-.item:last-child {
+.label:last-child {
   padding: 8px 0 0 0;
 }
-
-.checkbox__item:first-child {
-  padding: 0 0 8px 0;
-}
-.checkbox__item:last-child {
-  padding: 8px 0 0 0;
+.text {
+  margin-bottom: 8px;
 }
 .button {
   display: flex;
   justify-content: center;
-}
-.text {
-  margin-bottom: 8px;
 }

@@ -5,6 +5,7 @@ import {
   Button,
   Text,
   Column,
+  Label,
 } from "../../../components";
 
 import cx from "classnames";
@@ -14,56 +15,59 @@ import { ReactComponent as SunIcon } from "../../../icons/sun.svg";
 import styles from "./DropdownForm.module.css";
 
 export const DropdownForm = () => {
-  const classNamesCheckbox = cx(styles.item, styles.checkbox__item);
-  const classNamesRadio = cx(styles.item, styles.radio__item);
+  const classNamesRadio = cx(styles.item, styles.radio);
 
   return (
     <div className={styles.frame}>
       <div className={styles.blocks}>
         <Column className={styles.block}>
-          <Checkbox
-            className={classNamesCheckbox}
-            key="dp_chk_item_1"
-            id="dp_chk_item_1"
-          >
-            Новый
-          </Checkbox>
-          <Checkbox
-            className={classNamesCheckbox}
-            key="dp_chk_item_2"
-            id="dp_chk_item_2"
-          >
-            Рассчет
-          </Checkbox>
-          <Checkbox
-            className={classNamesCheckbox}
-            key="dp_chk_item_3"
-            id="dp_chk_item_3"
-            checked={true}
-          >
-            Подтвержден
-          </Checkbox>
-          <Checkbox
-            className={classNamesCheckbox}
-            key="dp_chk_item_4"
-            id="dp_chk_item_4"
-          >
-            Отложен
-          </Checkbox>
-          <Checkbox
-            className={classNamesCheckbox}
-            key="dp_chk_item_5"
-            id="dp_chk_item_5"
-          >
-            Выполнен
-          </Checkbox>
-          <Checkbox
-            className={classNamesCheckbox}
-            key="dp_chk_item_6"
-            id="dp_chk_item_6"
-          >
-            Отменен
-          </Checkbox>
+          <Label className={styles.label} text="Новый">
+            <Checkbox
+              className={styles.checkbox}
+              key="dp_chk_item_1"
+              id="dp_chk_item_1"
+            />
+          </Label>
+
+          <Label className={styles.label} text="Рассчет">
+            <Checkbox
+              className={styles.checkbox}
+              key="dp_chk_item_2"
+              id="dp_chk_item_2"
+            />
+          </Label>
+          <Label className={styles.label} text="Подтвержден">
+            <Checkbox
+              className={styles.checkbox}
+              key="dp_chk_item_3"
+              id="dp_chk_item_3"
+              checked={true}
+            />
+          </Label>
+
+          <Label className={styles.label} text="Отложен">
+            <Checkbox
+              className={styles.checkbox}
+              key="dp_chk_item_4"
+              id="dp_chk_item_4"
+            />
+          </Label>
+
+          <Label className={styles.label} text="Выполнен">
+            <Checkbox
+              className={styles.checkbox}
+              key="dp_chk_item_5"
+              id="dp_chk_item_5"
+            />
+          </Label>
+
+          <Label className={styles.label} text="Отменен">
+            <Checkbox
+              className={styles.checkbox}
+              key="dp_chk_item_6"
+              id="dp_chk_item_6"
+            />
+          </Label>
         </Column>
 
         <Column className={styles.block}>
@@ -74,9 +78,8 @@ export const DropdownForm = () => {
             key="dp_rad_item_1"
             id="dp_rad_item_1"
             value="dp_radio_group"
-          >
-            Новый
-          </Radio>
+            label="Новый"
+          ></Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
@@ -84,9 +87,8 @@ export const DropdownForm = () => {
             key="dp_rad_item_2"
             id="dp_rad_item_2"
             value="dp_radio_group"
-          >
-            Рассчет
-          </Radio>
+            label="Рассчет"
+          ></Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
@@ -95,9 +97,8 @@ export const DropdownForm = () => {
             id="dp_rad_item_3"
             value="dp_radio_group"
             checked={true}
-          >
-            Подтвержден
-          </Radio>
+            label="Подтвержден"
+          ></Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
@@ -105,9 +106,8 @@ export const DropdownForm = () => {
             key="dp_rad_item_4"
             id="dp_rad_item_4"
             value="dp_radio_group"
-          >
-            Отложен
-          </Radio>
+            label="Отложен"
+          ></Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
@@ -115,9 +115,8 @@ export const DropdownForm = () => {
             key="dp_rad_item_5"
             id="dp_rad_item_5"
             value="dp_radio_group"
-          >
-            Выполнен
-          </Radio>
+            label="Выполнен"
+          ></Radio>
           <Radio
             name="radioGroup2"
             className={classNamesRadio}
@@ -125,27 +124,34 @@ export const DropdownForm = () => {
             key="dp_rad_item_6"
             id="dp_rad_item_6"
             value="dp_radio_group"
-          >
-            Отменен
-          </Radio>
+            label="Отменен"
+          ></Radio>
         </Column>
       </div>
 
       <div className={styles.blocks}>
         <Column className={styles.block}>
-          <InputWithLabel placeholder="Введите номер" theme="default">
-            Номер страницы
-          </InputWithLabel>
+          <InputWithLabel
+            placeholder="Введите номер"
+            theme="default"
+            label="Номер страницы"
+          />
         </Column>
 
         <Column className={styles.block}>
           <Text className={styles.text}>Удалить n-записей</Text>
-          <Button className={styles.button} theme="flat" size="small">
-            Удалить
-          </Button>
-          <Button className={styles.button} theme="default" size="small">
-            Отменить
-          </Button>
+          <Button
+            className={styles.button}
+            theme="flat"
+            size="small"
+            text="Удалить"
+          />
+          <Button
+            className={styles.button}
+            theme="default"
+            size="small"
+            text="Отменить"
+          />
         </Column>
 
         <Column className={styles.block}>
@@ -155,17 +161,15 @@ export const DropdownForm = () => {
             theme="flat"
             size="small"
             icon={SunIcon}
-          >
-            Светлая
-          </Button>
+            text="Светлая"
+          />
           <Button
             className={styles.button}
             theme="default"
             size="small"
             icon={MoonIcon}
-          >
-            Темная
-          </Button>
+            text="Темная"
+          />
         </Column>
       </div>
     </div>

@@ -28,3 +28,8 @@
 .block {
   margin: 8px;
 }
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

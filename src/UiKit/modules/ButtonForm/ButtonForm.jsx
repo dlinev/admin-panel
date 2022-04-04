@@ -13,17 +13,15 @@ export const ButtonForm = () => {
             theme="default"
             size="big"
             icon={SearchIcon}
-          >
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
 
           <Button
             className={styles.button_auto_size}
             theme="default"
             size="big"
-          >
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="default"
@@ -38,16 +36,14 @@ export const ButtonForm = () => {
             theme="default"
             size="small"
             icon={SearchIcon}
-          >
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="default"
             size="small"
-          >
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="default"
@@ -64,12 +60,14 @@ export const ButtonForm = () => {
             theme="flat"
             size="big"
             icon={SearchIcon}
-          >
-            Text here
-          </Button>
-          <Button className={styles.button_auto_size} theme="flat" size="big">
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
+          <Button
+            className={styles.button_auto_size}
+            theme="flat"
+            size="big"
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="flat"
@@ -83,12 +81,14 @@ export const ButtonForm = () => {
             theme="flat"
             size="small"
             icon={SearchIcon}
-          >
-            Text here
-          </Button>
-          <Button className={styles.button_auto_size} theme="flat" size="small">
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
+          <Button
+            className={styles.button_auto_size}
+            theme="flat"
+            size="small"
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="flat"
@@ -105,16 +105,14 @@ export const ButtonForm = () => {
             theme="disabled"
             size="big"
             icon={SearchIcon}
-          >
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="disabled"
             size="big"
-          >
-            Text here
-          </Button>
+            text="Text here"
+          ></Button>
           <Button
             className={styles.button_auto_size}
             theme="disabled"

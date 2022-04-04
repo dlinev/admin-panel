@@ -7,7 +7,7 @@ export const Button = ({
   icon: Icon,
   theme,
   size,
-  children,
+  text,
   className,
   onClick,
   ...props
@@ -15,13 +15,13 @@ export const Button = ({
   const classNames = cx(styles._, className, {
     [styles[`theme_${theme}`]]: true,
     [styles[`size_${size}`]]: true,
-    [styles.size_icon_only]: !children && Icon,
+    [styles.size_icon_only]: !text && Icon,
   });
 
   return (
     <button className={classNames} onClick={onClick} {...props}>
       {Icon && <Icon className={styles.icon} />}
-      {children && <Text className={styles.text}>{children}</Text>}
+      {text && <Text className={styles.text}>{text}</Text>}
     </button>
   );
 };

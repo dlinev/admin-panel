@@ -5,7 +5,7 @@ import styles from "./InputWithLabel.module.css";
 export const InputWithLabel = ({
   type = "text",
   placeholder = "Введите значение",
-  children,
+  label,
   invalid,
   disabled,
   value,
@@ -14,7 +14,7 @@ export const InputWithLabel = ({
 }) => {
   return (
     <Label className={styles.label}>
-      {children}
+      {label}
       <div className={styles.space} />
       <Input
         className={styles.input}

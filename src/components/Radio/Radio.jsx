@@ -1,11 +1,10 @@
 import { Text, Label } from "../";
 import cx from "classnames";
-import { useState } from "react";
 
 import styles from "./Radio.module.css";
 
 export const Radio = ({
-  children,
+  label,
   checked,
   hiddenSelector,
   className,
@@ -24,7 +23,7 @@ export const Radio = ({
           defaultChecked={checked}
           {...props}
         />
-        {children && <Text className={styles.text}>{children}</Text>}
+        {label && <Text className={styles.text}>{label}</Text>}
       </Label>
     </div>
   );
