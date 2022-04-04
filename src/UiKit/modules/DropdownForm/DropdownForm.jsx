@@ -8,15 +8,12 @@ import {
   Label,
 } from "../../../components";
 
-import cx from "classnames";
 import { ReactComponent as MoonIcon } from "../../../icons/moon.svg";
 import { ReactComponent as SunIcon } from "../../../icons/sun.svg";
 
 import styles from "./DropdownForm.module.css";
 
 export const DropdownForm = () => {
-  const classNamesRadio = cx(styles.item, styles.radio);
-
   return (
     <div className={styles.frame}>
       <div className={styles.blocks}>
@@ -71,61 +68,69 @@ export const DropdownForm = () => {
         </Column>
 
         <Column className={styles.block}>
-          <Radio
-            name="radioGroup2"
-            className={classNamesRadio}
-            hiddenSelector={true}
-            key="dp_rad_item_1"
-            id="dp_rad_item_1"
-            value="dp_radio_group"
-            label="Новый"
-          ></Radio>
-          <Radio
-            name="radioGroup2"
-            className={classNamesRadio}
-            hiddenSelector={true}
-            key="dp_rad_item_2"
-            id="dp_rad_item_2"
-            value="dp_radio_group"
-            label="Рассчет"
-          ></Radio>
-          <Radio
-            name="radioGroup2"
-            className={classNamesRadio}
-            hiddenSelector={true}
-            key="dp_rad_item_3"
-            id="dp_rad_item_3"
-            value="dp_radio_group"
-            checked={true}
-            label="Подтвержден"
-          ></Radio>
-          <Radio
-            name="radioGroup2"
-            className={classNamesRadio}
-            hiddenSelector={true}
-            key="dp_rad_item_4"
-            id="dp_rad_item_4"
-            value="dp_radio_group"
-            label="Отложен"
-          ></Radio>
-          <Radio
-            name="radioGroup2"
-            className={classNamesRadio}
-            hiddenSelector={true}
-            key="dp_rad_item_5"
-            id="dp_rad_item_5"
-            value="dp_radio_group"
-            label="Выполнен"
-          ></Radio>
-          <Radio
-            name="radioGroup2"
-            className={classNamesRadio}
-            hiddenSelector={true}
-            key="dp_rad_item_6"
-            id="dp_rad_item_6"
-            value="dp_radio_group"
-            label="Отменен"
-          ></Radio>
+          <Label className={styles.label} text="Новый">
+            <Radio
+              name="radioGroup2"
+              className={styles.radio}
+              showSelector={false}
+              key="dp_rad_item_1"
+              id="dp_rad_item_1"
+              value="dp_radio_group"
+            />
+          </Label>
+
+          <Label className={styles.label} text="Рассчет">
+            <Radio
+              name="radioGroup2"
+              className={styles.radio}
+              showSelector={false}
+              key="dp_rad_item_2"
+              id="dp_rad_item_2"
+              value="dp_radio_group"
+            />
+          </Label>
+
+          <Label className={styles.label} text="Подтвержден">
+            <Radio
+              name="radioGroup2"
+              className={styles.radio}
+              showSelector={false}
+              key="dp_rad_item_3"
+              id="dp_rad_item_3"
+              value="dp_radio_group"
+              checked={true}
+            />
+          </Label>
+          <Label className={styles.label} text="Отложен">
+            <Radio
+              name="radioGroup2"
+              className={styles.radio}
+              showSelector={false}
+              key="dp_rad_item_4"
+              id="dp_rad_item_4"
+              value="dp_radio_group"
+            />
+          </Label>
+          <Label className={styles.label} text="Выполнен">
+            <Radio
+              name="radioGroup2"
+              className={styles.radio}
+              showSelector={false}
+              key="dp_rad_item_5"
+              id="dp_rad_item_5"
+              value="dp_radio_group"
+            />
+          </Label>
+          <Label className={styles.label} text="Отменен">
+            <Radio
+              name="radioGroup2"
+              className={styles.radio}
+              showSelector={false}
+              key="dp_rad_item_6"
+              id="dp_rad_item_6"
+              value="dp_radio_group"
+            />
+          </Label>
         </Column>
       </div>
 

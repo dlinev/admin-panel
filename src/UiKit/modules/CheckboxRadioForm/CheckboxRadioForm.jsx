@@ -18,12 +18,14 @@ export const CheckboxRadioForm = () => {
             name="radioGroup1"
             id="radio_1"
             value="radio1"
+            showSelector={true}
           />
           <Radio
             className={styles.block}
             name="radioGroup1"
             id="radio_2"
             value="radio2"
+            showSelector={true}
             checked={true}
           />
         </Row>

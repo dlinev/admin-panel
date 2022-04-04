@@ -23,8 +23,6 @@
 }
 .blocks {
   display: flex;
-  /* margin-bottom: 3rem; */
-  align-items: flex-start;
 }
 
 .block {
@@ -37,16 +35,12 @@
   margin: 24px;
 }
 
-.label,
-.radio {
-  padding: 8px 0 8px 0;
-}
 .checkbox {
   margin-right: 0.75rem;
 }
 .label {
-  position: relative;
   display: flex;
+  padding: 8px 0 8px 0;
 }
 .label:first-child {
   padding: 0 0 8px 0;
@@ -60,4 +54,5 @@
 .button {
   display: flex;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
