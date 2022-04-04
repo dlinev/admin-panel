@@ -15,20 +15,13 @@ export const Radio = ({
     [styles.input_hidden]: !!hiddenSelector,
   });
 
-  const [isChecked, setIsChecked] = useState(checked);
-
-  const handleOnChange = ({ target: { checked } }) => {
-    setIsChecked(checked);
-  };
-
   return (
     <div className={cx(styles._, className)}>
       <Label className={styles.label}>
         <input
           className={inputClass}
           type="radio"
-          onChange={handleOnChange}
-          checked={isChecked}
+          defaultChecked={checked}
           {...props}
         />
         {children && <Text className={styles.text}>{children}</Text>}

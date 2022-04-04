@@ -9,7 +9,7 @@ export const Button = ({
   size,
   children,
   className,
-  onClick = () => {},
+  onClick,
   ...props
 }) => {
   const classNames = cx(styles._, className, {

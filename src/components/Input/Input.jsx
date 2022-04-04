@@ -1,6 +1,7 @@
 import { ReactComponent as XMediumIcon } from "../../icons/x-medium.svg";
 import { ReactComponent as LockedIcon } from "../../icons/locked.svg";
 
+import { useState } from "react";
 import cx from "classnames";
 
 import { Row, Button } from "../";
@@ -21,21 +22,36 @@ export const Input = ({
     [styles.disabled]: !!disabled,
   });
 
+  const [inputValue, setInputValue] = useState(value);
+  const handleOnChange = ({ target: { value } }) => {
+    setInputValue(value);
+  };
+
+  const handleOnClick = (event) => {
+    setInputValue("");
+  };
+
   return (
     <Row className={rowClass}>
       <input
         className={cx(styles._, className)}
         type={type}
         placeholder={placeholder}
-        value={value}
+        value={inputValue}
         disabled={disabled}
+        onChange={handleOnChange}
         {...props}
       />
       {disabled && (
         <LockedIcon className={cx(styles.icon, styles.icon_disabled)} />
       )}
-      {value && !disabled && (
-        <Button className={styles.button} icon={XMediumIcon} theme="error" />
+      {inputValue && !disabled && (
+        <Button
+          className={styles.button}
+          icon={XMediumIcon}
+          theme="error"
+          onClick={handleOnClick}
+        />
       )}
     </Row>
   );

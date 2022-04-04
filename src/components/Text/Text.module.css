@@ -4,6 +4,9 @@
   font-style: normal;
   font-weight: normal;
   display: block;
-  white-space: nowrap;
   line-height: 16px;
+}
+
+.noWrap {
+  white-space: nowrap;
 }

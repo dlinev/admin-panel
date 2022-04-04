@@ -1,24 +1,16 @@
 import cx from "classnames";
-import { useState } from "react";
 import { Label, Text } from "../";
 
 import styles from "./Checkbox.module.css";
 
-export const Checkbox = ({ children, className, checked, ...props }) => {
-  const [isChecked, setIsChecked] = useState(checked);
-
-  const handleOnChange = ({ target: { checked } }) => {
-    setIsChecked(checked);
-  };
-
+export const Checkbox = ({ children, checked, className, ...props }) => {
   return (
     <div className={cx(styles._, className)}>
       <Label className={styles.label}>
         <input
           className={cx(styles.input, { [styles.input_space]: children })}
           type="checkbox"
-          onChange={handleOnChange}
-          checked={isChecked}
+          defaultChecked={checked}
           {...props}
         />
 

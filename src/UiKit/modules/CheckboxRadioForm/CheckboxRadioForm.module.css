@@ -26,6 +26,5 @@
   align-items: center;
 }
 .block {
-  width: 100%;
-  justify-content: space-around;
+  margin: 8px;
 }
