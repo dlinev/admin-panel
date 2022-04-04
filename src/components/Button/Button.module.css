@@ -74,3 +74,12 @@
 .size_small .text .icon {
   margin-left: 6px;
 }
+
+._:hover {
+  /* background-color: var(--button-background-color);
+  color: #fff; */
+  box-shadow: 0px 2px 5px 2px var(--button-shadow-normal);
+}
+/* ._:hover > .icon {
+  fill: white;
+} */
