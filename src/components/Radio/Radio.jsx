@@ -1,7 +1,9 @@
 import cx from "classnames";
+import { Text } from "../Text/Text";
+
 import styles from "./Radio.module.css";
 
-export const Radio = ({ checked, showSelector, className, ...props }) => {
+export const Radio = ({ text, checked, showSelector, className, ...props }) => {
   return (
     <div className={cx(styles._, className)}>
       <input
@@ -11,6 +13,7 @@ export const Radio = ({ checked, showSelector, className, ...props }) => {
         {...props}
       />
       {showSelector && <span className={styles.iconWrapper} />}
+      {text && <Text className={styles.text}>{text}</Text>}
     </div>
   );
 };

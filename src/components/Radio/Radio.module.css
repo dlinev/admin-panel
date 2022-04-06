@@ -22,7 +22,6 @@
 .input:checked ~ .iconWrapper {
   border: 4px solid #459df5;
 }
-
-.input:checked + label {
-  color: red;
+.input:checked ~ .text {
+  color: #459df5;
 }

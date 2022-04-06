@@ -68,7 +68,7 @@ export const DropdownForm = () => {
         </Column>
 
         <Column className={styles.block}>
-          <Label className={styles.label} text="Новый">
+          <Label className={styles.label}>
             <Radio
               name="radioGroup2"
               className={styles.radio}
@@ -76,10 +76,11 @@ export const DropdownForm = () => {
               key="dp_rad_item_1"
               id="dp_rad_item_1"
               value="dp_radio_group"
+              text="Новый"
             />
           </Label>
 
-          <Label className={styles.label} text="Рассчет">
+          <Label className={styles.label}>
             <Radio
               name="radioGroup2"
               className={styles.radio}
@@ -87,10 +88,11 @@ export const DropdownForm = () => {
               key="dp_rad_item_2"
               id="dp_rad_item_2"
               value="dp_radio_group"
+              text="Рассчет"
             />
           </Label>
 
-          <Label className={styles.label} text="Подтвержден">
+          <Label className={styles.label}>
             <Radio
               name="radioGroup2"
               className={styles.radio}
@@ -99,9 +101,10 @@ export const DropdownForm = () => {
               id="dp_rad_item_3"
               value="dp_radio_group"
               checked={true}
+              text="Подтвержден"
             />
           </Label>
-          <Label className={styles.label} text="Отложен">
+          <Label className={styles.label}>
             <Radio
               name="radioGroup2"
               className={styles.radio}
@@ -109,9 +112,10 @@ export const DropdownForm = () => {
               key="dp_rad_item_4"
               id="dp_rad_item_4"
               value="dp_radio_group"
+              text="Отложен"
             />
           </Label>
-          <Label className={styles.label} text="Выполнен">
+          <Label className={styles.label}>
             <Radio
               name="radioGroup2"
               className={styles.radio}
@@ -119,9 +123,10 @@ export const DropdownForm = () => {
               key="dp_rad_item_5"
               id="dp_rad_item_5"
               value="dp_radio_group"
+              text="Выполнен"
             />
           </Label>
-          <Label className={styles.label} text="Отменен">
+          <Label className={styles.label}>
             <Radio
               name="radioGroup2"
               className={styles.radio}
@@ -129,6 +134,7 @@ export const DropdownForm = () => {
               key="dp_rad_item_6"
               id="dp_rad_item_6"
               value="dp_radio_group"
+              text="Отменен"
             />
           </Label>
         </Column>
