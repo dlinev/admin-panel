@@ -1,7 +1,11 @@
-import { UiKit } from "./UiKit";
+import { Header, Main } from "./orders/components";
 
 function App() {
-  return <UiKit />;
+  return (
+    <div className="wrapper">
+      <Header />
+      <Main />
+    </div>
+  );
 }
-// поверка
 export default App;
