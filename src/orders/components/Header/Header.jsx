@@ -7,7 +7,6 @@ export const Header = () => {
     <header className={styles._}>
       <div>
         <Text className={styles.text} component="h2">
-          {" "}
           Page header
         </Text>
       </div>
