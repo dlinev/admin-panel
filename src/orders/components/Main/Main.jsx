@@ -1,11 +1,12 @@
 import { ListHeader, List, ListFooter } from "../";
+import styles from "./Main.module.css";
 
 export const Main = () => {
   return (
-    <div>
+    <main className={styles._}>
       <ListHeader />
       <List />
       <ListFooter />
-    </div>
+    </main>
   );
 };

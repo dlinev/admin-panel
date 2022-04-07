@@ -1,3 +1,5 @@
+import styles from "./ListFooter.module.css";
+
 export const ListFooter = () => {
-  return <div className="table__footer">List footer</div>;
+  return <div className={styles._}>List footer</div>;
 };

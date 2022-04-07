@@ -1,3 +1,5 @@
+import styles from "./List.module.css";
+
 export const List = () => {
-  return <div className="table__body">List body</div>;
+  return <div className={styles._}>List body</div>;
 };

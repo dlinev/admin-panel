@@ -1,0 +1,10 @@
+._ {
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.text {
+  background-color: var(--background-color-light);
+  color: var(--background-color-dark);
+  font-weight: bold;
+  font-size: 26px;
+}

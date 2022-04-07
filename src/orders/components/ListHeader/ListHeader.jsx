@@ -1,3 +1,5 @@
+import styles from "./ListHeader.module.css";
+
 export const ListHeader = () => {
-  return <div className="table__header">List header</div>;
+  return <div className={styles._}>List header</div>;
 };

@@ -53,13 +53,3 @@
     --l-100: 0%;
   }
 }
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 13px;
-}

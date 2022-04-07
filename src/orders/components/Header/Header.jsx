@@ -1,7 +1,16 @@
+import { Text } from "../../../components";
+
+import styles from "./Header.module.css";
+
 export const Header = () => {
   return (
-    <div>
-      <h2>Page header</h2>
-    </div>
+    <header className={styles._}>
+      <div>
+        <Text className={styles.text} component="h2">
+          {" "}
+          Page header
+        </Text>
+      </div>
+    </header>
   );
 };
