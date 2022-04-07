@@ -10,3 +10,14 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+/* body,
+input{
+  background: hsl(0 0% var(--l-0));
+  color: hsl(0 0% var(--l-100)); 
+}
+span,
+label,
+button{
+  color: hsl(0 0% var(--l-100)); 
+} */
