@@ -1,0 +1,85 @@
+._ {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+/* модификаторы*/
+.theme_default {
+  background-color: var(--background-color-default);
+  color: var(--button-font-color-white);
+}
+.theme_flat {
+  color: var(--background-color-default);
+  background: none;
+}
+.theme_disabled {
+  color: var(--button-font-color-black);
+  background: none;
+  cursor: default;
+}
+
+.theme_default .icon {
+  fill: var(--button-font-color-white);
+}
+.theme_flat .icon {
+  fill: var(--background-color-default);
+}
+
+.size_big {
+  padding: 8px 16px;
+}
+.size_big .icon + .text {
+  margin-left: 8px;
+}
+.size_big + .size_icon_only {
+  padding: 8px;
+}
+.size_small {
+  padding: 4px 8px;
+}
+.size_small .icon + .text {
+  margin-left: 6px;
+}
+.size_small + .size_icon_only {
+  padding: 4px;
+}
+.icon {
+  width: 1rem;
+  height: 1rem;
+  fill: rgb(69, 157, 245);
+  stroke: rgb(69, 157, 245);
+}
+.theme_default .icon {
+  stroke: #fff;
+  fill: #fff;
+}
+.theme_disabled .icon {
+  stroke: black;
+  fill: black;
+}
+.theme_error .icon {
+  stroke: rgb(186, 216, 245);
+}
+
+.text {
+  margin: 0;
+}
+.size_big .text .icon {
+  margin-left: 8px;
+}
+.size_small .text .icon {
+  margin-left: 6px;
+}
+
+._:hover {
+  /* background-color: var(--button-background-color);
+  color: #fff; */
+  box-shadow: 0px 2px 5px 2px var(--button-shadow-normal);
+}
+/* ._:hover > .icon {
+  fill: white;
+} */
