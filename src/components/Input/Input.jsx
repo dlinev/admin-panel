@@ -49,7 +49,7 @@ export const Input = ({
         <Button
           className={styles.button}
           icon={XMediumIcon}
-          theme="error"
+          theme="clear"
           onClick={handleOnClick}
         />
       )}

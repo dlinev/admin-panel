@@ -6,9 +6,5 @@ export const ListBody = ({ orders }) => {
     return <ListItem {...order} key={order.id} />;
   });
 
-  return (
-    <div className={styles._}>
-      <ul className={styles.item}>{ordersList}</ul>
-    </div>
-  );
+  return <div className={styles._}>{ordersList}</div>;
 };

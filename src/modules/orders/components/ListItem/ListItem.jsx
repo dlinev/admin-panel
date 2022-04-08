@@ -14,7 +14,7 @@ export const ListItem = ({
       <Label className={styles.label}>
         <ul className={styles.item}>
           <li className={styles.row}>
-            <Checkbox />
+            <Checkbox className={styles.checkbox} />
           </li>
           <li className={styles.row}>
             <Text className={styles.text}>{orderId}</Text>

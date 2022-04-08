@@ -21,6 +21,10 @@
   background: none;
   cursor: default;
 }
+.theme_error {
+  color: var(--button-font-color-white);
+  background: #f53152;
+}
 
 .theme_default .icon {
   fill: var(--button-font-color-white);
@@ -62,6 +66,10 @@
   fill: black;
 }
 .theme_error .icon {
+  stroke: #fff;
+  fill: #fff;
+}
+.theme_clear .icon {
   stroke: rgb(186, 216, 245);
 }
 
@@ -83,3 +91,8 @@
 /* ._:hover > .icon {
   fill: white;
 } */
+
+.auto_size {
+  width: auto;
+  height: auto;
+}

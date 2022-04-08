@@ -7,6 +7,7 @@ export const Button = ({
   icon: Icon,
   theme,
   size,
+  autoSize,
   text,
   className,
   onClick,
@@ -16,6 +17,7 @@ export const Button = ({
     [styles[`theme_${theme}`]]: true,
     [styles[`size_${size}`]]: true,
     [styles.size_icon_only]: !text && Icon,
+    [styles.auto_size]: !!autoSize,
   });
 
   return (

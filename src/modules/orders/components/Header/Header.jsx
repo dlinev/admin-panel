@@ -1,15 +1,25 @@
-import { Text } from "../../../../components";
+import { ReactComponent as SunIcon } from "../../../../icons/sun.svg";
+import { Button, Text, Row } from "../../../../components";
 
 import styles from "./Header.module.css";
 
 export const Header = () => {
   return (
     <header className={styles._}>
-      <div>
+      <Row>
         <Text className={styles.text} component="h2">
-          Page header
+          Список заказов
         </Text>
-      </div>
+      </Row>
+      <Row>
+        <Button
+          className={styles.button}
+          icon={SunIcon}
+          theme="flat"
+          size="big"
+          text="Светлая тема"
+        />
+      </Row>
     </header>
   );
 };
