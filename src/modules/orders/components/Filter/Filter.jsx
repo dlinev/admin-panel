@@ -9,7 +9,10 @@ export const Filter = () => {
       <Column>
         <div className={styles.row}>
           <Row className={styles.row}>
-            <Searchbar className={styles.searchbar} />
+            <Searchbar
+              className={styles.searchbar}
+              placeholder="Введите имя заказа или ФИО"
+            />
             <Button
               className={styles.button}
               icon={FilterIcon}
