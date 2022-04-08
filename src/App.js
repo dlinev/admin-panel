@@ -1,4 +1,4 @@
-import { Header, Filter, Main } from "./orders/components";
+import { Header, Filter, Main } from "./modules/orders/components";
 
 import "./styles/reset.css";
 import "./styles/App.css";

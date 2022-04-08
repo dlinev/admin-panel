@@ -1,5 +1,5 @@
-import "../../styles/index.css";
-import "../../styles/layout.css";
+import "../../../styles/index.css";
+import "../../../styles/layout.css";
 
 export { Header } from "./Header/Header";
 export { Filter } from "./Filter/Filter";

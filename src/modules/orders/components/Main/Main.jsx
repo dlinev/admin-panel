@@ -1,4 +1,4 @@
-import { ListHeader, ListBody, ListFooter } from "../";
+import { ListHeader, ListBody, ListFooter } from "..";
 import styles from "./Main.module.css";
 
 import { connect } from "react-redux";

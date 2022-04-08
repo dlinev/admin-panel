@@ -1,4 +1,4 @@
-import { ListItem } from "../";
+import { ListItem } from "..";
 import styles from "./ListBody.module.css";
 
 export const ListBody = ({ orders }) => {

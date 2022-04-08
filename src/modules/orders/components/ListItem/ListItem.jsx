@@ -1,4 +1,4 @@
-import { Label, Checkbox, Text } from "../../../components";
+import { Label, Checkbox, Text } from "../../../../components";
 import styles from "./ListItem.module.css";
 
 export const ListItem = ({

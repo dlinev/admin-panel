@@ -1,6 +1,6 @@
 ._ {
+  list-style-type: none;
 }
-
 .item,
 ._row {
   flex-basis: 3%;
