@@ -15,8 +15,8 @@
   justify-content: space-between;
 }
 .searchbar {
-  width: auto;
-  min-width: 320px;
+  width: 320px;
+  min-width: 100px;
 }
 .button {
   margin-left: 1rem;

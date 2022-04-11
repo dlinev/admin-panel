@@ -41,3 +41,29 @@
 .row .checkbox:checked {
   background: #ebf0f5;
 }
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 5px;
+}
+.status_new svg,
+.status_hold svg {
+  fill: #ff8c56;
+}
+.status_calc svg {
+  fill: #459df5;
+}
+.status_aprove svg,
+.status_done svg {
+  fill: #0fb864;
+}
+.status_abort svg {
+  fill: gray;
+}
+.status_done {
+  color: #0fb864;
+}
+.status_abort {
+  color: gray;
+}

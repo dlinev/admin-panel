@@ -21,19 +21,13 @@ export const ListHeader = () => {
           </Label>
         </li>
         <li className={styles.row}>
-          <div className="table__header-group">
-            <Text className={styles.text}>Статус</Text>
-          </div>
+          <Text className={styles.text}>Статус</Text>
         </li>
         <li className={styles.row}>
-          <div className="table__header-group">
-            <Text className={styles.text}>Позиций</Text>
-          </div>
+          <Text className={styles.text}>Позиций</Text>
         </li>
         <li className={styles.row}>
-          <div className="table__header-group">
-            <Text className={styles.text}>Сумма</Text>
-          </div>
+          <Text className={styles.text}>Сумма</Text>
         </li>
         <li className={styles.row}>
           <Text className={styles.text}>ФИО покупателя</Text>
