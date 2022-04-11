@@ -3,9 +3,10 @@ import {
   Label,
   Row,
   Column,
-  Input,
   Button,
 } from "../../../../components";
+import { DropdownStatus } from "../";
+
 import styles from "./Filter.module.css";
 
 export const Filter = () => {
@@ -32,7 +33,7 @@ export const Filter = () => {
         </Column>
         <Column className={styles.columnStatus}>
           <Label className={styles.label}>Статус заказа</Label>
-          <Input className={styles.dropdown} value="Любой" />
+          <DropdownStatus />
         </Column>
         <Column className={styles.column}>
           <Label className={styles.label}>Сумма заказа</Label>

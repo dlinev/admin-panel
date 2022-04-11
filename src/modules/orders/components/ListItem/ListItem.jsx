@@ -12,38 +12,38 @@ const STATUS = [
     id: "NEW",
     text: "Новый",
     icon: <DotIcon />,
-    style: "status_new",
+    style_icon: "status_new",
   },
   {
     id: "CALC",
     text: "Рассчет",
     icon: <DotIcon />,
-    style: "status_calc",
+    style_icon: "status_calc",
   },
   {
     id: "APROVE",
     text: "Подтвержден",
     icon: <DotIcon />,
-    style: "status_aprove",
+    style_icon: "status_aprove",
   },
   {
     id: "HOLD",
     text: "Отложен",
     icon: <DotIcon />,
-    style: "status_hold",
+    style_icon: "status_hold",
   },
   {
     id: "DONE",
     text: "Выполнен",
     icon: <CheckmarkIcon />,
-    style: "status_done",
+    style_icon: "status_done",
     style_text: "status_done",
   },
   {
     id: "ABORT",
     text: "Отменен",
     icon: <AbortIcon />,
-    style: "status_abort",
+    style_icon: "status_abort",
     style_text: "status_abort",
   },
 ];
@@ -58,7 +58,7 @@ export const ListItem = ({
 }) => {
   const status = STATUS.find(({ text }) => text === orderStatus);
   const iconClass = cx(styles.icon, {
-    [styles[status.style]]: true,
+    [styles[status.style_icon]]: true,
   });
 
   return (
