@@ -1,7 +1,6 @@
 ._ {
   list-style-type: none;
   background: #459df5;
-  height: 40px;
 }
 .item,
 .row {
@@ -36,4 +35,12 @@
 }
 .text {
   color: white;
+}
+.button {
+  fill: white;
+  stroke: white;
+}
+.row {
+  display: flex;
+  align-items: center;
 }

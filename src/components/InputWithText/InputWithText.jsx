@@ -19,7 +19,7 @@ export const InputWithText = ({
         placeholder={placeholder}
         {...props}
       />
-      {text && <Text className={styles.text} />}
+      {text && <Text className={styles.text}>{text}</Text>}
     </div>
   );
 };
