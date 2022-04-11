@@ -15,7 +15,6 @@ export const InputWithLabel = ({
   return (
     <Label className={styles.label}>
       {label}
-      <div className={styles.space} />
       <Input
         className={styles.input}
         type={type}

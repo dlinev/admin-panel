@@ -4,7 +4,7 @@ import { ReactComponent as LockedIcon } from "../../icons/locked.svg";
 import { useState } from "react";
 import cx from "classnames";
 
-import { Row, Button } from "../";
+import { Row, Button, Text } from "../";
 
 import styles from "./Input.module.css";
 
