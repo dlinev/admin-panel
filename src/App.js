@@ -1,4 +1,9 @@
-import { Header, Filter, Main, Search } from "./modules/orders/components";
+import {
+  HeaderContainer,
+  FilterContainer,
+  MainContainer,
+  SearchContainer,
+} from "./modules/orders/containers";
 
 import "./styles/reset.css";
 import "./styles/App.css";
@@ -6,10 +11,10 @@ import "./styles/App.css";
 function App() {
   return (
     <div className="wrapper">
-      <Header />
-      <Search />
-      <Filter />
-      <Main />
+      <HeaderContainer />
+      <SearchContainer />
+      <FilterContainer />
+      <MainContainer />
     </div>
   );
 }

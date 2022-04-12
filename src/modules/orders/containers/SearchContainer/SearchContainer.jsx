@@ -1,9 +1,9 @@
 import { ReactComponent as FilterIcon } from "../../../../icons/filter.svg";
 import { ReactComponent as RefreshIcon } from "../../../../icons/refresh.svg";
 import { Searchbar, Button, Column, Row } from "../../../../components";
-import styles from "./Search.module.css";
+import styles from "./SearchContainer.module.css";
 
-export const Search = () => {
+export const SearchContainer = () => {
   return (
     <div className={styles._}>
       <div className={styles.row}>

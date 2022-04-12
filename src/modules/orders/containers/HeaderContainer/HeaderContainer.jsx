@@ -1,9 +1,9 @@
 import { ReactComponent as SunIcon } from "../../../../icons/sun.svg";
 import { Button, Text, Row } from "../../../../components";
 
-import styles from "./Header.module.css";
+import styles from "./HeaderContainer.module.css";
 
-export const Header = () => {
+export const HeaderContainer = () => {
   return (
     <header className={styles._}>
       <Row>

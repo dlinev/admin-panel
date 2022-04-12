@@ -5,11 +5,11 @@ import {
   Column,
   Button,
 } from "../../../../components";
-import { DropdownStatus } from "../";
+import { DropdownStatus } from "../../components";
 
-import styles from "./Filter.module.css";
+import styles from "./FilterContainer.module.css";
 
-export const Filter = () => {
+export const FilterContainer = () => {
   return (
     <div className={styles._}>
       <Row className={styles.panel}>
