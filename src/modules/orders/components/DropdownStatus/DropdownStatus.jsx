@@ -1,10 +1,28 @@
-import { Label, Column, Input, Checkbox } from "../../../../components";
+import { ReactComponent as VArrowIcon } from "../../../../icons/v_arrow.svg";
+
+import { Label, Column, Row, Checkbox, Button } from "../../../../components";
 import styles from "./DropdownStatus.module.css";
 
 export const DropdownStatus = () => {
   return (
     <Column>
-      <Input className={styles.dropdown} value="Любой" />
+      <Row className={styles.row}>
+        <input
+          className={styles.input}
+          type="text"
+          placeholder="Выберете статус"
+          value="Любой"
+          disabled={true}
+          // onChange={handleOnChange}
+        />
+        <Button
+          className={styles.button}
+          icon={VArrowIcon}
+          theme="flat"
+          size="big"
+          // onClick={handleOnClick}
+        />
+      </Row>
 
       <Column className={styles.block}>
         <Label className={styles.label} text="Новый">

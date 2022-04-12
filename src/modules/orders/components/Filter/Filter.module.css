@@ -18,8 +18,8 @@
   align-content: end;
 }
 .columnStatus {
-  display: grid;
-  align-content: end;
+  /* display: grid;
+  align-content: end; */
   margin-left: 12px;
   margin-right: 16px;
 }

@@ -10,7 +10,7 @@ export const Search = () => {
         <Row className={styles.row}>
           <Searchbar
             className={styles.searchbar}
-            placeholder="Введите имя заказа или ФИО"
+            placeholder="Введите номер заказа или ФИО"
           />
           <Button
             className={styles.button}
