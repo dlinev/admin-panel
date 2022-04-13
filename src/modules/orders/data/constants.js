@@ -1,1 +1,11 @@
 export const SEARCH_ORDERS = "SEARCH_ORDERS";
+export const CLEAR_SEARCH_ORDERS_LINE = "CLEAR_SEARCH_ORDERS_LINE";
+export const SET_SEARCH_ORDERS_LINE = "SET_SEARCH_ORDERS_LINE";
+export const GET_ORDERS = "GET_ORDERS";
+export const GET_ORDERS_START = "GET_ORDERS_START";
+export const GET_ORDERS_SUCCESS = "GET_ORDERS_SUCCESS";
+export const GET_ORDERS_FAIL = "GET_ORDERS_FAIL";
+
+/* keyDown */
+
+export const ENTER_CODE = 13;

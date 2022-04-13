@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
+import { getFilteredOrders } from "../../data/selectors/orders";
+
 import { ListHeader, ListBody, ListFooter, EditPanel } from "../../components";
 import styles from "./MainContainer.module.css";
 
-import { connect } from "react-redux";
-import orders from "../../data/orders.json";
-
 export const MainContainer = () => {
+  const orders = useSelector(getFilteredOrders);
+
   return (
     <main className={styles._}>
       <div className={styles.list}>
@@ -16,11 +18,3 @@ export const MainContainer = () => {
     </main>
   );
 };
-
-const mapStateToProps = function (state) {
-  return {
-    orders: state.ordersReducer.orders,
-  };
-};
-
-connect(mapStateToProps)(MainContainer);
