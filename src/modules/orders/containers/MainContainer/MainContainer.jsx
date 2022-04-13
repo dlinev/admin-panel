@@ -1,4 +1,4 @@
-import { ListHeader, ListBody, ListFooter } from "../../components";
+import { ListHeader, ListBody, ListFooter, EditPanel } from "../../components";
 import styles from "./MainContainer.module.css";
 
 import { connect } from "react-redux";
@@ -11,6 +11,7 @@ export const MainContainer = () => {
         <ListHeader />
         <ListBody orders={orders} />
         <ListFooter />
+        <EditPanel />
       </div>
     </main>
   );

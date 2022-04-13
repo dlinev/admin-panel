@@ -7,3 +7,4 @@ export { ListItem } from "./ListItem/ListItem";
 export { ListFooter } from "./ListFooter/ListFooter";
 
 export { DropdownStatus } from "./DropdownStatus/DropdownStatus";
+export { EditPanel } from "./EditPanel/EditPanel";
