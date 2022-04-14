@@ -55,6 +55,7 @@ export const ListItem = ({
   orderCount,
   orderSum,
   orderClient,
+  selected,
 }) => {
   const status = STATUS.find(({ text }) => text === orderStatus);
   const iconClass = cx(styles.icon, {
@@ -66,7 +67,7 @@ export const ListItem = ({
       <Label className={styles.label}>
         <ul className={styles.item}>
           <li className={styles.row}>
-            <Checkbox className={styles.checkbox} />
+            <Checkbox className={styles.checkbox} checked={selected} />
           </li>
           <li className={styles.row}>
             <Text className={styles.text}>{orderId}</Text>
