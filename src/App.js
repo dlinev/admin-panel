@@ -1,6 +1,5 @@
 import {
   HeaderContainer,
-  FilterContainer,
   MainContainer,
   SearchContainer,
 } from "./modules/orders/containers";
@@ -13,7 +12,6 @@ export const App = () => {
     <div className="wrapper">
       <HeaderContainer />
       <SearchContainer />
-      <FilterContainer />
       <MainContainer />
     </div>
   );

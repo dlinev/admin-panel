@@ -17,7 +17,7 @@ const logger =
           type: GET_ORDERS_SUCCESS,
           payload: mock,
         });
-      }, 0);
+      }, 3000);
     } else {
       return next({ type, ...rest });
     }

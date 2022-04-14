@@ -1,6 +1,13 @@
 import { ReactComponent as FilterIcon } from "../../../../icons/filter.svg";
 import { ReactComponent as RefreshIcon } from "../../../../icons/refresh.svg";
-import { Searchbar, Button, Row } from "../../../../components";
+
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { getIsLoading } from "../../data/selectors/isLoading";
+
+import { FilterContainer } from "../../containers";
+import { Searchbar, Button, Row, Text } from "../../../../components";
+
 import styles from "./SearchPanel.module.css";
 
 export const SearchPanel = ({
@@ -10,6 +17,11 @@ export const SearchPanel = ({
   onClear,
   ...props
 }) => {
+  const [isOpen, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!isOpen);
+
+  const isLoading = useSelector(getIsLoading);
+
   return (
     <div className={styles._}>
       <div className={styles.row}>
@@ -25,29 +37,32 @@ export const SearchPanel = ({
           <Button
             className={styles.button}
             icon={FilterIcon}
-            theme="default"
+            theme={isOpen ? "default" : "flat"}
             size="big"
             autoSize={true}
             text="Фильтры"
+            onClick={handleOpen}
           />
-          <Button
-            className={styles.button}
-            theme="flat"
-            size="big"
-            autoSize={true}
-            text="Сбросить фильтры"
-            onClick={onClear}
-          />
+          {isOpen && (
+            <Button
+              className={styles.button}
+              theme="flat"
+              size="big"
+              autoSize={true}
+              text="Сбросить фильтры"
+              onClick={onClear}
+            />
+          )}
         </Row>
-        <Button
-          className={styles.button}
-          icon={RefreshIcon}
-          theme="flat"
-          size="big"
-          autoSize={true}
-          text="Загрузка"
-        />
+        {isLoading && (
+          <Row className={styles.row}>
+            <RefreshIcon className={styles.icon} />
+            <Text className={styles.text}>Загрузка</Text>
+          </Row>
+        )}
       </div>
+
+      {isOpen && <FilterContainer />}
     </div>
   );
 };
