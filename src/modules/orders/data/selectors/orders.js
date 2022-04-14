@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
-import { getSearchLine } from "./searchLine";
 
-export const getOrders = ({ orders }) => orders;
+import { getSearchLine } from "./searchLine";
+import { getOrders } from "./getOrders";
 
 export const getFilteredOrders = createSelector(
   getOrders,

@@ -1,0 +1,11 @@
+._ {
+}
+.button,
+.text {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

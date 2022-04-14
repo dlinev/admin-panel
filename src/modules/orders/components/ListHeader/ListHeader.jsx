@@ -1,5 +1,4 @@
-import { ReactComponent as VArrowIcon } from "../../../../icons/v_arrow.svg";
-import { Button, Checkbox, Text, Row, Label } from "../../../../components";
+import { Checkbox, Text, Row, Label } from "../../../../components";
 
 import styles from "./ListHeader.module.css";
 

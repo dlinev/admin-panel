@@ -1,10 +1,10 @@
 import { GET_ORDERS, SEARCH_ORDERS } from "../constants";
 
 export const searchOrders = (payload) => ({
-  action: SEARCH_ORDERS,
+  type: SEARCH_ORDERS,
   payload,
 });
 
 export const getOrders = () => ({
-  action: GET_ORDERS,
+  type: GET_ORDERS,
 });

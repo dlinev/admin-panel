@@ -1,6 +1,8 @@
 import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
 import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
 import { Text, Button, Row } from "../../../../components";
+import { Paginator } from "../";
+
 import styles from "./ListFooter.module.css";
 
 export const ListFooter = () => {
@@ -26,7 +28,7 @@ export const ListFooter = () => {
         />
       </Row>
       <Row className={styles.row}>
-        <Text className={styles.text}>1 2 3 ... 10 #</Text>
+        <Paginator className={styles.paginator} currentPage={1} lastPage={18} />
       </Row>
     </div>
   );

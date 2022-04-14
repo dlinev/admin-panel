@@ -1,6 +1,6 @@
 import { ReactComponent as FilterIcon } from "../../../../icons/filter.svg";
 import { ReactComponent as RefreshIcon } from "../../../../icons/refresh.svg";
-import { Searchbar, Button, Column, Row } from "../../../../components";
+import { Searchbar, Button, Row } from "../../../../components";
 import styles from "./SearchPanel.module.css";
 
 export const SearchPanel = ({
@@ -18,8 +18,9 @@ export const SearchPanel = ({
             className={styles.searchbar}
             placeholder="Введите номер заказа или ФИО"
             value={value}
-            onClear={onClear}
             onChange={onChange}
+            onClear={onClear}
+            {...props}
           />
           <Button
             className={styles.button}
@@ -35,6 +36,7 @@ export const SearchPanel = ({
             size="big"
             autoSize={true}
             text="Сбросить фильтры"
+            onClick={onClear}
           />
         </Row>
         <Button

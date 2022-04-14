@@ -9,6 +9,8 @@ export const Searchbar = ({
   placeholder = "Введите значение",
   className,
   value,
+  onClear,
+  onKeyDown,
   ...props
 }) => {
   return (
@@ -17,6 +19,8 @@ export const Searchbar = ({
         className={styles.input}
         value={value}
         placeholder={placeholder}
+        onClear={onClear}
+        onKeyDown={onKeyDown}
         {...props}
       />
       <SearchIcon className={styles.icon} />
