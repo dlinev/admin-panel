@@ -7,7 +7,6 @@ import styles from "./DropdownStatus.module.css";
 
 export const DropdownStatus = () => {
   const [isOpen, setOpen] = useState(false);
-
   const handleOpen = () => setOpen(!isOpen);
 
   return (

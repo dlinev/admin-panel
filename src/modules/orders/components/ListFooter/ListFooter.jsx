@@ -8,30 +8,40 @@ import { Text, Button, Row } from "../../../../components";
 import { Paginator } from "../";
 
 import styles from "./ListFooter.module.css";
+import {
+  getCountSelectedOrders,
+  hasSelectedOrders,
+} from "../../data/selectors/orders";
 
 export const ListFooter = () => {
   const isLoading = useSelector(getIsLoading);
+  const countSelected = useSelector(getCountSelectedOrders);
+  const hasSelected = useSelector(hasSelectedOrders);
 
   return (
     <div className={styles._}>
       <Row className={styles.row}>
-        <Text className={styles.text}>Выбрано записей: 0</Text>
-        <Button
-          className={styles.button}
-          icon={EditIcon}
-          theme="default"
-          size="small"
-          autoSize={true}
-          text="Изменить статус"
-        />
-        <Button
-          className={styles.button}
-          icon={DeleteIcon}
-          theme="error"
-          size="small"
-          autoSize={true}
-          text="Удалить"
-        />
+        <Text className={styles.text}>Выбрано записей: {countSelected}</Text>
+        {hasSelected && (
+          <Button
+            className={styles.button}
+            icon={EditIcon}
+            theme="default"
+            size="small"
+            autoSize={true}
+            text="Изменить статус"
+          />
+        )}
+        {hasSelected && (
+          <Button
+            className={styles.button}
+            icon={DeleteIcon}
+            theme="error"
+            size="small"
+            autoSize={true}
+            text="Удалить"
+          />
+        )}
       </Row>
       <Row className={styles.row}>
         {!isLoading && (

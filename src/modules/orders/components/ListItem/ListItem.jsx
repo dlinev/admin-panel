@@ -1,52 +1,15 @@
-import { ReactComponent as AbortIcon } from "../../../../icons/abort.svg";
-import { ReactComponent as DotIcon } from "../../../../icons/dot.svg";
-import { ReactComponent as CheckmarkIcon } from "../../../../icons/checkmark.svg";
-
 import cx from "classnames";
+import { useDispatch, useSelector } from "react-redux";
 
-import { Label, Checkbox, Text, Row } from "../../../../components";
+import { GET_SELECT_ORDERS } from "../../data/constants";
+
+import { getSelectedOrders } from "../../data/selectors/getSelectedOrders";
+import { setSelectedOrdersLine } from "../../data/creators/orders";
+
+import { Checkbox, Text, Row } from "../../../../components";
 import styles from "./ListItem.module.css";
 
-const STATUS = [
-  {
-    id: "NEW",
-    text: "Новый",
-    icon: <DotIcon />,
-    style_icon: "status_new",
-  },
-  {
-    id: "CALC",
-    text: "Рассчет",
-    icon: <DotIcon />,
-    style_icon: "status_calc",
-  },
-  {
-    id: "APROVE",
-    text: "Подтвержден",
-    icon: <DotIcon />,
-    style_icon: "status_aprove",
-  },
-  {
-    id: "HOLD",
-    text: "Отложен",
-    icon: <DotIcon />,
-    style_icon: "status_hold",
-  },
-  {
-    id: "DONE",
-    text: "Выполнен",
-    icon: <CheckmarkIcon />,
-    style_icon: "status_done",
-    style_text: "status_done",
-  },
-  {
-    id: "ABORT",
-    text: "Отменен",
-    icon: <AbortIcon />,
-    style_icon: "status_abort",
-    style_text: "status_abort",
-  },
-];
+import { STATUS } from "../../data/constants";
 
 export const ListItem = ({
   orderId,
@@ -56,47 +19,63 @@ export const ListItem = ({
   orderSum,
   orderClient,
   selected,
+  onSelected,
 }) => {
   const status = STATUS.find(({ text }) => text === orderStatus);
   const iconClass = cx(styles.icon, {
     [styles[status.style_icon]]: true,
   });
 
+  const selectedOrders = useSelector(getSelectedOrders);
+
+  const dispatch = useDispatch();
+
+  const handleSelected = ({ target: { checked } }) => {
+    dispatch(setSelectedOrdersLine({ selectedOrders }, checked, orderId));
+    dispatch({
+      type: GET_SELECT_ORDERS,
+    });
+  };
+
   return (
     <li className={styles._}>
-      <Label className={styles.label}>
-        <ul className={styles.item}>
-          <li className={styles.row}>
-            <Checkbox className={styles.checkbox} checked={selected} />
-          </li>
-          <li className={styles.row}>
-            <Text className={styles.text}>{orderId}</Text>
-          </li>
-          <li className={styles.row}>
-            <Text className={styles.text} type="datetime">
-              {orderDate}
-            </Text>
-          </li>
-          <li className={styles.row}>
-            <Row>
-              <div className={iconClass}>{status.icon}</div>
-              <Text className={styles[status.style_text]}>{orderStatus}</Text>
-            </Row>
-          </li>
-          <li className={styles.row}>
-            <Text className={styles.text}>{orderCount}</Text>
-          </li>
-          <li className={styles.row}>
-            <Text className={styles.text}>
-              {orderSum}
-              {orderSum === "-" || orderSum === null ? "" : " ₽"}
-            </Text>
-          </li>
-          <li className={styles.row}>
-            <Text className={styles.text}>{orderClient}</Text>
-          </li>
-        </ul>
-      </Label>
+      {/* <Label className={cx(styles.label)}> */}
+      <ul className={styles.item}>
+        <li className={styles.row}>
+          <Checkbox
+            className={styles.checkbox}
+            checked={selectedOrders.includes({ orderId })}
+            onChange={handleSelected}
+          />
+        </li>
+        <li className={styles.row}>
+          <Text className={styles.text}>{orderId}</Text>
+        </li>
+        <li className={styles.row}>
+          <Text className={styles.text} type="datetime">
+            {orderDate}
+          </Text>
+        </li>
+        <li className={styles.row}>
+          <Row>
+            <div className={iconClass}>{status.icon}</div>
+            <Text className={styles[status.style_text]}>{orderStatus}</Text>
+          </Row>
+        </li>
+        <li className={styles.row}>
+          <Text className={styles.text}>{orderCount}</Text>
+        </li>
+        <li className={styles.row}>
+          <Text className={styles.text}>
+            {orderSum}
+            {orderSum === "-" || orderSum === null ? "" : " ₽"}
+          </Text>
+        </li>
+        <li className={styles.row}>
+          <Text className={styles.text}>{orderClient}</Text>
+        </li>
+      </ul>
+      {/* </Label> */}
     </li>
   );
 };

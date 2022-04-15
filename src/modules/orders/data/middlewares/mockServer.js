@@ -2,7 +2,7 @@ import { GET_ORDERS_START, GET_ORDERS_SUCCESS, GET_ORDERS } from "../constants";
 
 import mock from "../orders.json";
 
-const logger =
+const mockServer =
   ({ dispatch }) =>
   (next) =>
   ({ type, ...rest }) => {
@@ -17,10 +17,10 @@ const logger =
           type: GET_ORDERS_SUCCESS,
           payload: mock,
         });
-      }, 3000);
+      }, 1500);
     } else {
       return next({ type, ...rest });
     }
   };
 
-export default logger;
+export default mockServer;

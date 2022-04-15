@@ -21,5 +21,10 @@ export const getCountOrders = createSelector(
 
 export const getCountSelectedOrders = createSelector(
   getSelectedOrders,
-  (selected) => selected.reduce((count, item) => count + item, 0)
+  (selected) => selected.length
+);
+
+export const hasSelectedOrders = createSelector(
+  getSelectedOrders,
+  (selected) => selected.length > 0
 );

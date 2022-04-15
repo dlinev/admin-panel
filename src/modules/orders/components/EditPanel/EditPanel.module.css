@@ -1,12 +1,11 @@
 ._ {
   position: absolute;
-  width: 450px;
+  width: 0px;
   height: 100%;
   top: 0px;
   right: 0px;
   border: 1px solid #459df5;
   background-color: white;
-  opacity: 0;
 }
 
 .header {

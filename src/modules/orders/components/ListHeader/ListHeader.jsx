@@ -13,11 +13,7 @@ export const ListHeader = () => {
           <Text className={styles.text}>#</Text>
         </li>
         <li className={styles.row}>
-          <Label>
-            <Row className={styles.row}>
-              <Text className={styles.text}>Дата</Text>
-            </Row>
-          </Label>
+          <Text className={styles.text}>Дата</Text>
         </li>
         <li className={styles.row}>
           <Text className={styles.text}>Статус</Text>
