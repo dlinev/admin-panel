@@ -5,11 +5,11 @@ import { getOrders } from "./getOrders";
 import { getSelectedOrders } from "./getSelectedOrders";
 import { getSortFields } from "./getSortFields";
 
+import lodash from "lodash";
+
 export const getFilteredOrders = createSelector(
   getOrders,
   getSearchLine,
-  getSortFields,
-
   (orders, search, sortFields) =>
     orders.filter(
       ({ orderId, orderClient }) =>
@@ -30,4 +30,10 @@ export const getCountSelectedOrders = createSelector(
 export const hasSelectedOrders = createSelector(
   getSelectedOrders,
   (selected) => selected.length > 0
+);
+
+export const getSortedOrders = createSelector(
+  getFilteredOrders,
+  getSortFields,
+  (orders, sortFields) => lodash.orderBy(orders, sortFields)
 );
