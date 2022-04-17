@@ -1,13 +1,16 @@
 import { createSelector } from "reselect";
 
-import { getSearchLine } from "./searchLine";
+import { getSearchLine } from "./getSearchLine";
 import { getOrders } from "./getOrders";
 import { getSelectedOrders } from "./getSelectedOrders";
+import { getSortFields } from "./getSortFields";
 
 export const getFilteredOrders = createSelector(
   getOrders,
   getSearchLine,
-  (orders, search) =>
+  getSortFields,
+
+  (orders, search, sortFields) =>
     orders.filter(
       ({ orderId, orderClient }) =>
         orderId.includes(search) || orderClient.includes(search)
@@ -28,5 +31,3 @@ export const hasSelectedOrders = createSelector(
   getSelectedOrders,
   (selected) => selected.length > 0
 );
-
-export const sortOrders = createSelector(getOrders, (orders) => orders.sort());

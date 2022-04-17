@@ -1,11 +1,16 @@
-import { GET_SELECT_ORDERS } from "../constants";
+import {
+  SET_SELECTED_ORDERS_LINE,
+  CLEAR_SELECTED_ORDERS_LINE,
+} from "../constants";
 
 const initialState = [];
 
 export const selectedOrders = (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_SELECT_ORDERS:
-      return payload;
+    case SET_SELECTED_ORDERS_LINE:
+      return [...state, payload];
+    case CLEAR_SELECTED_ORDERS_LINE:
+      return state.filter((orderId) => orderId !== payload);
     default:
       return state;
   }

@@ -12,9 +12,16 @@
   margin-right: 16px;
 }
 .button {
-  margin-right: 8px;
+  margin-right: 16px;
 }
 .row {
   display: flex;
   align-items: center;
+}
+.button_page {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }

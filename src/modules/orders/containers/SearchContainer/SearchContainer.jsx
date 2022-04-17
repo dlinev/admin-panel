@@ -1,14 +1,11 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { SearchPanel } from "../../components";
-import { getSearchLine } from "../../data/selectors/searchLine";
+import { getSearchLine } from "../../data/selectors/getSearchLine";
 import {
   createClearSearchOrdersLine,
   createSetSearhOrdersLine,
   createSearch,
 } from "../../data/creators/searchLine";
-
-import { getOrders } from "../../data/creators/orders";
 
 import { ENTER_CODE } from "../../data/constants";
 
@@ -19,6 +16,7 @@ export const SearchContainer = () => {
   const dispatch = useDispatch();
 
   const handleChangeSearch = ({ target: { value } }) => {
+    console.log("handleChangeSearch", value);
     dispatch(createSetSearhOrdersLine(value));
 
     // TODO: дописать запрос на сервер
@@ -37,17 +35,9 @@ export const SearchContainer = () => {
 
   const handleKeyDown = ({ keyCode }) => {
     if (keyCode === ENTER_CODE) {
-      dispatch(createSearch(searchLine));
+      dispatch(createSearch(getSearchLine));
     }
   };
-
-  const handleLoad = () => {
-    dispatch(getOrders());
-  };
-
-  useEffect(() => {
-    handleLoad();
-  }, []);
 
   return (
     <SearchPanel

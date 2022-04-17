@@ -53,7 +53,7 @@ export const ListFooter = () => {
             lastPage={lastPage}
           />
           <Button
-            className={styles.button}
+            className={styles.button_page}
             theme="flat"
             size="small"
             text="#"

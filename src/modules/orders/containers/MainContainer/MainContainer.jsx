@@ -12,6 +12,8 @@ export const MainContainer = () => {
   const selectedOrders = useSelector(getSelectedOrders);
   const isLoading = useSelector(getIsLoading);
 
+  console.log("MainContainer", orders);
+
   const dispatch = useDispatch();
 
   const handleClick = () => {

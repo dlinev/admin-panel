@@ -4,7 +4,7 @@ import {
   GET_SELECT_ORDERS,
   SET_SELECTED_ORDERS_LINE,
   CLEAR_SELECTED_ORDERS_LINE,
-  SORT_ORDERS,
+  GET_SORT_ORDERS,
 } from "../constants";
 
 export const searchOrders = (payload) => ({
@@ -32,6 +32,6 @@ export const clearSelectedOrdersLine = (payload) => ({
 });
 
 export const sortOrders = (payload) => ({
-  type: SORT_ORDERS,
+  type: GET_SORT_ORDERS,
   payload,
 });

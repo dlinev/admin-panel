@@ -1,18 +1,16 @@
 import { combineReducers } from "redux";
 import { orders } from "./orders";
 import { selectedOrders } from "./selectedOrders";
-import { filterReducer } from "./filterReducer";
-import { sortReducer } from "./sortReducer";
-import { selectedReducer } from "./selectedReducer";
+import { sortFields } from "./sortFields";
+import { filterOrders } from "./filterOrders";
 import { searchLine } from "./searchLine";
 import { isLoading } from "./isLoading";
 
 export default combineReducers({
   orders,
   selectedOrders,
-  filterReducer,
-  selectedReducer,
-  sortReducer,
+  sortFields,
+  filterOrders,
   searchLine,
   isLoading,
 });
