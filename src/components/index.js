@@ -12,3 +12,4 @@ export { InputWithLabel } from "./InputWithLabel/InputWithLabel";
 export { InputWithText } from "./InputWithText/InputWithText";
 export { Checkbox } from "./Checkbox/Checkbox";
 export { Radio } from "./Radio/Radio";
+export { Paginator } from "./Paginator/Paginator";

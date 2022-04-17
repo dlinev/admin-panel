@@ -37,8 +37,10 @@
   color: white;
 }
 .button {
-  fill: white;
-  stroke: white;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  margin-left: 4px;
 }
 .row {
   display: flex;

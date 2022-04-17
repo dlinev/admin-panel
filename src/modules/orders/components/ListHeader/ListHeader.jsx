@@ -1,8 +1,10 @@
-import { Checkbox, Text, Row, Label } from "../../../../components";
+import { ReactComponent as VArrowIcon } from "../../../../icons/v_arrow.svg";
+
+import { Checkbox, Text, Button, Row, Label } from "../../../../components";
 
 import styles from "./ListHeader.module.css";
 
-export const ListHeader = () => {
+export const ListHeader = ({ onClick }) => {
   return (
     <div className={styles._}>
       <ul className={styles.item}>
@@ -14,6 +16,13 @@ export const ListHeader = () => {
         </li>
         <li className={styles.row}>
           <Text className={styles.text}>Дата</Text>
+          <Button
+            className={styles.button}
+            theme="default"
+            size="small"
+            icon={VArrowIcon}
+            onClick={onClick}
+          />
         </li>
         <li className={styles.row}>
           <Text className={styles.text}>Статус</Text>

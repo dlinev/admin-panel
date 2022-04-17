@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { Row, Button, Text } from "../../../../components";
+import { Row, Button, Text } from "..";
 import styles from "./Paginator.module.css";
 
 export const Paginator = ({ className, currentPage, lastPage }) => {
@@ -13,7 +13,7 @@ export const Paginator = ({ className, currentPage, lastPage }) => {
         ) : (
           <Button
             className={styles.button}
-            theme="flat"
+            theme={page === currentPage ? "default" : "flat"}
             size="small"
             text={page}
           />

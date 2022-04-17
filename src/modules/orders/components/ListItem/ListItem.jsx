@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { GET_SELECT_ORDERS } from "../../data/constants";
 
 import { getSelectedOrders } from "../../data/selectors/getSelectedOrders";
-import { setSelectedOrdersLine } from "../../data/creators/orders";
+import {
+  setSelectedOrdersLine,
+  clearSelectedOrdersLine,
+} from "../../data/creators/orders";
 
 import { Checkbox, Text, Row } from "../../../../components";
 import styles from "./ListItem.module.css";
@@ -31,10 +34,14 @@ export const ListItem = ({
   const dispatch = useDispatch();
 
   const handleSelected = ({ target: { checked } }) => {
-    dispatch(setSelectedOrdersLine({ selectedOrders }, checked, orderId));
-    dispatch({
-      type: GET_SELECT_ORDERS,
-    });
+    if (checked) {
+      dispatch(setSelectedOrdersLine(orderId));
+    } else {
+      dispatch(clearSelectedOrdersLine(orderId));
+    }
+    // dispatch({
+    //   type: GET_SELECT_ORDERS,
+    // });
   };
 
   return (

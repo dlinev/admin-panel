@@ -28,3 +28,5 @@ export const hasSelectedOrders = createSelector(
   getSelectedOrders,
   (selected) => selected.length > 0
 );
+
+export const sortOrders = createSelector(getOrders, (orders) => orders.sort());

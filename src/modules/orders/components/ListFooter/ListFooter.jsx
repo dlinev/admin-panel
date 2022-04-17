@@ -4,11 +4,11 @@ import { getIsLoading } from "../../data/selectors/isLoading";
 import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
 import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
 
-import { Text, Button, Row } from "../../../../components";
-import { Paginator } from "../";
+import { Text, Button, Row, Paginator } from "../../../../components";
 
 import styles from "./ListFooter.module.css";
 import {
+  getCountOrders,
   getCountSelectedOrders,
   hasSelectedOrders,
 } from "../../data/selectors/orders";
@@ -17,6 +17,8 @@ export const ListFooter = () => {
   const isLoading = useSelector(getIsLoading);
   const countSelected = useSelector(getCountSelectedOrders);
   const hasSelected = useSelector(hasSelectedOrders);
+
+  const lastPage = Math.ceil(useSelector(getCountOrders) / 3);
 
   return (
     <div className={styles._}>
@@ -43,15 +45,21 @@ export const ListFooter = () => {
           />
         )}
       </Row>
-      <Row className={styles.row}>
-        {!isLoading && (
+      {!isLoading && lastPage > 1 && (
+        <Row className={styles.row}>
           <Paginator
             className={styles.paginator}
             currentPage={1}
-            lastPage={18}
+            lastPage={lastPage}
           />
-        )}
-      </Row>
+          <Button
+            className={styles.button}
+            theme="flat"
+            size="small"
+            text="#"
+          />
+        </Row>
+      )}
     </div>
   );
 };
