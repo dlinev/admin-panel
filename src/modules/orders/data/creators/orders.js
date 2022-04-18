@@ -8,6 +8,8 @@ import {
   SET_SELECTED_ORDERS_ALL,
   CLEAR_SELECTED_ORDERS_ALL,
   SET_CURRENT_PAGE,
+  SET_FILTRED_ORDERS,
+  CLEAR_FILTRED_ORDERS,
 } from "../constants";
 
 export const searchOrders = (payload) => ({
@@ -50,4 +52,12 @@ export const setCurrentPage = (payload) => ({
 export const sortOrders = (payload) => ({
   type: GET_SORT_ORDERS,
   payload,
+});
+
+export const setFiltredOrders = (payload) => ({
+  type: SET_FILTRED_ORDERS,
+  payload,
+});
+export const clearFiltredOrders = () => ({
+  type: CLEAR_FILTRED_ORDERS,
 });

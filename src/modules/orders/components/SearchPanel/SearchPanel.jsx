@@ -15,6 +15,7 @@ export const SearchPanel = ({
   className,
   onChange,
   onClear,
+  onClearFilter,
   ...props
 }) => {
   const [isOpen, setOpen] = useState(false);
@@ -50,7 +51,7 @@ export const SearchPanel = ({
               size="big"
               autoSize={true}
               text="Сбросить фильтры"
-              onClick={onClear}
+              onClick={onClearFilter}
             />
           )}
         </Row>

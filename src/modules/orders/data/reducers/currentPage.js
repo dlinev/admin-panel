@@ -1,6 +1,6 @@
 import { SET_CURRENT_PAGE } from "../constants";
 
-const initialState = "";
+const initialState = 1;
 
 export const currentPage = (state = initialState, { type, payload }) => {
   switch (type) {

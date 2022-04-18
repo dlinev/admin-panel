@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { createClearSearchOrdersLine } from "../../data/creators/searchLine";
+import { setFiltredOrders } from "../../data/creators/orders";
 
 import {
   InputWithText,
@@ -31,15 +31,16 @@ export const FilterContainer = () => {
     });
   };
 
-  const handleClear = ({ target: { value } }) => {
+  const handleClear = () => {
     // setFilter({
     //   ...filter,
-    //   value: '',
+    //   [name]: '',
     // });
   };
   const dispatch = useDispatch();
+
   const handleSetFilter = () => {
-    dispatch(createClearSearchOrdersLine());
+    dispatch(setFiltredOrders(filter));
   };
 
   return (

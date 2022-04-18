@@ -19,6 +19,9 @@ export const CLEAR_SELECTED_ORDERS_ALL = "CLEAR_SELECTED_ORDERS_ALL";
 export const GET_SORT_ORDERS = "GET_SORT_ORDERS";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
+export const SET_FILTRED_ORDERS = "SET_FILTRED_ORDERS";
+export const CLEAR_FILTRED_ORDERS = "CLEAR_FILTRED_ORDERS";
+
 export const ORDER_ID = "orderId";
 export const ORDER_DATE = "orderDate";
 export const ORDER_STATUS = "orderStatus";
@@ -26,7 +29,7 @@ export const ORDER_SUM = "orderSum";
 export const ORDER_COUNT = "orderCount";
 export const ORDER_CLIENT = "orderClient";
 
-export const COUNT_LINES_ON_PAGE = 5;
+export const COUNT_LINES_ON_PAGE = 8;
 /* keyDown */
 export const ENTER_CODE = 13;
 

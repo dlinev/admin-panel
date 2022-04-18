@@ -1,1 +1,1 @@
-export const getCurrentPage = ({ currenPage = 1 }) => currenPage;
+export const getCurrentPage = ({ currentPage }) => currentPage;

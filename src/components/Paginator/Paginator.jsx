@@ -9,7 +9,7 @@ export const Paginator = ({ className, currentPage, lastPage, onClick }) => {
     <Row className={cx(styles._, className)}>
       {pages.map((page) =>
         page === "..." ? (
-          <Text key={0} className={styles.text}>
+          <Text key={0} name={0} className={styles.text}>
             {page}
           </Text>
         ) : (
@@ -17,7 +17,7 @@ export const Paginator = ({ className, currentPage, lastPage, onClick }) => {
             key={page}
             name={page}
             className={styles.button}
-            theme={page === currentPage ? "default" : "flat"}
+            theme={page == currentPage ? "default" : "flat"}
             size="small"
             text={page}
             onClick={onClick}

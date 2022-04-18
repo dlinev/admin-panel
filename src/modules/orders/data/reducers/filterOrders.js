@@ -1,13 +1,13 @@
-import { CLEAR_SEARCH_ORDERS_LINE, SEARCH_ORDERS } from "../constants";
+import { SET_FILTRED_ORDERS, CLEAR_FILTRED_ORDERS } from "../constants";
 
-const initialState = "";
+const initialState = [];
 
 export const filterOrders = (state = initialState, { type, payload }) => {
   switch (type) {
-    case CLEAR_SEARCH_ORDERS_LINE:
-      return "";
+    case CLEAR_FILTRED_ORDERS:
+      return [];
 
-    case SEARCH_ORDERS:
+    case SET_FILTRED_ORDERS:
       return payload;
 
     default:

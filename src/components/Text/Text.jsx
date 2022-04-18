@@ -8,6 +8,7 @@ export const Text = ({
   noWrap = true,
   className,
   children,
+  ...props
 }) => {
   const textClass = cx(
     cx(styles._, className, {
@@ -16,5 +17,9 @@ export const Text = ({
     })
   );
 
-  return <Component className={textClass}>{children}</Component>;
+  return (
+    <Component className={textClass} {...props}>
+      {children}
+    </Component>
+  );
 };

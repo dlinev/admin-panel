@@ -31,7 +31,7 @@ export const ListFooter = () => {
 
   const dispatch = useDispatch();
   const handleClick = ({ target: { name } }) => {
-    dispatch(setCurrentPage(name));
+    dispatch(setCurrentPage(parseInt(name)));
   };
 
   return (

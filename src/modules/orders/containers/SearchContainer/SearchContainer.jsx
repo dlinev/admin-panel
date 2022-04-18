@@ -7,6 +7,8 @@ import {
   createSearch,
 } from "../../data/creators/searchLine";
 
+import { clearFiltredOrders } from "../../data/creators/orders";
+
 import { ENTER_CODE } from "../../data/constants";
 
 // let timer = null;
@@ -37,11 +39,15 @@ export const SearchContainer = () => {
       dispatch(createSearch(getSearchLine));
     }
   };
+  const handleClearFilter = () => {
+    dispatch(clearFiltredOrders());
+  };
 
   return (
     <SearchPanel
       onChange={handleChangeSearch}
       onClear={handleClear}
+      onClearFilter={handleClearFilter}
       onKeyDown={handleKeyDown}
       value={searchLine}
     />
