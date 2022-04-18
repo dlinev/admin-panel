@@ -22,13 +22,12 @@ export const getFilteredOrders = createSelector(
         ({ orderId, orderClient }) =>
           orderId.includes(search) || orderClient.includes(search)
       )
-      .filter(
-        ({ orderDate, orderSum, orderStatus }) =>
-          (orderDate >= filterOrders.dateFrom &&
-            orderDate <= filterOrders.dateTo) ||
-          (orderSum >= filterOrders.sumFrom && orderSum <= filterOrders.sumTo)
-        // filterOrders.orderStatus.includes(orderStatus)
-      )
+      // .filter(
+      //   ({ orderDate, orderSum, orderStatus }) =>
+      //     (orderDate >= filterOrders.dateFrom && orderDate <= filterOrders.dateTo) &&
+      //     (orderSum >= filterOrders.sumFrom && orderSum <= filterOrders.sumTo) &&
+      //   filterOrders.orderStatus.includes(orderStatus)
+      // )
       .slice(
         (currentPage - 1) * COUNT_LINES_ON_PAGE,
         currentPage * COUNT_LINES_ON_PAGE

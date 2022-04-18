@@ -1,11 +1,11 @@
 import { SET_FILTRED_ORDERS, CLEAR_FILTRED_ORDERS } from "../constants";
 
-const initialState = [];
+const initialState = {};
 
 export const filterOrders = (state = initialState, { type, payload }) => {
   switch (type) {
     case CLEAR_FILTRED_ORDERS:
-      return [];
+      return {};
 
     case SET_FILTRED_ORDERS:
       return payload;
