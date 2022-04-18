@@ -7,16 +7,16 @@ import styles from "./InputWithText.module.css";
 export const InputWithText = ({
   placeholder = "Введите значение",
   className,
-  value,
   text,
+  onClear,
   ...props
 }) => {
   return (
     <div className={cx(styles._, className)}>
       <Input
         className={styles.input}
-        value={value}
         placeholder={placeholder}
+        onClear={onClear}
         {...props}
       />
       {text && <Text className={styles.text}>{text}</Text>}

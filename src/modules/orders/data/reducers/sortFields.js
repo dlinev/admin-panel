@@ -4,7 +4,7 @@ const initialState = [];
 export const sortFields = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_SORT_ORDERS:
-      return [...state, payload];
+      return payload; //[...state, payload];
     default:
       return state;
   }

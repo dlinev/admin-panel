@@ -3,13 +3,14 @@ import { ReactComponent as IconCheckmark } from "../../icons/checkmark.svg";
 
 import styles from "./Checkbox.module.css";
 
-export const Checkbox = ({ checked, className, ...props }) => {
+export const Checkbox = ({ checked, onChange, className, ...props }) => {
   return (
     <div className={cx(styles._, className)}>
       <input
         className={styles.input}
         type="checkbox"
         defaultChecked={checked}
+        onChange={onChange}
         {...props}
       />
 

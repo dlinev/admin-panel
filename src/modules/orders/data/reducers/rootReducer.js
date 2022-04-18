@@ -5,6 +5,7 @@ import { sortFields } from "./sortFields";
 import { filterOrders } from "./filterOrders";
 import { searchLine } from "./searchLine";
 import { isLoading } from "./isLoading";
+import { currentPage } from "./currentPage";
 
 export default combineReducers({
   orders,
@@ -13,4 +14,5 @@ export default combineReducers({
   filterOrders,
   searchLine,
   isLoading,
+  currentPage,
 });

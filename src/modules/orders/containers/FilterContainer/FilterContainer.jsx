@@ -1,3 +1,8 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { createClearSearchOrdersLine } from "../../data/creators/searchLine";
+
 import {
   InputWithText,
   Label,
@@ -10,6 +15,33 @@ import { DropdownStatus } from "../../components";
 import styles from "./FilterContainer.module.css";
 
 export const FilterContainer = () => {
+  const [filter, setFilter] = useState({
+    name: "",
+    value: "",
+    dateFrom: "20.01.2022",
+    dateTo: "",
+    sumFrom: "5000",
+    sumTo: "",
+  });
+
+  const handleChange = ({ target: { name, value } }) => {
+    setFilter({
+      ...filter,
+      [name]: value,
+    });
+  };
+
+  const handleClear = ({ target: { value } }) => {
+    // setFilter({
+    //   ...filter,
+    //   value: '',
+    // });
+  };
+  const dispatch = useDispatch();
+  const handleSetFilter = () => {
+    dispatch(createClearSearchOrdersLine());
+  };
+
   return (
     <div className={styles._}>
       <Row className={styles.panel}>
@@ -20,7 +52,10 @@ export const FilterContainer = () => {
             type="datetime"
             placeholder="dd.mm.yyyy"
             text="с"
-            value="20.01.2022"
+            name="dateFrom"
+            value={filter.dateFrom}
+            onChange={handleChange}
+            onClear={handleClear}
           />
         </Column>
         <Column className={styles.column}>
@@ -29,11 +64,19 @@ export const FilterContainer = () => {
             type="datetime"
             placeholder="dd.mm.yyyy"
             text="по"
+            name="dateTo"
+            value={filter.dateTo}
+            onChange={handleChange}
+            onClear={handleClear}
           />
         </Column>
         <Column className={styles.columnStatus}>
           <Label className={styles.label}>Статус заказа</Label>
-          <DropdownStatus />
+          <DropdownStatus
+            name={filter.status}
+            onChange={handleChange}
+            onClear={handleClear}
+          />
         </Column>
         <Column className={styles.column}>
           <Label className={styles.label}>Сумма заказа</Label>
@@ -41,7 +84,10 @@ export const FilterContainer = () => {
             className={styles.inputSum}
             placeholder="₽"
             text="от"
-            value="5000"
+            name="sumFrom"
+            value={filter.sumFrom}
+            onChange={handleChange}
+            onClear={handleClear}
           />
         </Column>
         <Column className={styles.column}>
@@ -49,6 +95,10 @@ export const FilterContainer = () => {
             className={styles.inputSum}
             placeholder="₽"
             text="до"
+            name="sumTo"
+            value={filter.sumTo}
+            onChange={handleChange}
+            onClear={handleClear}
           />
         </Column>
         <Column className={styles.column}>
@@ -57,6 +107,7 @@ export const FilterContainer = () => {
             theme="flat"
             size="big"
             text="Применить"
+            onClick={handleSetFilter}
           />
         </Column>
       </Row>

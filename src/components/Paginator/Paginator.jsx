@@ -2,21 +2,25 @@ import cx from "classnames";
 import { Row, Button, Text } from "..";
 import styles from "./Paginator.module.css";
 
-export const Paginator = ({ className, currentPage, lastPage }) => {
+export const Paginator = ({ className, currentPage, lastPage, onClick }) => {
   const pages = generatePageRange(currentPage, lastPage);
 
   return (
     <Row className={cx(styles._, className)}>
       {pages.map((page) =>
         page === "..." ? (
-          <Text className={styles.text}>{page}</Text>
+          <Text key={0} className={styles.text}>
+            {page}
+          </Text>
         ) : (
           <Button
             key={page}
+            name={page}
             className={styles.button}
             theme={page === currentPage ? "default" : "flat"}
             size="small"
             text={page}
+            onClick={onClick}
           />
         )
       )}

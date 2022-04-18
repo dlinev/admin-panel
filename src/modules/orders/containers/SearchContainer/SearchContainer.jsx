@@ -16,7 +16,6 @@ export const SearchContainer = () => {
   const dispatch = useDispatch();
 
   const handleChangeSearch = ({ target: { value } }) => {
-    console.log("handleChangeSearch", value);
     dispatch(createSetSearhOrdersLine(value));
 
     // TODO: дописать запрос на сервер

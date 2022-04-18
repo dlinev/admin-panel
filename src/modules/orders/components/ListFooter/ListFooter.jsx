@@ -1,24 +1,38 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
 import { getIsLoading } from "../../data/selectors/isLoading";
+import { getCurrentPage } from "../../data/selectors/getCurrentPage";
 
-import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
-import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
-
-import { Text, Button, Row, Paginator } from "../../../../components";
-
-import styles from "./ListFooter.module.css";
 import {
   getCountOrders,
   getCountSelectedOrders,
   hasSelectedOrders,
 } from "../../data/selectors/orders";
 
+import { setCurrentPage } from "../../data/creators/orders";
+
+import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
+import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
+
+import { Text, Button, Row, Paginator } from "../../../../components";
+
+import { COUNT_LINES_ON_PAGE } from "../../data/constants";
+
+import styles from "./ListFooter.module.css";
+
 export const ListFooter = () => {
   const isLoading = useSelector(getIsLoading);
   const countSelected = useSelector(getCountSelectedOrders);
+  const countOrders = useSelector(getCountOrders);
   const hasSelected = useSelector(hasSelectedOrders);
+  const currentPage = useSelector(getCurrentPage);
 
-  const lastPage = Math.ceil(useSelector(getCountOrders) / 3);
+  const lastPage = Math.ceil(countOrders / COUNT_LINES_ON_PAGE);
+
+  const dispatch = useDispatch();
+  const handleClick = ({ target: { name } }) => {
+    dispatch(setCurrentPage(name));
+  };
 
   return (
     <div className={styles._}>
@@ -49,8 +63,9 @@ export const ListFooter = () => {
         <Row className={styles.row}>
           <Paginator
             className={styles.paginator}
-            currentPage={1}
+            currentPage={currentPage}
             lastPage={lastPage}
+            onClick={handleClick}
           />
           <Button
             className={styles.button_page}

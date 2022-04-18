@@ -5,6 +5,9 @@ import {
   SET_SELECTED_ORDERS_LINE,
   CLEAR_SELECTED_ORDERS_LINE,
   GET_SORT_ORDERS,
+  SET_SELECTED_ORDERS_ALL,
+  CLEAR_SELECTED_ORDERS_ALL,
+  SET_CURRENT_PAGE,
 } from "../constants";
 
 export const searchOrders = (payload) => ({
@@ -28,6 +31,19 @@ export const setSelectedOrdersLine = (payload) => ({
 
 export const clearSelectedOrdersLine = (payload) => ({
   type: CLEAR_SELECTED_ORDERS_LINE,
+  payload,
+});
+
+export const setSelectedOrdersAll = () => ({
+  type: SET_SELECTED_ORDERS_ALL,
+});
+
+export const clearSelectedOrdersAll = () => ({
+  type: CLEAR_SELECTED_ORDERS_ALL,
+});
+
+export const setCurrentPage = (payload) => ({
+  type: SET_CURRENT_PAGE,
   payload,
 });
 

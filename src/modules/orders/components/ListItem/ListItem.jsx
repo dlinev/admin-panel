@@ -1,9 +1,7 @@
 import cx from "classnames";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 
-import { GET_SELECT_ORDERS } from "../../data/constants";
-
-import { getSelectedOrders } from "../../data/selectors/getSelectedOrders";
 import {
   setSelectedOrdersLine,
   clearSelectedOrdersLine,
@@ -21,7 +19,7 @@ export const ListItem = ({
   orderCount,
   orderSum,
   orderClient,
-  selected,
+  selectedOrders,
   onSelected,
 }) => {
   const status = STATUS.find(({ text }) => text === orderStatus);
@@ -29,7 +27,7 @@ export const ListItem = ({
     [styles[status.style_icon]]: true,
   });
 
-  const selectedOrders = useSelector(getSelectedOrders);
+  const [checked, setChecked] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -39,9 +37,7 @@ export const ListItem = ({
     } else {
       dispatch(clearSelectedOrdersLine(orderId));
     }
-    // dispatch({
-    //   type: GET_SELECT_ORDERS,
-    // });
+    setChecked(selectedOrders.includes({ orderId }));
   };
 
   return (
@@ -51,7 +47,7 @@ export const ListItem = ({
         <li className={styles.row}>
           <Checkbox
             className={styles.checkbox}
-            checked={selectedOrders.includes({ orderId })}
+            checked={checked}
             onChange={handleSelected}
           />
         </li>
