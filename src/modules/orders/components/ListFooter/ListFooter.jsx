@@ -30,8 +30,8 @@ export const ListFooter = () => {
   const lastPage = Math.ceil(countOrders / COUNT_LINES_ON_PAGE);
 
   const dispatch = useDispatch();
-  const handleClick = ({ target: { name } }) => {
-    dispatch(setCurrentPage(parseInt(name)));
+  const handleClick = ({ target: { value } }) => {
+    dispatch(setCurrentPage(parseInt(value)));
   };
 
   return (

@@ -15,7 +15,7 @@ export const Paginator = ({ className, currentPage, lastPage, onClick }) => {
         ) : (
           <Button
             key={page}
-            name={page}
+            value={page}
             className={styles.button}
             theme={page == currentPage ? "default" : "flat"}
             size="small"
