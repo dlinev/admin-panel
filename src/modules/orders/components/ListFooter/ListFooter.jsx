@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 
 import { getIsLoading } from "../../data/selectors/isLoading";
 import { getCurrentPage } from "../../data/selectors/getCurrentPage";
@@ -15,6 +16,7 @@ import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
 import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
 
 import { Text, Button, Row, Paginator } from "../../../../components";
+import { DeleteOrderForm } from "../DeleteOrderForm/DeleteOrderForm";
 
 import { COUNT_LINES_ON_PAGE } from "../../data/constants";
 
@@ -34,6 +36,9 @@ export const ListFooter = () => {
     dispatch(setCurrentPage(parseInt(value)));
   };
 
+  const [isOpen, setOpen] = useState(false);
+  const handleDeleteOrderForm = () => setOpen(!isOpen);
+
   return (
     <div className={styles._}>
       <Row className={styles.row}>
@@ -46,8 +51,10 @@ export const ListFooter = () => {
             size="small"
             autoSize={true}
             text="Изменить статус"
+            onClick={handleDeleteOrderForm}
           />
         )}
+        {isOpen && <DeleteOrderForm />}
         {hasSelected && (
           <Button
             className={styles.button}
