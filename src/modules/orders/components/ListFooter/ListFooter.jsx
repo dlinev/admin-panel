@@ -16,7 +16,7 @@ import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
 import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
 
 import { Text, Button, Row, Paginator } from "../../../../components";
-import { DeleteOrderForm } from "../DeleteOrderForm/DeleteOrderForm";
+import { ChangeStatusForm, DeleteOrderForm, ChoicePageForm } from "../";
 
 import { COUNT_LINES_ON_PAGE } from "../../data/constants";
 
@@ -36,8 +36,16 @@ export const ListFooter = () => {
     dispatch(setCurrentPage(parseInt(value)));
   };
 
-  const [isOpen, setOpen] = useState(false);
-  const handleDeleteOrderForm = () => setOpen(!isOpen);
+  const [isChangeStatusFormOpen, setChangeStatusFormOpen] = useState(false);
+  const handleChangeStatusForm = () =>
+    setChangeStatusFormOpen(!isChangeStatusFormOpen);
+
+  const [isDeleteFormOpen, setDeleteFormOpen] = useState(false);
+  const handleDeleteOrderForm = () => setDeleteFormOpen(!isDeleteFormOpen);
+
+  const [isChoicePageFormOpen, setChoicePageFormOpen] = useState(false);
+  const handleChoicePageForm = () =>
+    setChoicePageFormOpen(!isChoicePageFormOpen);
 
   return (
     <div className={styles._}>
@@ -51,10 +59,12 @@ export const ListFooter = () => {
             size="small"
             autoSize={true}
             text="Изменить статус"
-            onClick={handleDeleteOrderForm}
+            onClick={handleChangeStatusForm}
           />
         )}
-        {isOpen && <DeleteOrderForm />}
+
+        {isChangeStatusFormOpen && hasSelected && <ChangeStatusForm />}
+
         {hasSelected && (
           <Button
             className={styles.button}
@@ -63,8 +73,11 @@ export const ListFooter = () => {
             size="small"
             autoSize={true}
             text="Удалить"
+            onClick={handleDeleteOrderForm}
           />
         )}
+
+        {isDeleteFormOpen && hasSelected && <DeleteOrderForm />}
       </Row>
       {!isLoading && lastPage > 1 && (
         <Row className={styles.row}>
@@ -79,7 +92,10 @@ export const ListFooter = () => {
             theme="flat"
             size="small"
             text="#"
+            onClick={handleChoicePageForm}
           />
+
+          {isChoicePageFormOpen && hasSelected && <ChoicePageForm />}
         </Row>
       )}
     </div>

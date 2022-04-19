@@ -7,14 +7,16 @@
   border-radius: 8px;
   position: absolute;
   bottom: 3rem;
-  left: 22rem;
+  left: 12.5rem;
 }
 
-.text {
-  margin-bottom: 8px;
-}
-.button {
+.label {
   display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
+  padding: 8px 0 8px 0;
+}
+.label:first-child {
+  padding: 0 0 8px 0;
+}
+.label:last-child {
+  padding: 8px 0 0 0;
 }
