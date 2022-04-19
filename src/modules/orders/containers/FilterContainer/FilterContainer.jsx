@@ -18,9 +18,9 @@ export const FilterContainer = () => {
   const [filter, setFilter] = useState({
     name: "",
     value: "",
-    dateFrom: "20.01.2022",
+    dateFrom: "",
     dateTo: "",
-    sumFrom: "5000",
+    sumFrom: "",
     sumTo: "",
   });
 

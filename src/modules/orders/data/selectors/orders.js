@@ -47,12 +47,14 @@ export const getFilteredOrders = createSelector(
         const dateFrom = parseStringToDate(filterOrders.dateFrom);
         const dateTo = parseStringToDate(filterOrders.dateTo);
 
-        return dateFrom <= date && date <= dateTo;
+        return date >= dateFrom && date <= dateTo;
       })
-      .filter(
-        ({ orderSum }) =>
-          parseInt(orderSum) >= filterOrders.sumFrom &&
-          parseInt(orderSum) <= filterOrders.sumTo
+      .filter(({ orderSum }) =>
+        parseInt(orderSum) >= filterOrders.sumFrom > 0
+          ? filterOrders.sumFrom
+          : 0 && parseInt(orderSum) <= filterOrders.sumTo > 0
+          ? filterOrders.sumTo
+          : 99999999999999
       )
   // .filter(
   //   ({ orderStatus }) =>
@@ -71,6 +73,6 @@ export const getOrders = createSelector(
 );
 
 export const getCountOrders = createSelector(
-  getOrders,
+  getFilteredOrders,
   (orders) => orders.length
 );

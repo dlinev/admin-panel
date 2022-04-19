@@ -28,5 +28,5 @@ export const parseStringToDate = (dateString = "", separator = ".") => {
   if (dateString !== undefined) {
     const parts = dateString.substring(0, 10).split(separator);
     return new Date(parts[2], parts[1] - 1, parts[0]);
-  } else return "";
+  } else return undefined;
 };

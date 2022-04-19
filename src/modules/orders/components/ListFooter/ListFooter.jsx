@@ -95,7 +95,7 @@ export const ListFooter = () => {
             onClick={handleChoicePageForm}
           />
 
-          {isChoicePageFormOpen && hasSelected && <ChoicePageForm />}
+          {isChoicePageFormOpen && <ChoicePageForm />}
         </Row>
       )}
     </div>
