@@ -3,41 +3,13 @@ import { createSelector } from "reselect";
 import { COUNT_LINES_ON_PAGE } from "../constants";
 
 import { getSearchLine } from "./getSearchLine";
-import { getOrders } from "./getOrders";
+import { getAllOrders } from "./getAllOrders";
 import { getSelectedOrders } from "./getSelectedOrders";
 import { getSortFields } from "./getSortFields";
 import { getFilterOrders } from "./getFilterOrders";
 
-import lodash from "lodash";
 import { getCurrentPage } from "./getCurrentPage";
-
-export const getFilteredOrders = createSelector(
-  getOrders,
-  getSearchLine,
-  getFilterOrders,
-  getCurrentPage,
-  (orders, search, filterOrders, currentPage) =>
-    orders
-      .filter(
-        ({ orderId, orderClient }) =>
-          orderId.includes(search) || orderClient.includes(search)
-      )
-      // .filter(
-      //   ({ orderDate, orderSum, orderStatus }) =>
-      //     (orderDate >= filterOrders.dateFrom && orderDate <= filterOrders.dateTo) &&
-      //     (orderSum >= filterOrders.sumFrom && orderSum <= filterOrders.sumTo) &&
-      //   filterOrders.orderStatus.includes(orderStatus)
-      // )
-      .slice(
-        (currentPage - 1) * COUNT_LINES_ON_PAGE,
-        currentPage * COUNT_LINES_ON_PAGE
-      )
-);
-
-export const getCountOrders = createSelector(
-  getOrders,
-  (orders) => orders.length
-);
+import { sortBy, parseStringToDate } from "../../utils";
 
 export const getCountSelectedOrders = createSelector(
   getSelectedOrders,
@@ -50,7 +22,55 @@ export const hasSelectedOrders = createSelector(
 );
 
 export const getSortedOrders = createSelector(
-  getFilteredOrders,
+  getAllOrders,
   getSortFields,
-  (orders, sortFields) => lodash.orderBy(orders, sortFields)
+  (orders, sortFields) => sortBy(orders, sortFields)
+);
+
+export const getSearchedOrders = createSelector(
+  getSortedOrders,
+  getSearchLine,
+  (orders, search) =>
+    orders.filter(
+      ({ orderId, orderClient }) =>
+        orderId.includes(search) || orderClient.includes(search)
+    )
+);
+
+export const getFilteredOrders = createSelector(
+  getSearchedOrders,
+  getFilterOrders,
+  (orders, filterOrders) =>
+    orders
+      .filter(({ orderDate }) => {
+        const date = parseStringToDate(orderDate);
+        const dateFrom = parseStringToDate(filterOrders.dateFrom);
+        const dateTo = parseStringToDate(filterOrders.dateTo);
+
+        return dateFrom <= date && date <= dateTo;
+      })
+      .filter(
+        ({ orderSum }) =>
+          parseInt(orderSum) >= filterOrders.sumFrom &&
+          parseInt(orderSum) <= filterOrders.sumTo
+      )
+  // .filter(
+  //   ({ orderStatus }) =>
+  //     filterOrders.orderStatus.includes(orderStatus)
+  // )
+);
+
+export const getOrders = createSelector(
+  getFilteredOrders,
+  getCurrentPage,
+  (orders, currentPage) =>
+    orders.slice(
+      (currentPage - 1) * COUNT_LINES_ON_PAGE,
+      currentPage * COUNT_LINES_ON_PAGE
+    )
+);
+
+export const getCountOrders = createSelector(
+  getOrders,
+  (orders) => orders.length
 );

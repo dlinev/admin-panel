@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getSortedOrders } from "../../data/selectors/orders";
+import { getOrders } from "../../data/selectors/orders";
 
 import { getSelectedOrders } from "../../data/selectors/getSelectedOrders";
 import { getIsLoading } from "../../data/selectors/isLoading";
@@ -14,7 +14,7 @@ import styles from "./MainContainer.module.css";
 import { getSortFields } from "../../data/selectors/getSortFields";
 
 export const MainContainer = () => {
-  const orders = useSelector(getSortedOrders);
+  const orders = useSelector(getOrders);
   const selectedOrders = useSelector(getSelectedOrders);
   const sortFields = useSelector(getSortFields);
   const isLoading = useSelector(getIsLoading);

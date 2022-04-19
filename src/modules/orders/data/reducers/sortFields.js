@@ -1,5 +1,5 @@
 import { GET_SORT_ORDERS } from "../constants";
-const initialState = [];
+const initialState = ["orderId"];
 
 export const sortFields = (state = initialState, { type, payload }) => {
   switch (type) {
