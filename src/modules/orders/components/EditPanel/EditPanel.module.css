@@ -29,8 +29,6 @@
   width: 100%;
   height: 56px;
   border: 1px solid var(--input-color-border-default);
-  position: relative;
-  align-items: center;
   background-color: #459df5;
   color: #bad8f5;
 }

@@ -1,36 +1,46 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getOrders } from "../../data/selectors/orders";
+import { useState } from "react";
 
+import { getOrders, getIsAllSelected } from "../../data/selectors/orders";
 import { getSelectedOrders } from "../../data/selectors/getSelectedOrders";
 import { getIsLoading } from "../../data/selectors/isLoading";
 import {
   sortOrders,
   setSelectedOrdersAll,
-  clearSelectedOrdersAll,
+  setSelectedOrdersLine,
 } from "../../data/creators/orders";
+import { getSortFields } from "../../data/selectors/getSortFields";
 
 import { ListHeader, ListBody, ListFooter, EditPanel } from "../../components";
+import { Modal } from "../../../../components/Modal/Modal";
+
 import styles from "./MainContainer.module.css";
-import { getSortFields } from "../../data/selectors/getSortFields";
 
 export const MainContainer = () => {
   const orders = useSelector(getOrders);
   const selectedOrders = useSelector(getSelectedOrders);
   const sortFields = useSelector(getSortFields);
   const isLoading = useSelector(getIsLoading);
+  const isAllSelected = useSelector(getIsAllSelected);
 
   const dispatch = useDispatch();
 
-  const handleClick = ({ target: { name } }) => {
-    dispatch(sortOrders(name));
+  const handleSort = ({ target: { value } }) => {
+    dispatch(sortOrders(value));
   };
 
-  const handleChange = ({ target: { checked } }) => {
-    if (checked) {
-      dispatch(setSelectedOrdersAll());
-    } else {
-      dispatch(clearSelectedOrdersAll());
-    }
+  const handleSelect = ({ target: { value } }) => {
+    dispatch(setSelectedOrdersLine([value]));
+  };
+
+  const handleSelectAll = () => {
+    dispatch(setSelectedOrdersAll(orders));
+  };
+
+  const [editPanelActive, setEditPanelActive] = useState(false);
+
+  const handleClickEditPanel = () => {
+    setEditPanelActive(true);
   };
 
   return (
@@ -38,15 +48,23 @@ export const MainContainer = () => {
       <div className={styles.list}>
         <ListHeader
           sortFields={sortFields}
-          onClick={handleClick}
-          onChange={handleChange}
+          onClick={handleSort}
+          onSelected={handleSelectAll}
+          isAllSelected={isAllSelected}
         />
         {!isLoading && (
-          <ListBody orders={orders} selectedOrders={selectedOrders} />
+          <ListBody
+            orders={orders}
+            selectedOrders={selectedOrders}
+            onEditPanel={handleClickEditPanel}
+            onSelect={handleSelect}
+          />
         )}
         <ListFooter />
-        <EditPanel />
       </div>
+      <Modal active={editPanelActive} setActive={setEditPanelActive}>
+        <EditPanel />
+      </Modal>
     </main>
   );
 };

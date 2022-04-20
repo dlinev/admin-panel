@@ -31,17 +31,9 @@ export const setSelectedOrdersLine = (payload) => ({
   payload,
 });
 
-export const clearSelectedOrdersLine = (payload) => ({
-  type: CLEAR_SELECTED_ORDERS_LINE,
-  payload,
-});
-
-export const setSelectedOrdersAll = () => ({
+export const setSelectedOrdersAll = (payload) => ({
   type: SET_SELECTED_ORDERS_ALL,
-});
-
-export const clearSelectedOrdersAll = () => ({
-  type: CLEAR_SELECTED_ORDERS_ALL,
+  payload,
 });
 
 export const setCurrentPage = (payload) => ({

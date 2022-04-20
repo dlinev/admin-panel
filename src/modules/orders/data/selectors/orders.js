@@ -73,6 +73,12 @@ export const getOrders = createSelector(
 );
 
 export const getCountOrders = createSelector(
-  getFilteredOrders,
+  getOrders,
   (orders) => orders.length
+);
+
+export const getIsAllSelected = createSelector(
+  getCountSelectedOrders,
+  getCountOrders,
+  (selectedCount, orderCount) => selectedCount == orderCount
 );

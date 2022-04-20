@@ -5,6 +5,7 @@ export { Text } from "./Text/Text";
 export { Label } from "./Label/Label";
 export { Row } from "./Row/Row";
 export { Column } from "./Column/Column";
+export { Modal } from "./Modal/Modal";
 
 /* basic element */
 export { Searchbar } from "./Searchbar/Searchbar";

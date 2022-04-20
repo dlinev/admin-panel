@@ -13,9 +13,7 @@ export const GET_ORDERS_SUCCESS = "GET_ORDERS_SUCCESS";
 export const GET_ORDERS_FAIL = "GET_ORDERS_FAIL";
 export const GET_SELECT_ORDERS = "GET_SELECT_ORDERS";
 export const SET_SELECTED_ORDERS_LINE = "SET_SELECTED_ORDERS_LINE";
-export const CLEAR_SELECTED_ORDERS_LINE = "CLEAR_SELECTED_ORDERS_LINE";
 export const SET_SELECTED_ORDERS_ALL = "SET_SELECTED_ORDERS_ALL";
-export const CLEAR_SELECTED_ORDERS_ALL = "CLEAR_SELECTED_ORDERS_ALL";
 export const GET_SORT_ORDERS = "GET_SORT_ORDERS";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
@@ -29,7 +27,7 @@ export const ORDER_SUM = "orderSum";
 export const ORDER_COUNT = "orderCount";
 export const ORDER_CLIENT = "orderClient";
 
-export const COUNT_LINES_ON_PAGE = 8;
+export const COUNT_LINES_ON_PAGE = 3;
 /* keyDown */
 export const ENTER_CODE = 13;
 

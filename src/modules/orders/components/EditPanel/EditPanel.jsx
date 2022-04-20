@@ -5,18 +5,16 @@ import styles from "./EditPanel.module.css";
 
 export const EditPanel = () => {
   return (
-    <form className={styles._}>
-      <Row className={styles.row}>
-        <Text className={styles.header} component="h2">
-          Редактирование заказа
-        </Text>
-        <Button
-          className={styles.button}
-          theme="default"
-          size="big"
-          icon={XMediumIcon}
-        />
-      </Row>
-    </form>
+    <Row className={styles.row}>
+      <Text className={styles.header} component="h2">
+        Редактирование заказа
+      </Text>
+      <Button
+        className={styles.button}
+        theme="default"
+        size="big"
+        icon={XMediumIcon}
+      />
+    </Row>
   );
 };

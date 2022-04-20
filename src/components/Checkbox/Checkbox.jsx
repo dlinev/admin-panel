@@ -9,7 +9,7 @@ export const Checkbox = ({ checked, onChange, className, ...props }) => {
       <input
         className={styles.input}
         type="checkbox"
-        defaultChecked={checked}
+        checked={checked}
         onChange={onChange}
         {...props}
       />

@@ -36,7 +36,10 @@
   flex-basis: 10%;
 }
 .row:nth-child(7) {
-  flex-basis: 40%;
+  flex-basis: 34%;
+}
+.row:nth-child(8) {
+  flex-basis: 6%;
 }
 .row .checkbox:checked {
   background: #ebf0f5;

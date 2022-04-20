@@ -11,18 +11,18 @@ import { Checkbox, Text } from "../../../../components";
 
 import styles from "./ListHeader.module.css";
 
-export const ListHeader = ({ onClick, onChange, sortFields = [] }) => {
+export const ListHeader = ({ onClick, onSelected, isAllSelected }) => {
   return (
     <div className={styles._}>
       <ul className={styles.item}>
         <li className={styles.row}>
-          <Checkbox onChange={onChange} />
+          <Checkbox onChange={onSelected} checked={isAllSelected} />
         </li>
         <li className={styles.row}>
           <Text className={styles.text}>#</Text>
           <input
             className={styles.button}
-            name={ORDER_ID}
+            value={ORDER_ID}
             type="button"
             onClick={onClick}
           />
@@ -31,7 +31,7 @@ export const ListHeader = ({ onClick, onChange, sortFields = [] }) => {
           <Text className={styles.text}>Дата</Text>
           <input
             className={styles.button}
-            name={ORDER_DATE}
+            value={ORDER_DATE}
             type="button"
             onClick={onClick}
           />
@@ -40,7 +40,7 @@ export const ListHeader = ({ onClick, onChange, sortFields = [] }) => {
           <Text className={styles.text}>Статус</Text>
           <input
             className={styles.button}
-            name={ORDER_STATUS}
+            value={ORDER_STATUS}
             type="button"
             onClick={onClick}
           />
@@ -49,7 +49,7 @@ export const ListHeader = ({ onClick, onChange, sortFields = [] }) => {
           <Text className={styles.text}>Позиций</Text>
           <input
             className={styles.button}
-            name={ORDER_COUNT}
+            value={ORDER_COUNT}
             type="button"
             onClick={onClick}
           />
@@ -58,7 +58,7 @@ export const ListHeader = ({ onClick, onChange, sortFields = [] }) => {
           <Text className={styles.text}>Сумма</Text>
           <input
             className={styles.button}
-            name={ORDER_SUM}
+            value={ORDER_SUM}
             type="button"
             onClick={onClick}
           />
@@ -67,7 +67,7 @@ export const ListHeader = ({ onClick, onChange, sortFields = [] }) => {
           <Text className={styles.text}>ФИО покупателя</Text>
           <input
             className={styles.button}
-            name={ORDER_CLIENT}
+            value={ORDER_CLIENT}
             type="button"
             onClick={onClick}
           />
