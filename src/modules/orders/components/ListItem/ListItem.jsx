@@ -40,39 +40,31 @@ export const ListItem = ({
             value={orderId}
           />
         </li>
-        <li className={styles.row}>
+        <li className={styles.row} onClick={onEditPanel}>
           <Text className={styles.text}>{orderId}</Text>
         </li>
-        <li className={styles.row}>
+        <li className={styles.row} onClick={onEditPanel}>
           <Text className={styles.text} type="datetime">
             {orderDate}
           </Text>
         </li>
-        <li className={styles.row}>
+        <li className={styles.row} onClick={onEditPanel}>
           <Row>
             <div className={iconClass}>{status.icon}</div>
             <Text className={styles[status.style_text]}>{orderStatus}</Text>
           </Row>
         </li>
-        <li className={styles.row}>
+        <li className={styles.row} onClick={onEditPanel}>
           <Text className={styles.text}>{orderCount}</Text>
         </li>
-        <li className={styles.row}>
+        <li className={styles.row} onClick={onEditPanel}>
           <Text className={styles.text}>
             {orderSum}
             {orderSum === "-" || orderSum === null ? "" : " ₽"}
           </Text>
         </li>
-        <li className={styles.row}>
+        <li className={styles.row} onClick={onEditPanel}>
           <Text className={styles.text}>{orderClient}</Text>
-        </li>
-        <li>
-          <Button
-            theme="default"
-            size="small"
-            onClick={onEditPanel}
-            text="Изменить"
-          />
         </li>
       </ul>
       {/* </Label> */}

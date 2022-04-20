@@ -9,6 +9,8 @@ export const InputWithText = ({
   className,
   text,
   onClear,
+  name,
+  value,
   ...props
 }) => {
   return (
@@ -17,6 +19,8 @@ export const InputWithText = ({
         className={styles.input}
         placeholder={placeholder}
         onClear={onClear}
+        name={name}
+        value={value}
         {...props}
       />
       {text && <Text className={styles.text}>{text}</Text>}

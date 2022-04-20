@@ -16,12 +16,11 @@ import styles from "./FilterContainer.module.css";
 
 export const FilterContainer = () => {
   const [filter, setFilter] = useState({
-    name: "",
-    value: "",
     dateFrom: "",
     dateTo: "",
     sumFrom: "",
     sumTo: "",
+    status: {},
   });
 
   const handleChange = ({ target: { name, value } }) => {
@@ -31,12 +30,14 @@ export const FilterContainer = () => {
     });
   };
 
-  const handleClear = () => {
-    // setFilter({
-    //   ...filter,
-    //   [name]: '',
-    // });
+  const handleClear = ({ target: { name } }) => {
+    console.log("handleClear", name);
+    setFilter({
+      ...filter,
+      [name]: "",
+    });
   };
+
   const dispatch = useDispatch();
 
   const handleSetFilter = () => {

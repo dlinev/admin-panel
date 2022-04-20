@@ -9,7 +9,7 @@ import { getSortFields } from "./getSortFields";
 import { getFilterOrders } from "./getFilterOrders";
 
 import { getCurrentPage } from "./getCurrentPage";
-import { sortBy, parseStringToDate } from "../../utils";
+import { sortBy, filterByDate, filterBySum } from "../../utils";
 
 export const getCountSelectedOrders = createSelector(
   getSelectedOrders,
@@ -42,24 +42,25 @@ export const getFilteredOrders = createSelector(
   getFilterOrders,
   (orders, filterOrders) =>
     orders
-      .filter(({ orderDate }) => {
-        const date = parseStringToDate(orderDate);
-        const dateFrom = parseStringToDate(filterOrders.dateFrom);
-        const dateTo = parseStringToDate(filterOrders.dateTo);
+      // .filter(({ orderDate }) => {
+      //   const date = parseStringToDate(orderDate);
+      //   const dateFrom = parseStringToDate(filterOrders.dateFrom);
+      //   const dateTo = parseStringToDate(filterOrders.dateTo);
 
-        return date >= dateFrom && date <= dateTo;
-      })
+      //   return date >= dateFrom && date <= dateTo;
+      // })
+
       .filter(({ orderSum }) =>
-        parseInt(orderSum) >= filterOrders.sumFrom > 0
-          ? filterOrders.sumFrom
-          : 0 && parseInt(orderSum) <= filterOrders.sumTo > 0
-          ? filterOrders.sumTo
-          : 99999999999999
+        filterBySum(orderSum, filterOrders.sumFrom, filterOrders.sumTo)
       )
-  // .filter(
-  //   ({ orderStatus }) =>
-  //     filterOrders.orderStatus.includes(orderStatus)
-  // )
+      .filter(({ orderDate }) =>
+        filterByDate(orderDate, filterOrders.dateFrom, filterOrders.dateTo)
+      )
+
+  // // .filter(
+  // //   ({ orderStatus }) =>
+  // //     filterOrders.orderStatus.includes(orderStatus)
+  // // )
 );
 
 export const getOrders = createSelector(
@@ -72,13 +73,23 @@ export const getOrders = createSelector(
     )
 );
 
-export const getCountOrders = createSelector(
+export const getCountVisibleOrders = createSelector(
   getOrders,
+  (orders) => orders.length
+);
+
+export const getCountOrders = createSelector(
+  getFilteredOrders,
+  (orders) => orders.length
+);
+
+export const getCountAllOrders = createSelector(
+  getAllOrders,
   (orders) => orders.length
 );
 
 export const getIsAllSelected = createSelector(
   getCountSelectedOrders,
-  getCountOrders,
+  getCountVisibleOrders,
   (selectedCount, orderCount) => selectedCount == orderCount
 );

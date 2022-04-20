@@ -11,12 +11,11 @@ export const Input = ({
   type = "text",
   placeholder = "Введите значениие",
   className,
+  name,
   value,
   invalid,
   disabled,
   onClear,
-  onKeyDown,
-  onChange,
   ...props
 }) => {
   const rowClass = cx(styles.row, {
@@ -30,10 +29,9 @@ export const Input = ({
         className={cx(styles._, className)}
         type={type}
         placeholder={placeholder}
-        value={value}
         disabled={disabled}
-        onKeyDown={onKeyDown}
-        onChange={onChange}
+        name={name}
+        value={value}
         {...props}
       />
       {disabled && (

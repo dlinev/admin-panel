@@ -27,7 +27,7 @@ export const ORDER_SUM = "orderSum";
 export const ORDER_COUNT = "orderCount";
 export const ORDER_CLIENT = "orderClient";
 
-export const COUNT_LINES_ON_PAGE = 3;
+export const COUNT_LINES_ON_PAGE = 8;
 /* keyDown */
 export const ENTER_CODE = 13;
 

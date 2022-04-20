@@ -1,27 +1,20 @@
 import lodash from "lodash";
 
+const NUMBER = "NUMBER";
+const DATE = "DATE";
+
 export const sortBy = (list = [], fields = [], orders = []) => {
   return lodash.orderBy(list, fields, orders);
 };
 
-export const filterByDate = (list = [], dateFrom = "", dateTo = "") => {
-  return true;
+export const filterByDate = (value, dateFrom, dateTo) => {
+  const rangeDate = isRange(dateFrom, dateTo, DATE);
+  return rangeDate(value);
 };
 
-export const getDate = (dateString) => {
-  var date = new Date(dateString);
-  var displayValue = "{0}.{1}.{2}"
-    .replace("{0}", prefixZeroIfNeeded(date.getUTCDate()))
-    .replace("{1}", prefixZeroIfNeeded(date.getUTCMonth() + 1))
-    .replace("{2}", date.getUTCFullYear());
-
-  return {
-    sortKey: date.getTime(),
-    displayValue: displayValue,
-  };
-};
-const prefixZeroIfNeeded = (nr) => {
-  return nr < 10 ? "0" + nr : "" + nr;
+export const filterBySum = (value, sumFrom, sumTo) => {
+  const rangeSum = isRange(sumFrom, sumTo, NUMBER);
+  return rangeSum(value);
 };
 
 export const parseStringToDate = (dateString = "", separator = ".") => {
@@ -29,4 +22,23 @@ export const parseStringToDate = (dateString = "", separator = ".") => {
     const parts = dateString.substring(0, 10).split(separator);
     return new Date(parts[2], parts[1] - 1, parts[0]);
   } else return undefined;
+};
+
+export const isRange = (min, max, type) => (value) => {
+  switch (type) {
+    case NUMBER:
+      const minNumber = min ? parseInt(min) : Number.MIN_SAFE_INTEGER;
+      const maxNumber = max ? parseInt(max) : Number.MAX_SAFE_INTEGER;
+      value = value === "-" ? 0 : parseInt(value);
+      return value >= minNumber && value <= maxNumber;
+
+    case DATE:
+      const minDate = min ? parseStringToDate(min) : new Date("1900-01-01");
+      const maxDate = max ? parseStringToDate(max) : new Date("9999-01-01");
+      value = parseStringToDate(value);
+      return value >= minDate && value <= maxDate;
+
+    default:
+      return true;
+  }
 };

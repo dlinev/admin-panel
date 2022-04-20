@@ -7,7 +7,7 @@ import {
   createSearch,
 } from "../../data/creators/searchLine";
 
-import { clearFiltredOrders } from "../../data/creators/orders";
+import { clearFiltredOrders, setCurrentPage } from "../../data/creators/orders";
 
 import { ENTER_CODE } from "../../data/constants";
 
@@ -19,6 +19,7 @@ export const SearchContainer = () => {
 
   const handleChangeSearch = ({ target: { value } }) => {
     dispatch(createSetSearhOrdersLine(value));
+    dispatch(setCurrentPage(1));
 
     // TODO: дописать запрос на сервер
     // clearTimeout(timer);
