@@ -3,9 +3,9 @@ import { Button, Text, Row } from "../../../../components";
 
 import styles from "./EditPanel.module.css";
 
-export const EditPanel = () => {
+export const EditPanel = ({ onClose }) => {
   return (
-    <Row className={styles.row}>
+    <Row className={styles._}>
       <Text className={styles.header} component="h2">
         Редактирование заказа
       </Text>
@@ -14,6 +14,7 @@ export const EditPanel = () => {
         theme="default"
         size="big"
         icon={XMediumIcon}
+        onClick={onClose}
       />
     </Row>
   );

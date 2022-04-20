@@ -39,8 +39,8 @@ export const MainContainer = () => {
 
   const [editPanelActive, setEditPanelActive] = useState(false);
 
-  const handleClickEditPanel = () => {
-    setEditPanelActive(true);
+  const handleClickEditPanel = (active = true) => {
+    setEditPanelActive(active);
   };
 
   return (
@@ -63,7 +63,11 @@ export const MainContainer = () => {
         <ListFooter />
       </div>
       <Modal active={editPanelActive} setActive={setEditPanelActive}>
-        <EditPanel />
+        <EditPanel
+          onClose={() => {
+            handleClickEditPanel(false);
+          }}
+        />
       </Modal>
     </main>
   );
