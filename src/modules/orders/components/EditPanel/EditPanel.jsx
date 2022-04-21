@@ -3,11 +3,11 @@ import { Button, Text, Row } from "../../../../components";
 
 import styles from "./EditPanel.module.css";
 
-export const EditPanel = ({ onClose }) => {
+export const EditPanel = ({ onClose, ...props }) => {
   return (
     <Row className={styles._}>
       <Text className={styles.header} component="h2">
-        Редактирование заказа
+        #{props.name}
       </Text>
       <Button
         className={styles.button}

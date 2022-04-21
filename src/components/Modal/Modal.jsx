@@ -7,12 +7,14 @@ export const Modal = ({ active, setActive, children }) => {
     [styles.active]: active,
   });
 
+  console.log("Modal", active);
+
   const contentClass = cx(styles.content, {
     [styles.active]: active,
   });
 
   return (
-    <div className={formClass} onClick={() => setActive(false)}>
+    <div className={formClass} onClick={() => setActive({ active: active })}>
       <div
         className={contentClass}
         onClick={(event) => event.stopPropagation()}

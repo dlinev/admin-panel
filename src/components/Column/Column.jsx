@@ -2,7 +2,7 @@ import cx from "classnames";
 
 import styles from "./Column.module.css";
 
-export const Column = ({ children, className, ...props }) => {
+export const Column = ({ children, className, ref, ...props }) => {
   return (
     <div className={cx(styles._, className)} {...props}>
       {children}

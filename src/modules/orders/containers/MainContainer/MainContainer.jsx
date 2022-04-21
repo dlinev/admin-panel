@@ -1,6 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-
 import { getOrders, getIsAllSelected } from "../../data/selectors/orders";
 import { getSelectedOrders } from "../../data/selectors/getSelectedOrders";
 import { getIsLoading } from "../../data/selectors/isLoading";
@@ -11,8 +9,7 @@ import {
 } from "../../data/creators/orders";
 import { getSortFields } from "../../data/selectors/getSortFields";
 
-import { ListHeader, ListBody, ListFooter, EditPanel } from "../../components";
-import { Modal } from "../../../../components/Modal/Modal";
+import { ListHeader, ListBody, ListFooter } from "../../components";
 
 import styles from "./MainContainer.module.css";
 
@@ -37,12 +34,6 @@ export const MainContainer = () => {
     dispatch(setSelectedOrdersAll(orders));
   };
 
-  const [editPanelActive, setEditPanelActive] = useState(false);
-
-  const handleClickEditPanel = (active = true) => {
-    setEditPanelActive(active);
-  };
-
   return (
     <main className={styles._}>
       <div className={styles.list}>
@@ -56,19 +47,11 @@ export const MainContainer = () => {
           <ListBody
             orders={orders}
             selectedOrders={selectedOrders}
-            onEditPanel={handleClickEditPanel}
             onSelect={handleSelect}
           />
         )}
         <ListFooter />
       </div>
-      <Modal active={editPanelActive} setActive={setEditPanelActive}>
-        <EditPanel
-          onClose={() => {
-            handleClickEditPanel(false);
-          }}
-        />
-      </Modal>
     </main>
   );
 };

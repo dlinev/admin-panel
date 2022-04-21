@@ -11,6 +11,7 @@ import {
 } from "../../data/selectors/orders";
 
 import { setCurrentPage } from "../../data/creators/orders";
+import { useOuterClick } from "../../utils";
 
 import { ReactComponent as EditIcon } from "../../../../icons/pencil.svg";
 import { ReactComponent as DeleteIcon } from "../../../../icons/bin.svg";
@@ -48,6 +49,18 @@ export const ListFooter = () => {
   const handleChoicePageForm = () =>
     setChoicePageFormOpen(!isChoicePageFormOpen);
 
+  const refStatusForm = useOuterClick(() => {
+    setChangeStatusFormOpen(!isChangeStatusFormOpen);
+  });
+
+  const refDeleteForm = useOuterClick(() => {
+    setDeleteFormOpen(!isDeleteFormOpen);
+  });
+
+  const refChoicePageForm = useOuterClick(() => {
+    setChoicePageFormOpen(!isChoicePageFormOpen);
+  });
+
   return (
     <div className={styles._}>
       <Row className={styles.row}>
@@ -64,7 +77,11 @@ export const ListFooter = () => {
           />
         )}
 
-        {isChangeStatusFormOpen && hasSelected && <ChangeStatusForm />}
+        {isChangeStatusFormOpen && hasSelected && (
+          <div ref={refStatusForm}>
+            <ChangeStatusForm />
+          </div>
+        )}
 
         {hasSelected && (
           <Button
@@ -78,7 +95,11 @@ export const ListFooter = () => {
           />
         )}
 
-        {isDeleteFormOpen && hasSelected && <DeleteOrderForm />}
+        {isDeleteFormOpen && hasSelected && (
+          <div ref={refDeleteForm}>
+            <DeleteOrderForm />
+          </div>
+        )}
       </Row>
       {!isLoading && lastPage > 1 && (
         <Row className={styles.row}>
@@ -96,7 +117,11 @@ export const ListFooter = () => {
             onClick={handleChoicePageForm}
           />
 
-          {isChoicePageFormOpen && <ChoicePageForm />}
+          {isChoicePageFormOpen && (
+            <div ref={refChoicePageForm}>
+              <ChoicePageForm />
+            </div>
+          )}
         </Row>
       )}
     </div>
