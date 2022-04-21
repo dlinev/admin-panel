@@ -5,17 +5,21 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getIsLoading } from "../../data/selectors/isLoading";
 
-import { FilterContainer } from "../../containers";
+import { FilterPanel } from "../../components";
 import { Searchbar, Button, Row, Text } from "../../../../components";
 
 import styles from "./SearchPanel.module.css";
 
 export const SearchPanel = ({
-  value,
   className,
-  onChange,
-  onClear,
+  value,
+  filter,
+  onChangeSearch,
+  onClearSearch,
+  onSetFilter,
   onClearFilter,
+  onCreateFilter,
+  onResetFilter,
   ...props
 }) => {
   const [isOpen, setOpen] = useState(false);
@@ -31,8 +35,8 @@ export const SearchPanel = ({
             className={styles.searchbar}
             placeholder="Введите номер заказа или ФИО"
             value={value}
-            onChange={onChange}
-            onClear={onClear}
+            onChange={onChangeSearch}
+            onClear={onClearSearch}
             {...props}
           />
           <Button
@@ -51,7 +55,7 @@ export const SearchPanel = ({
               size="big"
               autoSize={true}
               text="Сбросить фильтры"
-              onClick={onClearFilter}
+              onClick={onResetFilter}
             />
           )}
         </Row>
@@ -63,7 +67,14 @@ export const SearchPanel = ({
         )}
       </div>
 
-      {isOpen && <FilterContainer />}
+      {isOpen && (
+        <FilterPanel
+          filter={filter}
+          onSetFilter={onSetFilter}
+          onClearFilter={onClearFilter}
+          onCreateFilter={onCreateFilter}
+        />
+      )}
     </div>
   );
 };

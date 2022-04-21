@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { SearchPanel } from "../../components";
 import { getSearchLine } from "../../data/selectors/getSearchLine";
@@ -7,7 +8,11 @@ import {
   createSearch,
 } from "../../data/creators/searchLine";
 
-import { clearFiltredOrders, setCurrentPage } from "../../data/creators/orders";
+import {
+  clearFiltredOrders,
+  setCurrentPage,
+  setFiltredOrders,
+} from "../../data/creators/orders";
 
 import { ENTER_CODE } from "../../data/constants";
 
@@ -31,7 +36,7 @@ export const SearchContainer = () => {
     // }, 500);
   };
 
-  const handleClear = () => {
+  const handleClearSearch = () => {
     dispatch(createClearSearchOrdersLine());
   };
 
@@ -40,17 +45,51 @@ export const SearchContainer = () => {
       dispatch(createSearch(getSearchLine));
     }
   };
-  const handleClearFilter = () => {
+
+  const initialStateFilter = {
+    dateFrom: "",
+    dateTo: "",
+    sumFrom: "",
+    sumTo: "",
+    status: {},
+  };
+
+  const [filter, setFilter] = useState(initialStateFilter);
+
+  const handleSetFilter = ({ target: { name, value } }) => {
+    setFilter({
+      ...filter,
+      [name]: value,
+    });
+  };
+
+  const handleClearFilter = ({ target: { name } }) => {
+    setFilter({
+      ...filter,
+      [name]: "",
+    });
+  };
+
+  const handleCreateFilter = () => {
+    dispatch(setFiltredOrders(filter));
+  };
+
+  const handleResetFilter = () => {
+    setFilter(initialStateFilter);
     dispatch(clearFiltredOrders());
   };
 
   return (
     <SearchPanel
-      onChange={handleChangeSearch}
-      onClear={handleClear}
+      onChangeSearch={handleChangeSearch}
+      onClearSearch={handleClearSearch}
+      onSetFilter={handleSetFilter}
       onClearFilter={handleClearFilter}
+      onCreateFilter={handleCreateFilter}
+      onResetFilter={handleResetFilter}
       onKeyDown={handleKeyDown}
       value={searchLine}
+      filter={filter}
     />
   );
 };

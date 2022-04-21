@@ -1,8 +1,3 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-
-import { setFiltredOrders } from "../../data/creators/orders";
-
 import {
   InputWithText,
   Label,
@@ -12,38 +7,14 @@ import {
 } from "../../../../components";
 import { DropdownStatus } from "../../components";
 
-import styles from "./FilterContainer.module.css";
+import styles from "./FilterPanel.module.css";
 
-export const FilterContainer = () => {
-  const [filter, setFilter] = useState({
-    dateFrom: "",
-    dateTo: "",
-    sumFrom: "",
-    sumTo: "",
-    status: {},
-  });
-
-  const handleChange = ({ target: { name, value } }) => {
-    setFilter({
-      ...filter,
-      [name]: value,
-    });
-  };
-
-  const handleClear = ({ target: { name } }) => {
-    console.log("handleClear", name);
-    setFilter({
-      ...filter,
-      [name]: "",
-    });
-  };
-
-  const dispatch = useDispatch();
-
-  const handleSetFilter = () => {
-    dispatch(setFiltredOrders(filter));
-  };
-
+export const FilterPanel = ({
+  filter,
+  onSetFilter,
+  onClearFilter,
+  onCreateFilter,
+}) => {
   return (
     <div className={styles._}>
       <Row className={styles.panel}>
@@ -56,8 +27,8 @@ export const FilterContainer = () => {
             text="с"
             name="dateFrom"
             value={filter.dateFrom}
-            onChange={handleChange}
-            onClear={handleClear}
+            onChange={onSetFilter}
+            onClear={onClearFilter}
           />
         </Column>
         <Column className={styles.column}>
@@ -68,16 +39,16 @@ export const FilterContainer = () => {
             text="по"
             name="dateTo"
             value={filter.dateTo}
-            onChange={handleChange}
-            onClear={handleClear}
+            onChange={onSetFilter}
+            onClear={onClearFilter}
           />
         </Column>
         <Column className={styles.columnStatus}>
           <Label className={styles.label}>Статус заказа</Label>
           <DropdownStatus
             name={filter.status}
-            onChange={handleChange}
-            onClear={handleClear}
+            onChange={onSetFilter}
+            onClear={onClearFilter}
           />
         </Column>
         <Column className={styles.column}>
@@ -88,8 +59,8 @@ export const FilterContainer = () => {
             text="от"
             name="sumFrom"
             value={filter.sumFrom}
-            onChange={handleChange}
-            onClear={handleClear}
+            onChange={onSetFilter}
+            onClear={onClearFilter}
           />
         </Column>
         <Column className={styles.column}>
@@ -99,8 +70,8 @@ export const FilterContainer = () => {
             text="до"
             name="sumTo"
             value={filter.sumTo}
-            onChange={handleChange}
-            onClear={handleClear}
+            onChange={onSetFilter}
+            onClear={onClearFilter}
           />
         </Column>
         <Column className={styles.column}>
@@ -109,7 +80,7 @@ export const FilterContainer = () => {
             theme="flat"
             size="big"
             text="Применить"
-            onClick={handleSetFilter}
+            onClick={onCreateFilter}
           />
         </Column>
       </Row>

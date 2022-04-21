@@ -11,8 +11,6 @@ export const Input = ({
   type = "text",
   placeholder = "Введите значениие",
   className,
-  name,
-  value,
   invalid,
   disabled,
   onClear,
@@ -30,18 +28,17 @@ export const Input = ({
         type={type}
         placeholder={placeholder}
         disabled={disabled}
-        name={name}
-        value={value}
         {...props}
       />
       {disabled && (
         <LockedIcon className={cx(styles.icon, styles.icon_disabled)} />
       )}
-      {value && !disabled && (
+      {props.value && !disabled && (
         <Button
           className={styles.button}
           icon={XMediumIcon}
           theme="clear"
+          name={props.name}
           onClick={onClear}
         />
       )}

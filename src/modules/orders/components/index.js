@@ -13,3 +13,4 @@ export { ChoicePageForm } from "./ChoicePageForm/ChoicePageForm";
 
 export { EditPanel } from "./EditPanel/EditPanel";
 export { SearchPanel } from "./SearchPanel/SearchPanel";
+export { FilterPanel } from "./FilterPanel/FilterPanel";

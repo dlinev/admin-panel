@@ -21,7 +21,12 @@ export const Button = ({
   });
 
   return (
-    <button className={classNames} onClick={onClick} {...props}>
+    <button
+      className={classNames}
+      onClick={onClick}
+      name={props.name}
+      {...props}
+    >
       {Icon && <Icon className={styles.icon} />}
       {text && <Text className={styles.text}>{text}</Text>}
     </button>

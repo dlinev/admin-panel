@@ -73,6 +73,9 @@
   stroke: rgb(186, 216, 245);
 }
 
+.icon {
+  pointer-events: none;
+}
 .text {
   margin: 0;
   pointer-events: none;
