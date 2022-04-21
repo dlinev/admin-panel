@@ -9,7 +9,7 @@ import { getSortFields } from "./getSortFields";
 import { getFilterOrders } from "./getFilterOrders";
 
 import { getCurrentPage } from "./getCurrentPage";
-import { sortBy, filterByDate, filterBySum } from "../../utils";
+import { sortBy, filterByDate, filterBySum, filterByStatus } from "../../utils";
 
 export const getCountSelectedOrders = createSelector(
   getSelectedOrders,
@@ -42,13 +42,6 @@ export const getFilteredOrders = createSelector(
   getFilterOrders,
   (orders, filterOrders) =>
     orders
-      // .filter(({ orderDate }) => {
-      //   const date = parseStringToDate(orderDate);
-      //   const dateFrom = parseStringToDate(filterOrders.dateFrom);
-      //   const dateTo = parseStringToDate(filterOrders.dateTo);
-
-      //   return date >= dateFrom && date <= dateTo;
-      // })
 
       .filter(({ orderSum }) =>
         filterBySum(orderSum, filterOrders.sumFrom, filterOrders.sumTo)
@@ -56,11 +49,9 @@ export const getFilteredOrders = createSelector(
       .filter(({ orderDate }) =>
         filterByDate(orderDate, filterOrders.dateFrom, filterOrders.dateTo)
       )
-
-  // // .filter(
-  // //   ({ orderStatus }) =>
-  // //     filterOrders.orderStatus.includes(orderStatus)
-  // // )
+      .filter(({ orderStatus }) =>
+        filterByStatus(orderStatus, filterOrders.status)
+      )
 );
 
 export const getOrders = createSelector(

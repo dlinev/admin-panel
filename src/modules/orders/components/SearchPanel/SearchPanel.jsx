@@ -18,6 +18,7 @@ export const SearchPanel = ({
   onClearSearch,
   onSetFilter,
   onClearFilter,
+  onSetStatusFilter,
   onCreateFilter,
   onResetFilter,
   ...props
@@ -72,6 +73,7 @@ export const SearchPanel = ({
           filter={filter}
           onSetFilter={onSetFilter}
           onClearFilter={onClearFilter}
+          onSetStatusFilter={onSetStatusFilter}
           onCreateFilter={onCreateFilter}
         />
       )}

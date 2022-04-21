@@ -20,7 +20,7 @@
   {
     "orderId": "1103397",
     "orderDate": "03.02.2021, 08:04",
-    "orderStatus": "Рассчет",
+    "orderStatus": "Расчет",
     "orderCount": "5",
     "orderSum": "3800",
     "orderClient": "Тихонова Алина Давидовна"
@@ -110,7 +110,7 @@
   {
     "orderId": "2103397",
     "orderDate": "03.02.2021, 08:04",
-    "orderStatus": "Рассчет",
+    "orderStatus": "Расчет",
     "orderCount": "5",
     "orderSum": "3800",
     "orderClient": "Тихонова Алина Давидовна"
@@ -200,7 +200,7 @@
   {
     "orderId": "1103398",
     "orderDate": "03.02.2021, 08:04",
-    "orderStatus": "Рассчет",
+    "orderStatus": "Расчет",
     "orderCount": "5",
     "orderSum": "3800",
     "orderClient": "Тихонова Алина Давидовна"
@@ -290,7 +290,7 @@
   {
     "orderId": "1104397",
     "orderDate": "03.02.2021, 08:04",
-    "orderStatus": "Рассчет",
+    "orderStatus": "Расчет",
     "orderCount": "5",
     "orderSum": "3800",
     "orderClient": "Тихонова Алина Давидовна"

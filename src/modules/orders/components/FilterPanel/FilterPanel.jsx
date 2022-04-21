@@ -13,6 +13,7 @@ export const FilterPanel = ({
   filter,
   onSetFilter,
   onClearFilter,
+  onSetStatusFilter,
   onCreateFilter,
 }) => {
   return (
@@ -45,11 +46,7 @@ export const FilterPanel = ({
         </Column>
         <Column className={styles.columnStatus}>
           <Label className={styles.label}>Статус заказа</Label>
-          <DropdownStatus
-            name={filter.status}
-            onChange={onSetFilter}
-            onClear={onClearFilter}
-          />
+          <DropdownStatus onChange={onSetStatusFilter} status={filter.status} />
         </Column>
         <Column className={styles.column}>
           <Label className={styles.label}>Сумма заказа</Label>

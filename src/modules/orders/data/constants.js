@@ -41,7 +41,7 @@ export const STATUS = [
   },
   {
     id: "CALC",
-    text: "Рассчет",
+    text: "Расчет",
     icon: <DotIcon />,
     style_icon: "status_calc",
   },

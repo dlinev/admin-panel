@@ -7,7 +7,7 @@ import { useOuterClick } from "../../utils";
 import { Label, Column, Row, Checkbox } from "../../../../components";
 import styles from "./DropdownStatus.module.css";
 
-export const DropdownStatus = () => {
+export const DropdownStatus = ({ onChange, status }) => {
   const [isOpen, setOpen] = useState(false);
   const handleOpen = () => setOpen(!isOpen);
 
@@ -39,14 +39,20 @@ export const DropdownStatus = () => {
                 className={styles.checkbox}
                 key="dp_chk_item_1"
                 id="dp_chk_item_1"
+                name="Новый"
+                checked={status.includes("Новый")}
+                onChange={onChange}
               />
             </Label>
 
-            <Label className={styles.label} text="Рассчет">
+            <Label className={styles.label} text="Расчет">
               <Checkbox
                 className={styles.checkbox}
                 key="dp_chk_item_2"
                 id="dp_chk_item_2"
+                name="Расчет"
+                checked={status.includes("Расчет")}
+                onChange={onChange}
               />
             </Label>
             <Label className={styles.label} text="Подтвержден">
@@ -54,7 +60,9 @@ export const DropdownStatus = () => {
                 className={styles.checkbox}
                 key="dp_chk_item_3"
                 id="dp_chk_item_3"
-                // checked={true}
+                name="Подтвержден"
+                checked={status.includes("Подтвержден")}
+                onChange={onChange}
               />
             </Label>
 
@@ -63,6 +71,9 @@ export const DropdownStatus = () => {
                 className={styles.checkbox}
                 key="dp_chk_item_4"
                 id="dp_chk_item_4"
+                name="Отложен"
+                checked={status.includes("Отложен")}
+                onChange={onChange}
               />
             </Label>
 
@@ -71,6 +82,9 @@ export const DropdownStatus = () => {
                 className={styles.checkbox}
                 key="dp_chk_item_5"
                 id="dp_chk_item_5"
+                name="Выполнен"
+                checked={status.includes("Выполнен")}
+                onChange={onChange}
               />
             </Label>
 
@@ -79,6 +93,9 @@ export const DropdownStatus = () => {
                 className={styles.checkbox}
                 key="dp_chk_item_6"
                 id="dp_chk_item_6"
+                name="Отменен"
+                checked={status.includes("Отменен")}
+                onChange={onChange}
               />
             </Label>
           </Column>

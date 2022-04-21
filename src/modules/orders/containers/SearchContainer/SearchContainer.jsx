@@ -51,7 +51,7 @@ export const SearchContainer = () => {
     dateTo: "",
     sumFrom: "",
     sumTo: "",
-    status: {},
+    status: [],
   };
 
   const [filter, setFilter] = useState(initialStateFilter);
@@ -79,12 +79,28 @@ export const SearchContainer = () => {
     dispatch(clearFiltredOrders());
   };
 
+  const handleSetStatusFilter = ({ target: { name, checked } }) => {
+    if (checked) {
+      filter.status.push(name);
+    } else {
+      const indexOfName = filter.status.indexOf(name);
+      if (indexOfName >= 0) {
+        filter.status.splice(indexOfName, 1);
+      }
+    }
+
+    setFilter({
+      ...filter,
+    });
+  };
+
   return (
     <SearchPanel
       onChangeSearch={handleChangeSearch}
       onClearSearch={handleClearSearch}
       onSetFilter={handleSetFilter}
       onClearFilter={handleClearFilter}
+      onSetStatusFilter={handleSetStatusFilter}
       onCreateFilter={handleCreateFilter}
       onResetFilter={handleResetFilter}
       onKeyDown={handleKeyDown}

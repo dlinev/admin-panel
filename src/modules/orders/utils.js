@@ -18,6 +18,11 @@ export const filterBySum = (value, sumFrom, sumTo) => {
   return rangeSum(value);
 };
 
+export const filterByStatus = (value, status) => {
+  if (status) return status.includes(value);
+  else return true;
+};
+
 export const parseStringToDate = (dateString = "", separator = ".") => {
   if (dateString !== undefined) {
     const parts = dateString.substring(0, 10).split(separator);
