@@ -1,6 +1,5 @@
 import { ReactComponent as XMediumIcon } from "../../../../icons/x-medium.svg";
 import { ReactComponent as CheckmarkIcon } from "../../../../icons/checkmark.svg";
-import cx from "classnames";
 
 import {
   Button,
@@ -36,10 +35,11 @@ export const EditPanel = ({ onClose, ...props }) => {
           placeholder="Введите"
           disabled={true}
           label="Дата и время заказа"
+          onChange={() => {}}
         />
 
         <Label className={styles.label} text="ФИО покупателя" />
-        <Input placeholder="Введите" value="Степан" />
+        <Input placeholder="Введите" value="Степан" onChange={() => {}} />
 
         <table className={styles.table}>
           <thead>
@@ -51,20 +51,22 @@ export const EditPanel = ({ onClose, ...props }) => {
           </thead>
           <tbody>
             <tr className={styles.table_line}>
-              <td>art.12024</td>
+              <td>12024</td>
               <td>Стил блейдс фо грасс</td>
               <td>15 339 ₽</td>
             </tr>
             <tr className={styles.table_line}>
-              <td>art.24600</td>
+              <td>24600</td>
               <td>Газонокосилка Apple Magic Grass Remover</td>
               <td>82 664 ₽</td>
             </tr>
           </tbody>
           <tfoot>
-            <th colspan="3" className={styles.table_footer}>
-              Итоговая сумма: 98 003 ₽
-            </th>
+            <tr>
+              <th colSpan="3" className={styles.table_footer}>
+                Итоговая сумма: 98 003 ₽
+              </th>
+            </tr>
           </tfoot>
         </table>
 
@@ -74,6 +76,7 @@ export const EditPanel = ({ onClose, ...props }) => {
           placeholder="Введите"
           disabled={true}
           label="Дата и время заказа"
+          onChange={() => {}}
         />
 
         <Label className={styles.label} text="Статус заказа" />
@@ -90,6 +93,7 @@ export const EditPanel = ({ onClose, ...props }) => {
           placeholder="Введите"
           invalid={true}
           label="Дата и время заказа"
+          onChange={() => {}}
         />
       </Column>
 
