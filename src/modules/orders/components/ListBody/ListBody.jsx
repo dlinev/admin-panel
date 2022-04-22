@@ -12,22 +12,30 @@ export const ListBody = ({ orders, selectedOrders, onSelect }) => {
   };
   const [editPanel, setEditPanel] = useState(initialStateEditPanel);
 
-  const handleClickEditPanel = ({ active, order }) => {
-    console.log("handleClickEditPanel", active, order);
-    setEditPanel({
-      active: active,
-      order: order,
-    });
+  const handleCloseEditPanel = () => {
+    setEditPanel({ active: false });
   };
 
   const ordersList = orders.map((order) => {
+    const handleClickEditPanel = ({ target: { value } }) => {
+      const { orderId } = value;
+      console.log("handleClickEditPanel", orderId);
+      const changeFilter = (order) => {
+        setEditPanel({
+          active: true,
+          order: order,
+        });
+      };
+      return changeFilter(value);
+    };
+
     return (
       <ListItem
         {...order}
         key={order.orderId}
         selectedOrders={selectedOrders}
         onSelect={onSelect}
-        // onEditPanel={handleClickEditPanel({order: order})}
+        onEditPanel={handleClickEditPanel}
       />
     );
   });
@@ -36,9 +44,7 @@ export const ListBody = ({ orders, selectedOrders, onSelect }) => {
     <div className={styles._}>
       {ordersList}
       <Modal active={editPanel.active} setActive={setEditPanel}>
-        <EditPanel
-        // onClose={handleClickEditPanel}
-        />
+        <EditPanel onClose={handleCloseEditPanel} />
       </Modal>
     </div>
   );

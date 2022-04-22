@@ -1,10 +1,10 @@
 import { GET_SORT_ORDERS } from "../constants";
-const initialState = ["orderId"];
+const initialState = [];
 
 export const sortFields = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_SORT_ORDERS:
-      return payload; //[...state, payload];
+      return [...state, payload];
     default:
       return state;
   }

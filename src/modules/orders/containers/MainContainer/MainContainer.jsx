@@ -22,8 +22,8 @@ export const MainContainer = () => {
 
   const dispatch = useDispatch();
 
-  const handleSort = ({ target: { value } }) => {
-    dispatch(sortOrders(value));
+  const handleSort = ({ target: { name } }) => {
+    dispatch(sortOrders(name));
   };
 
   const handleSelect = ({ target: { value } }) => {
