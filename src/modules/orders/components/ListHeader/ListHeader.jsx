@@ -1,5 +1,7 @@
 import { ReactComponent as VArrowIcon } from "../../../../icons/v_arrow.svg";
-import { COLUMNS } from "../../data/constants";
+import cx from "classnames";
+
+import { COLUMNS, SORT_DESCENDING } from "../../data/constants";
 
 import { Checkbox } from "../../../../components";
 
@@ -12,6 +14,12 @@ export const ListHeader = ({
   sortFields,
 }) => {
   const headerColumns = COLUMNS.map(({ id, label }) => {
+    const indexSort = sortFields.findIndex((item) => item.field === id);
+    const isSorting = indexSort >= 0;
+    const isReverseIcon = isSorting
+      ? sortFields[indexSort].sorting === SORT_DESCENDING
+      : false;
+
     return (
       <li key={id} className={styles.row}>
         <input
@@ -21,7 +29,13 @@ export const ListHeader = ({
           onClick={onClick}
           value={label}
         />
-        {sortFields.includes(id) && <VArrowIcon className={styles.icon} />}
+        {isSorting && (
+          <VArrowIcon
+            className={cx(styles.icon, {
+              [styles.icon_reverse]: isReverseIcon,
+            })}
+          />
+        )}
       </li>
     );
   });

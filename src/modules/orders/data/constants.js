@@ -14,13 +14,17 @@ export const GET_ORDERS_FAIL = "GET_ORDERS_FAIL";
 export const GET_SELECT_ORDERS = "GET_SELECT_ORDERS";
 export const SET_SELECTED_ORDERS_LINE = "SET_SELECTED_ORDERS_LINE";
 export const SET_SELECTED_ORDERS_ALL = "SET_SELECTED_ORDERS_ALL";
-export const GET_SORT_ORDERS = "GET_SORT_ORDERS";
+export const SET_SORT_ORDERS = "SET_SORT_ORDERS";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
 export const SET_FILTRED_ORDERS = "SET_FILTRED_ORDERS";
 export const CLEAR_FILTRED_ORDERS = "CLEAR_FILTRED_ORDERS";
 
 export const COUNT_LINES_ON_PAGE = 8;
+
+export const SORT_ASCENDING = "asc";
+export const SORT_DESCENDING = "desc";
+
 /* keyDown */
 export const ENTER_CODE = 13;
 

@@ -3,10 +3,8 @@ import {
   SEARCH_ORDERS,
   GET_SELECT_ORDERS,
   SET_SELECTED_ORDERS_LINE,
-  CLEAR_SELECTED_ORDERS_LINE,
-  GET_SORT_ORDERS,
+  SET_SORT_ORDERS,
   SET_SELECTED_ORDERS_ALL,
-  CLEAR_SELECTED_ORDERS_ALL,
   SET_CURRENT_PAGE,
   SET_FILTRED_ORDERS,
   CLEAR_FILTRED_ORDERS,
@@ -42,7 +40,7 @@ export const setCurrentPage = (payload) => ({
 });
 
 export const sortOrders = (payload) => ({
-  type: GET_SORT_ORDERS,
+  type: SET_SORT_ORDERS,
   payload,
 });
 

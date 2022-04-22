@@ -4,8 +4,12 @@ import React, { useEffect, useRef } from "react";
 const NUMBER = "NUMBER";
 const DATE = "DATE";
 
-export const sortBy = (list = [], fields = [], orders = []) => {
-  return lodash.orderBy(list, fields, orders);
+export const sortBy = (list = [], sortFields = []) => {
+  return lodash.orderBy(
+    list,
+    sortFields.map((item) => item.field),
+    sortFields.map((item) => item.sorting)
+  );
 };
 
 export const filterByDate = (value, dateFrom, dateTo) => {
