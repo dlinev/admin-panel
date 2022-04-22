@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(../fonts/Ubuntu-Regular.ttf);
+}
+body {
+  color: #000;
+  position: relative;
+  font-family: Ubuntu;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.App {
+  text-align: center;
+}
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 28rem;
+  padding: 2rem 3rem 0 3rem;
+}

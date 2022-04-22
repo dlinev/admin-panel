@@ -1,0 +1,39 @@
+.frame {
+  width: 352px;
+  height: 400px;
+  margin: 0 auto;
+  border: 1px dashed var(--frame-color-border-default);
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.frame {
+  width: 600px;
+  flex-direction: initial;
+  padding: 48px;
+}
+.column {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.block {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-bottom: 40px;
+}
+.button_auto_size {
+  width: auto;
+  height: auto;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,51 @@
+._ {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.panel {
+  background: #ebf0f5;
+  border-radius: 8px;
+  height: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchbar {
+  width: 320px;
+  min-width: 100px;
+}
+.button {
+  margin-left: 1rem;
+}
+.icon {
+  width: 1rem;
+  stroke: var(--input-color-image-default);
+  margin-right: 6px;
+  animation: 1s linear 0s normal none infinite running rot;
+  -webkit-animation: 1s linear 0s normal none infinite running rot;
+}
+.text {
+  color: var(--input-color-image-default);
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

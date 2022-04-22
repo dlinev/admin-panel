@@ -1,0 +1,9 @@
+._ {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.text {
+  font-weight: bold;
+  font-size: 26px;
+}

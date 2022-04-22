@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(../fonts/Ubuntu-Regular.ttf);
+}
 :root {
   --frame-color-border-default: #8055ff;
   --background-color-default: #459df5;
@@ -12,47 +16,22 @@
   --button-shadow-light: #bad8f5;
   --button-shadow-dark: rgba(0, 0, 0, 0.2);
 
-  --wrapper-color-border: #8055FF;
+  --wrapper-color-border: #8055ff;
   --input-background-color: #fff;
-  --input-color-border: #BAD8F5;
-  --input-background-color-checked: #459DF5;
-  --input-color-border-checked: #459DF5;
+  --input-color-border: #bad8f5;
+  --input-background-color-checked: #459df5;
+  --input-color-border-checked: #459df5;
   --radio-background-color: #fff;
-  --radio-color-border: #BAD8F5;
-  --radio-color-text: #459DF5;
-  --input-color-placeholder: #BAD8F5;
+  --radio-color-border: #bad8f5;
+  --radio-color-text: #459df5;
+  --input-color-placeholder: #bad8f5;
   --input-color-text: #000;
-  --input-order-color-border: #459DF5;
+  --input-order-color-border: #459df5;
 
-  --button-font-color-normal: #FFF;
+  --button-font-color-normal: #fff;
   --button-font-color-dark: #000;
-  --button-shadow-normal: #BAD8F5;
+  --button-shadow-normal: #bad8f5;
   --button-shadow-dark: rgba(0, 0, 0, 0.2);
-  --button-background-color: #459DF5;
-  --button-empty-color: #459DF5;
-}
-.wrapper{
-  display: flex;
-  flex-direction: column;
-}
-.body {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-}
-.frame {
-  width: 352px;
-  height: 400px;
-  margin: 0 auto;
-  border: 1px dashed var(--frame-color-border-default);
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.iframe {
-  border: 1px solid black;
-  width: 100%;
-  height: 410px;
+  --button-background-color: #459df5;
+  --button-empty-color: #459df5;
 }

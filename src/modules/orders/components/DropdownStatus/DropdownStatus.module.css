@@ -1,0 +1,73 @@
+.block {
+  width: 160px;
+  background-color: #fff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
+    0px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 40px;
+  position: absolute;
+}
+
+.checkbox {
+  margin-right: 0.75rem;
+}
+.label {
+  display: flex;
+  padding: 8px 0 8px 0;
+}
+.label:first-child {
+  padding: 0 0 8px 0;
+}
+.label:last-child {
+  padding: 8px 0 0 0;
+}
+.text {
+  margin-bottom: 8px;
+}
+.row {
+  width: 100%;
+  height: 2rem;
+  border-radius: 4px;
+  border: 1px solid var(--input-color-border-default);
+  position: relative;
+  align-items: center;
+}
+
+.button {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* top: 0.5rem; */
+  /* right: 0.5rem; */
+  border-radius: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.icon {
+  fill: rgb(69, 157, 245);
+  stroke: rgb(69, 157, 245);
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.dropdown {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 0 2rem 0 0.5rem;
+  background: #fff;
+}
+.icon_reverse {
+  transition: all 0.2s ease-in-out;
+  transform: rotate(180deg);
+}

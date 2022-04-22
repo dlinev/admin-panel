@@ -1,0 +1,98 @@
+/*icon*/
+import { ReactComponent as AbortIcon } from "../../../icons/abort.svg";
+import { ReactComponent as DotIcon } from "../../../icons/dot.svg";
+import { ReactComponent as CheckmarkIcon } from "../../../icons/checkmark.svg";
+
+/*const */
+export const SEARCH_ORDERS = "SEARCH_ORDERS";
+export const CLEAR_SEARCH_ORDERS_LINE = "CLEAR_SEARCH_ORDERS_LINE";
+export const SET_SEARCH_ORDERS_LINE = "SET_SEARCH_ORDERS_LINE";
+export const GET_ORDERS = "GET_ORDERS";
+export const GET_ORDERS_START = "GET_ORDERS_START";
+export const GET_ORDERS_SUCCESS = "GET_ORDERS_SUCCESS";
+export const GET_ORDERS_FAIL = "GET_ORDERS_FAIL";
+export const GET_SELECT_ORDERS = "GET_SELECT_ORDERS";
+export const SET_SELECTED_ORDERS_LINE = "SET_SELECTED_ORDERS_LINE";
+export const SET_SELECTED_ORDERS_ALL = "SET_SELECTED_ORDERS_ALL";
+export const SET_SORT_ORDERS = "SET_SORT_ORDERS";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+
+export const SET_FILTRED_ORDERS = "SET_FILTRED_ORDERS";
+export const CLEAR_FILTRED_ORDERS = "CLEAR_FILTRED_ORDERS";
+
+export const COUNT_LINES_ON_PAGE = 8;
+
+export const SORT_ASCENDING = "asc";
+export const SORT_DESCENDING = "desc";
+
+/* keyDown */
+export const ENTER_CODE = 13;
+
+/* data */
+export const STATUS = [
+  {
+    id: "NEW",
+    text: "Новый",
+    icon: <DotIcon />,
+    style_icon: "status_new",
+  },
+  {
+    id: "CALC",
+    text: "Расчет",
+    icon: <DotIcon />,
+    style_icon: "status_calc",
+  },
+  {
+    id: "APROVE",
+    text: "Подтвержден",
+    icon: <DotIcon />,
+    style_icon: "status_aprove",
+  },
+  {
+    id: "HOLD",
+    text: "Отложен",
+    icon: <DotIcon />,
+    style_icon: "status_hold",
+  },
+  {
+    id: "DONE",
+    text: "Выполнен",
+    icon: <CheckmarkIcon />,
+    style_icon: "status_done",
+    style_text: "status_done",
+  },
+  {
+    id: "ABORT",
+    text: "Отменен",
+    icon: <AbortIcon />,
+    style_icon: "status_abort",
+    style_text: "status_abort",
+  },
+];
+
+export const COLUMNS = [
+  {
+    id: "orderId",
+    label: "#",
+  },
+  {
+    id: "orderDate",
+    label: "Дата",
+  },
+  {
+    id: "orderStatus",
+    label: "Статус",
+  },
+  {
+    id: "orderSum",
+    label: "Сумма",
+  },
+  {
+    id: "orderCount",
+    label: "Позиций",
+  },
+  {
+    id: "orderClient",
+    label: "ФИО покупателя",
+  },
+];
