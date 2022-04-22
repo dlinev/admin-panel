@@ -8,25 +8,30 @@ import styles from "./ListBody.module.css";
 export const ListBody = ({ orders, selectedOrders, onSelect }) => {
   const initialStateEditPanel = {
     active: false,
-    order: {},
+    order: {
+      orderId: "",
+      orderDate: "",
+      orderStatus: "",
+      orderSum: "",
+      orderCount: "",
+      orderClient: "",
+    },
   };
   const [editPanel, setEditPanel] = useState(initialStateEditPanel);
 
   const handleCloseEditPanel = () => {
-    setEditPanel({ active: false });
+    setEditPanel(initialStateEditPanel);
   };
 
   const ordersList = orders.map((order) => {
-    const handleClickEditPanel = ({ target: { value } }) => {
-      const { orderId } = value;
-      console.log("handleClickEditPanel", orderId);
-      const changeFilter = (order) => {
+    const handleClickEditPanel = () => {
+      const changeEditPanel = (order) => {
         setEditPanel({
           active: true,
           order: order,
         });
       };
-      return changeFilter(value);
+      return changeEditPanel(order);
     };
 
     return (
@@ -43,8 +48,8 @@ export const ListBody = ({ orders, selectedOrders, onSelect }) => {
   return (
     <div className={styles._}>
       {ordersList}
-      <Modal active={editPanel.active} setActive={setEditPanel}>
-        <EditPanel onClose={handleCloseEditPanel} />
+      <Modal active={editPanel.active} setActive={handleCloseEditPanel}>
+        <EditPanel order={editPanel.order} onClose={handleCloseEditPanel} />
       </Modal>
     </div>
   );

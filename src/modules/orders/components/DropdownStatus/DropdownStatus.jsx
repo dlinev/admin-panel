@@ -7,12 +7,12 @@ import { useOuterClick } from "../../utils";
 import { Label, Column, Row, Checkbox } from "../../../../components";
 import styles from "./DropdownStatus.module.css";
 
-export const DropdownStatus = ({ onChange, status }) => {
+export const DropdownStatus = ({ value, onChange, status }) => {
   const [isOpen, setOpen] = useState(false);
   const handleOpen = () => setOpen(!isOpen);
 
   const thisRef = useOuterClick(() => {
-    setOpen(!isOpen);
+    handleOpen();
   });
 
   return (
@@ -22,8 +22,9 @@ export const DropdownStatus = ({ onChange, status }) => {
           className={styles.dropdown}
           type="text"
           placeholder="Выберете статус"
-          value="Любой"
+          value={value}
           disabled={true}
+          onChange={() => {}}
         />
         <input className={styles.button} type="button" onClick={handleOpen} />
         <VArrowIcon

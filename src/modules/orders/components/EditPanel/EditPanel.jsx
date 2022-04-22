@@ -13,12 +13,16 @@ import {
 import styles from "./EditPanel.module.css";
 import { DropdownStatus } from "../DropdownStatus/DropdownStatus";
 
-export const EditPanel = ({ onClose, ...props }) => {
+export const EditPanel = ({
+  order: { orderId, orderDate, orderStatus, orderClient },
+  onClose,
+  ...props
+}) => {
   return (
     <Column>
       <Row className={styles._}>
         <Text className={styles.header} component="h2">
-          Заявка #{props.name}
+          Заявка #{orderId}
         </Text>
         <Button
           className={styles.button}
@@ -31,15 +35,15 @@ export const EditPanel = ({ onClose, ...props }) => {
       <Column className={styles.body}>
         <Label className={styles.label} text="Дата и время заказа" />
         <Input
-          value="06.12.2021"
           placeholder="Введите"
           disabled={true}
           label="Дата и время заказа"
+          value={orderDate}
           onChange={() => {}}
         />
 
         <Label className={styles.label} text="ФИО покупателя" />
-        <Input placeholder="Введите" value="Степан" onChange={() => {}} />
+        <Input placeholder="Введите" value={orderClient} onChange={() => {}} />
 
         <table className={styles.table}>
           <thead>
@@ -72,10 +76,10 @@ export const EditPanel = ({ onClose, ...props }) => {
 
         <Label className={styles.label} text="Уровень лояльности" />
         <Input
-          value="Новичок"
           placeholder="Введите"
           disabled={true}
           label="Дата и время заказа"
+          value="Новичок"
           onChange={() => {}}
         />
 
@@ -83,31 +87,30 @@ export const EditPanel = ({ onClose, ...props }) => {
 
         <DropdownStatus
           className={styles.dropdown}
-          onChange={() => {}}
           status={[]}
+          value={orderStatus}
+          onChange={() => {}}
         />
 
         <Label className={styles.label} text="Код подтверждения" />
         <Input
-          value="000"
           placeholder="Введите"
           invalid={true}
           label="Дата и время заказа"
+          value="000"
           onChange={() => {}}
         />
       </Column>
 
       <Row className={styles.footer}>
-        <Text className={styles.text}>
-          Ошибка или индикатор загрузки{props.name}
-        </Text>
+        <Text className={styles.text}>Ошибка или индикатор загрузки</Text>
         <Button
           theme="default"
           size="big"
           icon={CheckmarkIcon}
           text="Сохранить"
           autoSize={true}
-          onClick={() => {}}
+          onClick={onClose}
         />
       </Row>
     </Column>

@@ -12,7 +12,7 @@ export const Modal = ({ active, setActive, children }) => {
   });
 
   return (
-    <div className={formClass} onClick={() => setActive({ active: !active })}>
+    <div className={formClass} onClick={setActive}>
       <div
         className={contentClass}
         onClick={(event) => event.stopPropagation()}
